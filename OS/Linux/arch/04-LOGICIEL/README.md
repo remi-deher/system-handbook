@@ -4,6 +4,7 @@ Documentation et particularités par application. Portée : Arch. Ce dossier est
 
 ## Où chercher
 
+- [claude-code/](claude-code/README.md)
 - [firefox/](firefox/README.md)
 - [git/](git/README.md)
 - [kitty/](kitty/README.md)
