@@ -1,7 +1,7 @@
 # Écran de connexion Ryoku en QWERTY au lieu d'AZERTY
 
 - Résumé : l'écran de connexion (greeter weston de SDDM) tape en QWERTY alors que le système est en `fr` ; ajouter `keymap_layout` à la section `[keyboard]` générée par `ryoku-greeter` règle le problème.
-- Statut : résolu (confirmé par l'utilisateur) ; la cause exacte reste une hypothèse.
+- Statut : résolu (confirmé par l'utilisateur, défaut reproduit avec l'ancien fichier) ; la cause exacte dans weston reste une hypothèse.
 - Date : 2026-11-05.
 - Portée : Ryoku, paquet `ryoku-desktop` ; indépendant du compositeur de session.
 - Environnements testés : `ryoku-desktop` 1.0.7.r5727.gf7197d7-5, `weston` 15.0.1-3, `sddm` 0.21.0-7, Arch (noyau 7.2.14), Dell Latitude 7440, disposition `fr` sans variante.
@@ -40,7 +40,7 @@ La sortie doit contenir `keymap_layout=fr`. Verrouiller ou fermer la session, ou
 
 ## Validation
 
-Confirmé par l'utilisateur : après la modification, l'écran de connexion tape en AZERTY, et un contrôle avec l'ancien fichier de configuration a été fait. Le contrôle de la config générée par `DRYRUN` a été fait pendant l'intervention.
+Confirmé par l'utilisateur : après la modification, l'écran de connexion tape en AZERTY ; en remettant l'ancien fichier, le défaut (QWERTY) est réapparu. La modification est donc bien la cause de la correction. Le contrôle de la config générée par `DRYRUN` a été fait pendant l'intervention.
 
 ## Persistance et maintenance
 
