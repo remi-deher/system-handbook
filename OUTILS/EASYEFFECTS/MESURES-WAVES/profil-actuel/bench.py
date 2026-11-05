@@ -160,4 +160,3 @@ def run_scan():
 if __name__=='__main__':
     if sys.argv[1]=='inventory':inventory()
     elif sys.argv[1]=='scan':run_scan()
-
