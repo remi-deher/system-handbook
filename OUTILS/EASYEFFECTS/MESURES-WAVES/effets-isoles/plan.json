@@ -1,0 +1,208 @@
+{
+  "first_capture": "baseline-zero-first",
+  "trials": [
+    {
+      "label": "master-off-zero",
+      "levels": {},
+      "volume": 0.1,
+      "on": false
+    },
+    {
+      "label": "bass-025-v10",
+      "levels": {
+        "bass": 25
+      },
+      "volume": 0.1,
+      "on": true
+    },
+    {
+      "label": "bass-050-v10",
+      "levels": {
+        "bass": 50
+      },
+      "volume": 0.1,
+      "on": true
+    },
+    {
+      "label": "bass-075-v10",
+      "levels": {
+        "bass": 75
+      },
+      "volume": 0.1,
+      "on": true
+    },
+    {
+      "label": "bass-100-v10",
+      "levels": {
+        "bass": 100
+      },
+      "volume": 0.1,
+      "on": true
+    },
+    {
+      "label": "zero-after-bass",
+      "levels": {},
+      "volume": 0.1,
+      "on": true
+    },
+    {
+      "label": "details-025-v10",
+      "levels": {
+        "details": 25
+      },
+      "volume": 0.1,
+      "on": true
+    },
+    {
+      "label": "details-050-v10",
+      "levels": {
+        "details": 50
+      },
+      "volume": 0.1,
+      "on": true
+    },
+    {
+      "label": "details-075-v10",
+      "levels": {
+        "details": 75
+      },
+      "volume": 0.1,
+      "on": true
+    },
+    {
+      "label": "details-100-v10",
+      "levels": {
+        "details": 100
+      },
+      "volume": 0.1,
+      "on": true
+    },
+    {
+      "label": "zero-after-details",
+      "levels": {},
+      "volume": 0.1,
+      "on": true
+    },
+    {
+      "label": "width-025-v10",
+      "levels": {
+        "width": 25
+      },
+      "volume": 0.1,
+      "on": true
+    },
+    {
+      "label": "width-050-v10",
+      "levels": {
+        "width": 50
+      },
+      "volume": 0.1,
+      "on": true
+    },
+    {
+      "label": "width-075-v10",
+      "levels": {
+        "width": 75
+      },
+      "volume": 0.1,
+      "on": true
+    },
+    {
+      "label": "width-100-v10",
+      "levels": {
+        "width": 100
+      },
+      "volume": 0.1,
+      "on": true
+    },
+    {
+      "label": "zero-after-width",
+      "levels": {},
+      "volume": 0.1,
+      "on": true
+    },
+    {
+      "label": "bass-050-v05",
+      "levels": {
+        "bass": 50
+      },
+      "volume": 0.05,
+      "on": true
+    },
+    {
+      "label": "bass-050-v15",
+      "levels": {
+        "bass": 50
+      },
+      "volume": 0.15,
+      "on": true
+    },
+    {
+      "label": "details-050-v05",
+      "levels": {
+        "details": 50
+      },
+      "volume": 0.05,
+      "on": true
+    },
+    {
+      "label": "details-050-v15",
+      "levels": {
+        "details": 50
+      },
+      "volume": 0.15,
+      "on": true
+    },
+    {
+      "label": "width-050-v05",
+      "levels": {
+        "width": 50
+      },
+      "volume": 0.05,
+      "on": true
+    },
+    {
+      "label": "width-050-v15",
+      "levels": {
+        "width": 50
+      },
+      "volume": 0.15,
+      "on": true
+    },
+    {
+      "label": "initial-mix-reference",
+      "levels": {
+        "bass": 50,
+        "details": 35,
+        "width": 35
+      },
+      "volume": 0.1,
+      "on": true
+    }
+  ],
+  "source_levels_dbfs": [
+    -60,
+    -48,
+    -36
+  ],
+  "mute": true,
+  "effect_percentages": [
+    0,
+    25,
+    50,
+    75,
+    100
+  ],
+  "endpoint_volumes": [
+    0.05,
+    0.1,
+    0.15
+  ],
+  "restoration": {
+    "bass": 50,
+    "details": 35,
+    "width": 35,
+    "power": "On",
+    "midnight": "Off"
+  }
+}

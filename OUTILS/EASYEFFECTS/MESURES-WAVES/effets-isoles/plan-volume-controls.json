@@ -1,0 +1,39 @@
+{
+  "reason": "Confirm volume-dependent response at 100%, isolate common OEM processing with knobs zero and test reversibility",
+  "trials": [
+    {
+      "label": "zero-v100",
+      "levels": {},
+      "volume": 1.0,
+      "on": true
+    },
+    {
+      "label": "zero-v50",
+      "levels": {},
+      "volume": 0.5,
+      "on": true
+    },
+    {
+      "label": "zero-return-v10",
+      "levels": {},
+      "volume": 0.1,
+      "on": true
+    },
+    {
+      "label": "bass-050-v100-repeat",
+      "levels": {
+        "bass": 50
+      },
+      "volume": 1.0,
+      "on": true
+    },
+    {
+      "label": "bass-050-v10-repeat",
+      "levels": {
+        "bass": 50
+      },
+      "volume": 0.1,
+      "on": true
+    }
+  ]
+}

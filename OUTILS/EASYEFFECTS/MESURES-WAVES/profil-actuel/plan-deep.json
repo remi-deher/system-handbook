@@ -1,0 +1,82 @@
+{
+  "reference": "Current unchanged Waves knobs/EQ; only global Playback power OFF for two matched controls",
+  "trials": [
+    {
+      "label": "deep-v028",
+      "percent": 28,
+      "enabled": true
+    },
+    {
+      "label": "deep-v000",
+      "percent": 0,
+      "enabled": true
+    },
+    {
+      "label": "deep-v010",
+      "percent": 10,
+      "enabled": true
+    },
+    {
+      "label": "deep-v050",
+      "percent": 50,
+      "enabled": true
+    },
+    {
+      "label": "deep-v065",
+      "percent": 65,
+      "enabled": true
+    },
+    {
+      "label": "deep-v075",
+      "percent": 75,
+      "enabled": true
+    },
+    {
+      "label": "deep-v090",
+      "percent": 90,
+      "enabled": true
+    },
+    {
+      "label": "deep-v095",
+      "percent": 95,
+      "enabled": true
+    },
+    {
+      "label": "deep-v100",
+      "percent": 100,
+      "enabled": true
+    },
+    {
+      "label": "deep-repeat-v028",
+      "percent": 28,
+      "enabled": true
+    },
+    {
+      "label": "deep-repeat-v100",
+      "percent": 100,
+      "enabled": true
+    },
+    {
+      "label": "deep-off-v028",
+      "percent": 28,
+      "enabled": false
+    },
+    {
+      "label": "deep-off-v100",
+      "percent": 100,
+      "enabled": false
+    }
+  ],
+  "source": "reference/deep-suite.wav",
+  "source_levels_dbfs": [
+    -60,
+    -48,
+    -36,
+    -24,
+    -18,
+    -12,
+    -6,
+    -1
+  ],
+  "all_physical_output_muted": true
+}

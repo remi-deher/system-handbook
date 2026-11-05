@@ -1,0 +1,64 @@
+{
+  "trials": [
+    {
+      "label": "bass-050-v50",
+      "levels": {
+        "bass": 50
+      },
+      "volume": 0.5,
+      "on": true
+    },
+    {
+      "label": "bass-050-v100",
+      "levels": {
+        "bass": 50
+      },
+      "volume": 1.0,
+      "on": true
+    },
+    {
+      "label": "details-050-v50",
+      "levels": {
+        "details": 50
+      },
+      "volume": 0.5,
+      "on": true
+    },
+    {
+      "label": "details-050-v100",
+      "levels": {
+        "details": 50
+      },
+      "volume": 1.0,
+      "on": true
+    },
+    {
+      "label": "width-050-v50",
+      "levels": {
+        "width": 50
+      },
+      "volume": 0.5,
+      "on": true
+    },
+    {
+      "label": "width-050-v100",
+      "levels": {
+        "width": 50
+      },
+      "volume": 1.0,
+      "on": true
+    },
+    {
+      "label": "zero-final",
+      "levels": {},
+      "volume": 0.1,
+      "on": true
+    }
+  ],
+  "physical_output": "MUTED and verified before raising volume; restore volume before unmuting",
+  "source_levels_dbfs": [
+    -60,
+    -48,
+    -36
+  ]
+}

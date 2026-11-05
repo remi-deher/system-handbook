@@ -69,3 +69,8 @@ Une mise à jour d'EasyEffects peut changer le format des presets ; si un plugin
 ## Sauvegarde et retour arrière
 
 Les presets sont des ajouts : supprimer les deux fichiers de `~/.local/share/easyeffects/output/` suffit pour revenir en arrière. Sauvegarder `~/.config/easyeffects` avant tout changement d'autoload.
+
+## Références
+
+- [Mesures Waves : scripts, protocoles et rapports](../../../../../../../OUTILS/EASYEFFECTS/MESURES-WAVES/README.md) pour refaire ou prolonger les mesures.
+- [Autoload par appareil](../../../../../../../OUTILS/EASYEFFECTS/autoload-par-appareil.md) pour charger ce preset seulement sur les haut-parleurs.
