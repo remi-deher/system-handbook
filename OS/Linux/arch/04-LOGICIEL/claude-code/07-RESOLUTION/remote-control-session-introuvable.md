@@ -1,6 +1,6 @@
 # Remote Control : session introuvable, sans réponse ou service bloqué
 
-- Résumé : liste des pièges rencontrés avec `claude remote-control` en service (session absente de l'application, message sans réponse, erreur « already served », service actif mais mort) et leur cause.
+- Résumé : liste des pièges rencontrés avec `claude remote-control` en service (session absente de l'application ou de `/resume`, message sans réponse, erreur « already served », service actif mais mort) et leur cause.
 - Statut : résolu (confirmé par l'utilisateur) ; certaines causes restent des hypothèses signalées comme telles.
 - Date : 2026-11-05.
 - Portée : Claude Code CLI sur Linux avec le service de la fiche [service systemd Remote Control](../02-SYSTEME/service-systemd-remote-control.md).
@@ -9,7 +9,7 @@
 
 ## But ou problème
 
-Symptômes : la session créée depuis le téléphone n'apparaît pas, ou apparaît sans réponse de la machine ; le service reste « actif » sans rien faire ; le journal affiche `Error: This folder is already served by a terminal claude remote-control on this device`.
+Symptômes : la session créée depuis le téléphone n'apparaît pas, ou apparaît sans réponse de la machine ; une session créée depuis claude.ai dans l'environnement du service n'apparaît ni dans `/resume` ni dans le tableau de bord du terminal ; le service reste « actif » sans rien faire ; le journal affiche `Error: This folder is already served by a terminal claude remote-control on this device`.
 
 ## Diagnostic
 
@@ -19,6 +19,7 @@ Symptômes : la session créée depuis le téléphone n'apparaît pas, ou appara
 - **Session fantôme qui échoue au démarrage** : `bridge-pointer.json` pointait vers une session supprimée côté Claude. Remplacer son champ `sessionId` par celui d'une session existante, service arrêté, en gardant `environmentId` ; sauvegarder le fichier avant.
 - **`--continue` inutilisable ici** : incompatible avec `--no-create-session-in-dir`, et il se rattache à la dernière session enregistrée (supprimée dans notre cas), qui échoue.
 - **Anciennes sessions** : un arrêt du service archive ses sessions ; les désarchiver dans l'application et leur envoyer un message pour qu'elles reviennent.
+- **Session créée depuis claude.ai ou le téléphone absente de `/resume` et du tableau de bord** : elle est bien enregistrée sur la machine mais Claude Code la masque du sélecteur ; ce n'est pas propre à Linux. Voir [Sessions Remote Control absentes de `/resume`](../../../../../../OUTILS/CLAUDE-CODE/sessions-masquees-resume.md) pour la cause et la reprise par identifiant.
 
 Pour voir ce que le serveur reçoit, ajouter temporairement `--debug-file <chemin>` à la commande : le journal contient le contenu des conversations. Le supprimer ensuite.
 

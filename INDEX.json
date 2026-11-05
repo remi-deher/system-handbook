@@ -1006,7 +1006,7 @@
       "path": "OS/Linux/arch/04-LOGICIEL/claude-code/07-RESOLUTION/remote-control-session-introuvable.md",
       "kind": "fiche",
       "title": "Remote Control : session introuvable, sans réponse ou service bloqué",
-      "summary": "liste des pièges rencontrés avec `claude remote-control` en service (session absente de l'application, message sans réponse, erreur « already served », service actif mais mort) et leur cause.",
+      "summary": "liste des pièges rencontrés avec `claude remote-control` en service (session absente de l'application ou de `/resume`, message sans réponse, erreur « already served », service actif mais mort) et leur cause.",
       "status": "résolu (confirmé par l'utilisateur) ; certaines causes restent des hypothèses signalées comme telles",
       "date": "2026-11-05",
       "scope_note": "Claude Code CLI sur Linux avec le service de la fiche service systemd Remote Control",
@@ -5254,6 +5254,30 @@
       "kind": "tool",
       "title": "Chiffrer et récupérer — Windows / PowerShell",
       "summary": "Commandes PowerShell 5.1 et 7 pour chiffrer et déchiffrer avec age.exe et tar.exe sous Windows natif, avec les limites observées (noms japonais, ordre des tar.exe).",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/CLAUDE-CODE/AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Outils Claude Code",
+      "summary": "Lire `../../AGENTS.md`, `../AGENTS.md` et `README.md`.",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/CLAUDE-CODE/README.md",
+      "kind": "guide",
+      "title": "Outils Claude Code",
+      "summary": "Comportements de Claude Code communs à plusieurs systèmes.",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/CLAUDE-CODE/sessions-masquees-resume.md",
+      "kind": "tool",
+      "title": "Sessions Remote Control absentes de /resume et du tableau de bord",
+      "summary": "les sessions créées depuis claude.ai ou le téléphone dans un environnement Remote Control sont enregistrées sur la machine mais masquées de `/resume` et du tableau de bord ; on les reprend avec `claude --resume <IDENTIFIANT>`.",
+      "status": "testé sous Linux (reprise par identifiant confirmée par l'utilisateur) ; la cause est déduite, pas lue à l'endroit de l'appel",
+      "date": "2026-11-05",
+      "scope_note": "outil commun, Claude Code CLI, tous systèmes (le comportement ne dépend pas de l'OS)",
       "tags": []
     },
     {
