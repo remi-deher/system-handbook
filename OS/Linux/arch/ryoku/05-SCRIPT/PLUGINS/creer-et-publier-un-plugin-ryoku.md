@@ -5,7 +5,7 @@ Résumé : comment créer, valider, installer et publier un plugin de shell Ryok
 - Statut : testé
 - Date : 2026-11-05
 - Portée : Ryoku (Arch), shell Quickshell ; Omarchy pour les mentions qui le concernent.
-- Environnements testés : Ryoku 1.0.7, `ryoku plugin` et `ryostore` du paquet installé, bash et fish, GitHub avec `gh`. Publication Ryostore (`ryoku plugin share`) : **non testée**. Workflow `mirror.yml` : **non testé** (secret absent) ; le premier miroir a été poussé à la main.
+- Environnements testés : Ryoku 1.0.7, `ryoku plugin` et `ryostore` du paquet installé, bash et fish, GitHub avec `gh`. Publication Ryostore (`ryoku plugin share`) : **non testée**. Workflow `mirror.yml` : testé le 2026-11-05 (run réussi) ; le premier miroir a été poussé à la main.
 - Prérequis : `ryoku`, `git`, `gh` connecté, un éditeur QML (`qmllint` aide).
 
 ## Ce que Ryoku accepte
@@ -61,14 +61,15 @@ CREDITS.md, AGENTS.md, LICENSE
    git push https://github.com/remi-deher/mon-plugin.git mirror-tmp:main && git branch -D mirror-tmp
    ```
 
-   Puis `mirrors.json` : `"linux/ryoku/mon-plugin": "remi-deher/mon-plugin"`. Ensuite `mirror.yml` republie à chaque push sur `main` si le secret `MIRROR_TOKEN` existe (jeton à granularité fine, écriture sur le contenu des dépôts miroirs ; ne pas y mettre le jeton `gh` personnel).
+   Puis `mirrors.json` : `"linux/ryoku/mon-plugin": "remi-deher/mon-plugin"`. Ensuite `mirror.yml` republie à chaque push sur `main` (ou à la demande : `gh workflow run mirror.yml -R remi-deher/linux-plugins`) si le secret `MIRROR_TOKEN` existe. Ce secret est un jeton à granularité fine, « All repositories », avec la seule permission **Contents : Read and write** ; il est enregistré dans l'entrée GitHub de 1Password (champ `MIRROR_TOKEN`) et se pose avec `op item get <id> --fields label=MIRROR_TOKEN --reveal | tr -d '\n' | gh secret set MIRROR_TOKEN -R remi-deher/linux-plugins`. Ne pas y mettre le jeton `gh` personnel. Republier un contenu inchangé redonne le même commit sur le miroir.
 8. Vérifier : `ryoku plugin add https://github.com/remi-deher/mon-plugin --bar --yes` (testé pour `ryoku-pods`).
 9. Catalogue officiel (seulement sur décision) : `ryoku plugin share mon-plugin`.
 
 ## Validation
 
 - Chaîne complète faite pour `ryoku-pods` : création du dépôt, miroir poussé à la main, installation par URL du miroir réussie.
-- Non validé : `mirror.yml` en CI et `ryoku plugin share`.
+- `mirror.yml` : validé en CI. Piège rencontré : `actions/checkout` persiste le `GITHUB_TOKEN` dans la configuration git et il masque le jeton de l'URL de push, d'où un 403 sur le miroir ; `persist-credentials: false` règle le problème.
+- Non validé : `ryoku plugin share`.
 
 ## Retour arrière
 
