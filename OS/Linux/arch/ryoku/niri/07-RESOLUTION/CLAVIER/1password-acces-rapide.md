@@ -31,18 +31,18 @@ Ctrl+Maj+Espace n'ouvre pas la fenêtre « Accès rapide » alors que le raccour
 1. Copier [acces-rapide-1p.sh](acces-rapide-1p.sh) vers `~/.local/bin/1password-quick-access` et le rendre exécutable (`chmod +x`). Il lance `--quick-access`, attend la fenêtre, la déplace sur le bureau actif (`move-window-to-workspace --window-id … --focus false`) puis lui donne le focus (`focus-window --id`). Prérequis : `niri`, `python3`.
 2. Ajouter dans le bloc `binds` existant de `~/.config/niri/user.kdl` (un seul bloc `binds` est accepté ; un second provoque « duplicate node `binds` ») :
 
-```kdl
-binds {
-    Ctrl+Shift+Space { spawn "/home/<utilisateur>/.local/bin/1password-quick-access"; }
-}
-```
+   ```kdl
+   binds {
+       Ctrl+Shift+Space { spawn "/home/<utilisateur>/.local/bin/1password-quick-access"; }
+   }
+   ```
 
 3. Valider et recharger (shell Bash ou fish) :
 
-```bash
-niri validate
-niri msg action load-config-file
-```
+   ```bash
+   niri validate
+   niri msg action load-config-file
+   ```
 
 `Ctrl+Shift+Space` n'était lié à aucune autre action dans `rebinds.kdl` ni `settings.kdl` sur cette installation.
 
