@@ -2460,6 +2460,112 @@
       ]
     },
     {
+      "path": "OS/Linux/arch/ryoku/05-SCRIPT/AIRPODS/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — AirPods — Ryoku",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "05-SCRIPT",
+      "category": "AIRPODS",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "script",
+        "airpods"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/05-SCRIPT/AIRPODS/README.md",
+      "kind": "guide",
+      "title": "AirPods — Ryoku",
+      "summary": "plugin de barre Ryoku (`ryoku-pods`) qui affiche batteries, mode d'écoute et réglages des AirPods, porté depuis le plugin Omarchy `omarchy-pods`.",
+      "status": "testé",
+      "date": "2026-11-05",
+      "scope_note": "Ryoku (Arch), barre du shell",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "05-SCRIPT",
+      "category": "AIRPODS",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "script",
+        "airpods"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/05-SCRIPT/PLUGINS/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Plugins — Ryoku",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "05-SCRIPT",
+      "category": "PLUGINS",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "script",
+        "plugins"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/05-SCRIPT/PLUGINS/README.md",
+      "kind": "guide",
+      "title": "Plugins — Ryoku",
+      "summary": "procédures pour créer, valider, installer et publier des plugins de shell Ryoku, et organisation du dépôt `linux-plugins`.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "05-SCRIPT",
+      "category": "PLUGINS",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "script",
+        "plugins"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/05-SCRIPT/PLUGINS/creer-et-publier-un-plugin-ryoku.md",
+      "kind": "fiche",
+      "title": "Créer et publier un plugin Ryoku",
+      "summary": "comment créer, valider, installer et publier un plugin de shell Ryoku, avec le dépôt généraliste `linux-plugins` et un miroir mono-plugin pour l'installation par URL.",
+      "status": "testé",
+      "date": "2026-11-05",
+      "scope_note": "Ryoku (Arch), shell Quickshell ; Omarchy pour les mentions qui le concernent",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "05-SCRIPT",
+      "category": "PLUGINS",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "script",
+        "plugins"
+      ]
+    },
+    {
       "path": "OS/Linux/arch/ryoku/05-SCRIPT/README.md",
       "kind": "guide",
       "title": "Scripts — Ryoku",
