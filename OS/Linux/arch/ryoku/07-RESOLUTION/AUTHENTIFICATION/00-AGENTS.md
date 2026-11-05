@@ -1,10 +1,10 @@
-# Instructions pour les IA — Clavier — Résolutions Ryoku
+# Instructions pour les IA — Authentification — Résolutions Ryoku
 
 Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.
 
 ## Utilité
 
-Catégorie de la rubrique `07-RESOLUTION` de Ryoku : disposition du clavier hors compositeur de session (écran de connexion, console). Les raccourcis et la disposition propres à Niri sont dans la catégorie `CLAVIER` de la portée `niri`. Ce dossier est une catégorie, pas une portée.
+Catégorie de la rubrique `07-RESOLUTION` de Ryoku : écran de connexion (greeter SDDM), saisie du mot de passe, PAM et empreinte propres à Ryoku. Les résolutions communes à Arch sont dans la catégorie `AUTHENTIFICATION` d'Arch ; le clavier et les raccourcis de la session sont dans la catégorie `CLAVIER` de la portée `niri`. Ce dossier est une catégorie, pas une portée.
 
 ## Maintenir ce dossier
 

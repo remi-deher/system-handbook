@@ -4,7 +4,7 @@ Problèmes, diagnostics et solutions, regroupés par catégorie. Portée : Ryoku
 
 ## Où chercher
 
-- [CLAVIER/](CLAVIER/README.md) : disposition au greeter.
+- [AUTHENTIFICATION/](AUTHENTIFICATION/README.md) : écran de connexion, mot de passe.
 - [LANCEUR/](LANCEUR/README.md)
 
 Ajouter ici les futures fiches utiles et les référencer dans cet index.
