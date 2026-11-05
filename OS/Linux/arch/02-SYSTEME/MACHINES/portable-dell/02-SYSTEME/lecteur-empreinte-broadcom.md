@@ -39,7 +39,7 @@ Shell : fish ou bash, sur Arch.
    - **Interface Ryoku** : ouvrir les paramètres (Super + ,), puis « Écran de verrouillage », section « Connexion, Empreinte & Clé de sécurité ». Choisir un doigt et suivre les étapes de capture (le lecteur demande plusieurs poses, « soulevez et retouchez »).
    - **Ligne de commande** : `fprintd-enroll`, puis `fprintd-verify`.
 
-4. Dans la même section des paramètres, choisir où l'empreinte sert : déverrouillage de l'écran, `sudo`, écran de connexion, invites administrateur (polkit).
+4. Dans la même section des paramètres, choisir où l'empreinte sert : déverrouillage de l'écran, `sudo`, écran de connexion, invites administrateur (polkit). Si l'option polkit échoue avec « open /etc/pam.d/polkit-1: no such file or directory », voir [la résolution dédiée](../../../../07-RESOLUTION/AUTHENTIFICATION/polkit-pam-introuvable.md).
 
 ## Validation
 
