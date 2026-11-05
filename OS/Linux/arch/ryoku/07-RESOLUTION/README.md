@@ -4,6 +4,7 @@ Problèmes, diagnostics et solutions, regroupés par catégorie. Portée : Ryoku
 
 ## Où chercher
 
+- [CLAVIER/](CLAVIER/README.md) : disposition au greeter.
 - [LANCEUR/](LANCEUR/README.md)
 
 Ajouter ici les futures fiches utiles et les référencer dans cet index.
