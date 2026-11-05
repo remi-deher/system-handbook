@@ -2,7 +2,7 @@
 
 Résumé : Sous Niri (Wayland), Ctrl+Maj+Espace n'ouvre pas l'accès rapide de 1Password car l'application ne peut pas enregistrer de raccourci global ; un raccourci Niri qui lance `1password --quick-access` via un script le ramène sur le bureau actif.
 
-Statut : **testé** (essai réel par l'assistant, non confirmé par l'utilisateur à la date indiquée).
+Statut : **résolu et confirmé par l'utilisateur le 5 novembre 2026**.
 
 Date : 2026-11-05.
 
@@ -50,7 +50,7 @@ niri msg action load-config-file
 
 - Configuration Niri valide et rechargée sans erreur.
 - Essai réel du script depuis un bureau : la fenêtre « Accès rapide — 1Password » est déplacée sur le bureau actif et reçoit le focus.
-- Non vérifié : appuis répétés depuis plusieurs bureaux par l'utilisateur. Shellcheck non exécuté (shim `mise` sans version).
+- Fonctionnement du raccourci confirmé par l'utilisateur le 5 novembre 2026. Shellcheck non exécuté (shim `mise` sans version).
 - Le fichier 1Password `settings.json` contient des étiquettes d'authenticité : ne pas le modifier à la main.
 
 ## Persistance et limites
