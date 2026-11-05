@@ -20,6 +20,7 @@ Index généré automatiquement à partir des fiches : ne pas modifier à la mai
 
 ## Fiches
 
+- **[Écran de connexion Ryoku en QWERTY au lieu d'AZERTY](OS/Linux/arch/ryoku/07-RESOLUTION/AUTHENTIFICATION/greeter-clavier-qwerty.md)** — l'écran de connexion (greeter weston de SDDM) tape en QWERTY alors que le système est en `fr` ; ajouter `keymap_layout` à la section `[keyboard]` générée par `ryoku-greeter` règle le problème. (statut : résolu (confirmé par l'utilisateur, défaut reproduit avec l'ancien fichier) ; la cause exacte dans weston reste une hypothèse ; date : 2026-11-05)
 - **[Lanceur Super+Espace sans résultat (variante hero)](OS/Linux/arch/ryoku/07-RESOLUTION/LANCEUR/lanceur-hero-sans-resultat.md)** — Sous Ryoku (Niri et Hyprland), le lanceur Super+Espace n'affiche aucun résultat avec la variante `hero` ; contournement en passant à la variante `main`, sans cause identifiée. (statut : contournement confirmé par l'utilisateur le 5 novembre 2026 ; cause non identifiée ; date : 2026-11-05)
 - **[Raccourcis AZERTY dans Ryoku / Niri](OS/Linux/arch/ryoku/niri/07-RESOLUTION/CLAVIER/raccourcis-azerty.md)** — Les raccourcis Super+Alt et Super+Maj avec la rangée AZERTY déplacent une fenêtre vers un bureau ; ils exigent les noms XKB français et `focus=false` pour Maj dans Ryoku avec Niri. (statut : résolu et confirmé par l'utilisateur le 4 novembre 2026)
 
