@@ -2,9 +2,9 @@
 
 Fonctionnement, services, matériel et réglages système. Portée : Portable Dell sous Arch. Ce dossier est une rubrique, pas une nouvelle portée.
 
-Le squelette est prêt ; aucune fiche technique propre à ce dossier n’est encore ajoutée.
-
 ## Où chercher
+
+- [Lecteur d'empreinte Broadcom 0a5c:5843](lecteur-empreinte-broadcom.md)
 
 Ajouter ici les futures fiches utiles et les référencer dans cet index.
 

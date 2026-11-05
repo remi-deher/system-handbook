@@ -296,6 +296,27 @@
       ]
     },
     {
+      "path": "OS/Linux/arch/02-SYSTEME/MACHINES/portable-dell/02-SYSTEME/lecteur-empreinte-broadcom.md",
+      "kind": "fiche",
+      "title": "Lecteur d'empreinte Broadcom 0a5c:5843 (Dell Latitude 7440)",
+      "summary": "le lecteur d'empreinte Broadcom `0a5c:5843` du Dell Latitude 7440 demande `libfprint-tod` et le pilote propriétaire `libfprint-2-tod1-broadcom` (AUR) ; l'enregistrement se fait ensuite dans les paramètres Ryoku (Super + ,), rubrique « Écran de verrouillage ».",
+      "status": "testé (installation et configuration réalisées par l'utilisateur ; enregistrement vu en cours dans les paramètres Ryoku)",
+      "date": "2026-11-05",
+      "scope_note": "Arch Linux, machine Dell Latitude 7440, environnement Ryoku",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "02-SYSTEME",
+      "category": "MACHINES/portable-dell/02-SYSTEME",
+      "tags": [
+        "linux",
+        "arch",
+        "systeme",
+        "machines",
+        "portable-dell",
+        "02-systeme"
+      ]
+    },
+    {
       "path": "OS/Linux/arch/02-SYSTEME/MACHINES/portable-dell/03-CONFIGURATION/00-AGENTS.md",
       "kind": "guide",
       "title": "Instructions pour les IA — Configuration — Portable Dell sous Arch",
@@ -1748,6 +1769,57 @@
         "linux",
         "arch",
         "resolution"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/07-RESOLUTION/AUTHENTIFICATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Authentification — Résolutions Arch",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "07-RESOLUTION",
+      "category": "AUTHENTIFICATION",
+      "tags": [
+        "linux",
+        "arch",
+        "resolution",
+        "authentification"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/07-RESOLUTION/AUTHENTIFICATION/README.md",
+      "kind": "guide",
+      "title": "Authentification — Résolutions Arch",
+      "summary": "Problèmes d'authentification sous Arch : PAM, polkit, sudo, empreinte et connexion.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "07-RESOLUTION",
+      "category": "AUTHENTIFICATION",
+      "tags": [
+        "linux",
+        "arch",
+        "resolution",
+        "authentification"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/07-RESOLUTION/AUTHENTIFICATION/polkit-pam-introuvable.md",
+      "kind": "fiche",
+      "title": "polkit : « open /etc/pam.d/polkit-1: no such file or directory »",
+      "summary": "depuis PAM 1.7, Arch livre le fichier PAM de polkit dans `/usr/lib/pam.d/` et non dans `/etc/pam.d/` ; un outil qui lit `/etc/pam.d/polkit-1` échoue, et copier le fichier dans `/etc/pam.d/` règle le problème.",
+      "status": "résolu (confirmé par l'utilisateur)",
+      "date": "2026-11-05",
+      "scope_note": "Arch Linux (famille), valable hors machine ou version précise",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "07-RESOLUTION",
+      "category": "AUTHENTIFICATION",
+      "tags": [
+        "linux",
+        "arch",
+        "resolution",
+        "authentification"
       ]
     },
     {
