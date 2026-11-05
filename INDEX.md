@@ -36,6 +36,7 @@ Index généré automatiquement à partir des fiches : ne pas modifier à la mai
 
 - **[Chiffrer et récupérer — Linux / Bash](OUTILS/CHIFFREMENT/linux.md)** — Commandes Bash pour chiffrer un fichier ou un dossier avec age et tar vers un objet à nom opaque, puis le déchiffrer en retrouvant les noms d'origine.
 - **[Chiffrer et récupérer — Windows / PowerShell](OUTILS/CHIFFREMENT/windows.md)** — Commandes PowerShell 5.1 et 7 pour chiffrer et déchiffrer avec age.exe et tar.exe sous Windows natif, avec les limites observées (noms japonais, ordre des tar.exe).
+- **[Nettoyer les branches locales validées](OUTILS/GIT/nettoyer-branches.md)** — script bash qui supprime les branches locales (et leurs worktrees) dont les commits sont déjà dans une pull request fusionnée ou dans la branche par défaut, en conservant tout ce qui n'est pas publié. (statut : testé (dépôt jetable avec worktree ; simulation sur ce dépôt). La suppression réelle n'a pas été lancée sur le dépôt de travail ; date : 2026-11-05)
 
 ## Documents généraux
 
