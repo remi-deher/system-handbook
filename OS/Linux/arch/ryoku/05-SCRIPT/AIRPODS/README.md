@@ -20,10 +20,11 @@ Tout le travail de rétro-ingénierie du protocole revient à Kavish Devar ; le 
 
 ## Contenu
 
-Le code du plugin vit dans son propre dépôt, car l'arborescence d'un plugin Ryoku (`bin/`, `content/`, `service/`…) ne suit pas les conventions de dossiers de ce handbook :
+Le code du plugin vit dans le dépôt de plugins `linux-plugins`, car l'arborescence d'un plugin Ryoku (`bin/`, `content/`, `service/`…) ne suit pas les conventions de dossiers de ce handbook :
 
-- Dépôt cible : `https://github.com/remi-deher/ryoku-pods` (**pas encore publié** à la date de la fiche).
-- Copie locale : `~/Documents/ryoku-plugins/ryoku-pods/` (dépôt git, licence MIT avec le copyright de GM conservé).
+- Dépôt : `https://github.com/remi-deher/linux-plugins`, dossier `linux/ryoku/ryoku-pods` (**pas encore publié** à la date de la fiche).
+- Miroir mono-plugin prévu pour l'installation par URL : `https://github.com/remi-deher/ryoku-pods` (alimenté par la CI ; `ryoku plugin add <url>` exige `manifest.json` à la racine).
+- Copie locale : `~/Projets/linux-plugins/linux/ryoku/ryoku-pods/` (licence MIT avec le copyright de GM conservé).
 
 ## Installation (bash ou fish)
 
@@ -31,7 +32,8 @@ Le démon n'est pas inclus (source externe, GPLv3) :
 
 ```bash
 git clone https://github.com/thisisgm/omarchy-pods ~/src/omarchy-pods
-ryoku plugin add ~/Documents/ryoku-plugins/ryoku-pods --bar --yes
+git clone https://github.com/remi-deher/linux-plugins ~/Projets/linux-plugins
+ryoku plugin add ~/Projets/linux-plugins/linux/ryoku/ryoku-pods --bar --yes
 ~/.local/share/ryoku/plugins/ryoku-pods/bin/ryopods-setup ~/src/omarchy-pods
 ```
 

@@ -8,7 +8,7 @@ Catégorie des outils AirPods pour Ryoku : le plugin de barre `ryoku-pods` et sa
 
 ## Maintenir ce dossier
 
-- Le plugin est développé dans `~/Documents/ryoku-plugins/ryoku-pods/` (règle R1 de Ryoku). Ne pas y copier l'arborescence ici : le validateur du handbook exige des guides dans chaque sous-dossier et ignore les archives.
+- Le plugin est développé dans `~/Projets/linux-plugins/linux/ryoku/ryoku-pods/` (dépôt `linux-plugins` ; `~/Documents/ryoku-plugins/ryoku-pods` en est un lien symbolique, règle R1 de Ryoku). Ne pas y copier l'arborescence ici : le validateur du handbook exige des guides dans chaque sous-dossier et ignore les archives.
 - Conserver les crédits de [README.md](README.md) et la ligne de copyright de GM dans la `LICENSE` du plugin : le plugin dérive d'un code MIT.
 - Ne pas copier le code du démon librepods ici (GPLv3, source externe).
 - Distinguer validation du validateur Ryoku et essai réel avec AirPods.
