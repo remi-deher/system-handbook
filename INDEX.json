@@ -5281,6 +5281,229 @@
       "tags": []
     },
     {
+      "path": "OUTILS/EASYEFFECTS/AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Outils EasyEffects",
+      "summary": "Lire `../../AGENTS.md`, `../AGENTS.md` et `README.md`.",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/EASYEFFECTS/MESURES-WAVES/AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Mesures Waves du Dell Latitude 7440",
+      "summary": "Lire `../../../AGENTS.md`, `../../AGENTS.md`, `../AGENTS.md` et `README.md`.",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/EASYEFFECTS/MESURES-WAVES/MODELE-WAVES.md",
+      "kind": "tool",
+      "title": "Modèle Waves ON — preset EasyEffects (ajusté sur des mesures musicales)",
+      "summary": "modèle Waves ON ajusté sur les captures musicales : chaîne EasyEffects, qualité de l'ajustement et limites.",
+      "status": "proposé (ajusté sur des mesures, rendu non validé par écoute A/B)",
+      "date": "2026-11-05",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/EASYEFFECTS/MESURES-WAVES/README.md",
+      "kind": "guide",
+      "title": "Mesures Waves du Dell Latitude 7440",
+      "summary": "Scripts, protocoles et rapports qui ont servi à construire les presets Waves ON du Dell Latitude 7440 : captures loopback WASAPI sous Windows, analyse, ajustement du modèle et export EasyEffects.",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/EASYEFFECTS/MESURES-WAVES/effets-isoles/AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Campagne des effets isolés",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../AGENTS.md`, `../../AGENTS.md`, `../AGENTS.md`, puis `README.md`.",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/EASYEFFECTS/MESURES-WAVES/effets-isoles/METHODE.md",
+      "kind": "tool",
+      "title": "Méthode — effets Waves isolés",
+      "summary": "méthode de la campagne qui isole MaxxBass, Détails et Largeur de Waves (loopback WASAPI, volumes, analyse, restauration).",
+      "status": "testé (mesures réalisées sous Windows, profils non validés à l'écoute)",
+      "date": "2026-11-05",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/EASYEFFECTS/MESURES-WAVES/effets-isoles/RAPPORT-EFFETS-ISOLES.md",
+      "kind": "tool",
+      "title": "Mesures des effets Waves isolés — Latitude 7440",
+      "summary": "résultats de la campagne MaxxBass, Détails et Largeur isolés, avec leurs limites.",
+      "status": "testé (mesures réalisées sous Windows, profils non validés à l'écoute)",
+      "date": "2026-11-05",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/EASYEFFECTS/MESURES-WAVES/effets-isoles/README.md",
+      "kind": "guide",
+      "title": "Campagne des effets isolés",
+      "summary": "MaxxBass, Détails et Largeur mesurés séparément à 25, 50, 75 et 100 %.",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/EASYEFFECTS/MESURES-WAVES/musique/AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Mesures musicales et ajustement du modèle",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../AGENTS.md`, `../../AGENTS.md`, `../AGENTS.md`, puis `README.md`.",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/EASYEFFECTS/MESURES-WAVES/musique/README.md",
+      "kind": "guide",
+      "title": "Mesures musicales et ajustement du modèle",
+      "summary": "Six extraits musicaux et voix à trois niveaux, Waves ON et OFF, puis ajustement du modèle.",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/EASYEFFECTS/MESURES-WAVES/musique/model/AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Ajustement du modèle Waves ON",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../AGENTS.md`, `../../../AGENTS.md`, `../../AGENTS.md`, `../AGENTS.md`, puis `README.md`.",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/EASYEFFECTS/MESURES-WAVES/musique/model/README.md",
+      "kind": "guide",
+      "title": "Ajustement du modèle Waves ON",
+      "summary": "Chaîne `stage1_curves.py` → `fit_model.py` → `validate_model.py` → `export_preset.py`, avec `common.py`.",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/EASYEFFECTS/MESURES-WAVES/musique/reference/AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Sources musicales préparées",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../AGENTS.md`, `../../../AGENTS.md`, `../../AGENTS.md`, `../AGENTS.md`, puis `README.md`.",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/EASYEFFECTS/MESURES-WAVES/musique/reference/README.md",
+      "kind": "guide",
+      "title": "Sources musicales préparées",
+      "summary": "`reference.json` : métadonnées (empreintes, niveaux, positions) des sources préparées par `prepare_sources.py`.",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/EASYEFFECTS/MESURES-WAVES/profil-actuel/AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Référence approfondie du profil actuel",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../AGENTS.md`, `../../AGENTS.md`, `../AGENTS.md`, puis `README.md`.",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/EASYEFFECTS/MESURES-WAVES/profil-actuel/METHODE.md",
+      "kind": "tool",
+      "title": "Profil Windows actuel — protocole approfondi",
+      "summary": "protocole approfondi de mesure du profil Windows actuel (MaxxBass 50 %, Détails 35 %, Largeur 35 %) sur tous les volumes.",
+      "status": "testé (mesures réalisées sous Windows, profils non validés à l'écoute)",
+      "date": "2026-11-05",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/EASYEFFECTS/MESURES-WAVES/profil-actuel/RAPPORT-PROFIL-ACTUEL.md",
+      "kind": "tool",
+      "title": "Référence Windows approfondie — Dell Latitude 7440",
+      "summary": "résultats de la référence Windows approfondie du profil actuel : gain, dynamique, stéréo et récupération.",
+      "status": "testé (mesures réalisées sous Windows, profils non validés à l'écoute)",
+      "date": "2026-11-05",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/EASYEFFECTS/MESURES-WAVES/profil-actuel/README.md",
+      "kind": "guide",
+      "title": "Référence approfondie du profil actuel",
+      "summary": "Profil 50/35/35 mesuré à tous les volumes entiers 0 à 100 %, avec séries longues sur la dynamique et la récupération.",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/EASYEFFECTS/MESURES-WAVES/protocole/AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Protocole de départ",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../AGENTS.md`, `../../AGENTS.md`, `../AGENTS.md`, puis `README.md`.",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/EASYEFFECTS/MESURES-WAVES/protocole/PROMPT-WINDOWS-WASAPI.md",
+      "kind": "tool",
+      "title": "Reprise sous Windows — captures loopback WASAPI Dell Latitude 7440",
+      "summary": "consigne donnée à l'IA sous Windows pour mettre en place et réaliser les captures loopback WASAPI ; sert de protocole de départ.",
+      "status": "proposé",
+      "date": "2026-11-05",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/EASYEFFECTS/MESURES-WAVES/protocole/README.md",
+      "kind": "guide",
+      "title": "Protocole de départ",
+      "summary": "Consigne donnée à l'IA sous Windows pour mettre en place les captures loopback WASAPI : PROMPT-WINDOWS-WASAPI.md.",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/EASYEFFECTS/MESURES-WAVES/reprise-des-mesures.md",
+      "kind": "tool",
+      "title": "Reprendre les mesures Waves du Dell Latitude 7440",
+      "summary": "prérequis, disposition des dossiers et ordre des campagnes pour refaire ou prolonger les mesures Waves sans repartir de zéro, à partir des scripts et protocoles conservés.",
+      "status": "proposé (les scripts n'ont pas été relancés depuis cette copie)",
+      "date": "2026-11-05",
+      "scope_note": "Windows 11 pour l'acquisition, n'importe quel poste avec Python pour l'analyse et l'ajustement ; Dell Latitude 7440, Realtek, Waves MaxxAudio 2.0.54.0",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/EASYEFFECTS/MESURES-WAVES/windows-wasapi/AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Première campagne WASAPI",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../AGENTS.md`, `../../AGENTS.md`, `../AGENTS.md`, puis `README.md`.",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/EASYEFFECTS/MESURES-WAVES/windows-wasapi/RAPPORT-WASAPI.md",
+      "kind": "tool",
+      "title": "Essais Windows — Waves MaxxAudio / Latitude 7440",
+      "summary": "rapport de la première campagne loopback WASAPI : Waves ON et OFF, répétabilité et dynamique.",
+      "status": "testé (mesures réalisées sous Windows, profils non validés à l'écoute)",
+      "date": "2026-11-05",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/EASYEFFECTS/MESURES-WAVES/windows-wasapi/README.md",
+      "kind": "guide",
+      "title": "Première campagne WASAPI",
+      "summary": "Waves ON et OFF en loopback WASAPI : inventaire, paires pilotes, répétabilité, dynamique.",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/EASYEFFECTS/PRESETS/AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Presets EasyEffects",
+      "summary": "Lire `../../../AGENTS.md`, `../../AGENTS.md`, `../AGENTS.md` et `README.md`.",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/EASYEFFECTS/PRESETS/README.md",
+      "kind": "guide",
+      "title": "Presets et modèles d'autoload",
+      "summary": "Preset de sortie pour des AirPods Pro 3 et deux fichiers d'autoload à adapter.",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/EASYEFFECTS/README.md",
+      "kind": "guide",
+      "title": "Outils EasyEffects",
+      "summary": "Outils et références EasyEffects réutilisables : charger automatiquement un preset selon la sortie audio, presets prêts à l'emploi et méthode de mesure Waves.",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/EASYEFFECTS/autoload-par-appareil.md",
+      "kind": "tool",
+      "title": "EasyEffects : un preset par sortie audio (autoload)",
+      "summary": "charger automatiquement un preset EasyEffects pour des AirPods Bluetooth et un autre pour les haut-parleurs internes, avec les pièges rencontrés (nom de route localisé, liste de blocage, preset qui persiste).",
+      "status": "testé",
+      "date": "2026-11-05",
+      "scope_note": "Linux, EasyEffects 8.3.2, PipeWire et WirePlumber, session en français ; vérifié sur le Dell Latitude 7440 avec des AirPods Pro 3",
+      "tags": []
+    },
+    {
       "path": "OUTILS/GIT/AGENTS.md",
       "kind": "guide",
       "title": "Instructions pour les IA — Outils Git",
