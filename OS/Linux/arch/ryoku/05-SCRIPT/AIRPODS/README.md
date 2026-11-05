@@ -22,8 +22,8 @@ Tout le travail de rétro-ingénierie du protocole revient à Kavish Devar ; le 
 
 Le code du plugin vit dans le dépôt de plugins `linux-plugins`, car l'arborescence d'un plugin Ryoku (`bin/`, `content/`, `service/`…) ne suit pas les conventions de dossiers de ce handbook :
 
-- Dépôt : `https://github.com/remi-deher/linux-plugins`, dossier `linux/ryoku/ryoku-pods` (**pas encore publié** à la date de la fiche).
-- Miroir mono-plugin prévu pour l'installation par URL : `https://github.com/remi-deher/ryoku-pods` (alimenté par la CI ; `ryoku plugin add <url>` exige `manifest.json` à la racine).
+- Dépôt : `https://github.com/remi-deher/linux-plugins`, dossier `linux/ryoku/ryoku-pods` (publié le 2026-11-05).
+- Miroir mono-plugin prévu pour l'installation par URL : `https://github.com/remi-deher/ryoku-pods` (créé et poussé à la main le 2026-11-05, puis alimenté par la CI une fois `MIRROR_TOKEN` défini ; `ryoku plugin add <url>` exige `manifest.json` à la racine).
 - Copie locale : `~/Projets/linux-plugins/linux/ryoku/ryoku-pods/` (licence MIT avec le copyright de GM conservé).
 
 ## Installation (bash ou fish)
@@ -52,5 +52,7 @@ Pas de navigation clavier ni d'IPC, pas de réglage `ctlPath`, panneau refait av
 ## Retour arrière
 
 `ryoku plugin remove ryoku-pods`, puis `bin/ryopods-remove ~/src/omarchy-pods` pour retirer le démon et les secrets d'appairage locaux.
+
+Procédure générale : [créer et publier un plugin](../PLUGINS/creer-et-publier-un-plugin-ryoku.md).
 
 Voir les [instructions IA](00-AGENTS.md) et [l'index parent](../README.md).

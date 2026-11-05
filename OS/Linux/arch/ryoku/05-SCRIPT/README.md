@@ -4,6 +4,7 @@ Outils exécutables documentés, avec leurs dépendances et environnements test�
 
 ## Où chercher
 
+- [PLUGINS/](PLUGINS/README.md) : créer, valider et publier un plugin Ryoku (dépôt `linux-plugins`, miroir, Ryostore).
 - [AIRPODS/](AIRPODS/README.md) : plugin de barre `ryoku-pods` (batteries et réglages AirPods), porté depuis omarchy-pods.
 
 Voir les [instructions IA](00-AGENTS.md) et [l’index parent](../README.md).
