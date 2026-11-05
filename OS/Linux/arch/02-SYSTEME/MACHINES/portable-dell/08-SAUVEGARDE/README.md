@@ -1,0 +1,11 @@
+# Sauvegarde — Portable Dell sous Arch
+
+Actions de sauvegarde, archivage, rétention et restauration. Toutes les données sauvegardées sont chiffrées. Portée : Portable Dell sous Arch. Ce dossier est une rubrique, pas une nouvelle portée.
+
+Le squelette est prêt ; aucune fiche technique propre à ce dossier n’est encore ajoutée.
+
+## Où chercher
+
+Ajouter ici les futures fiches utiles et les référencer dans cet index.
+
+Voir les [instructions IA](00-AGENTS.md) et [l’index parent](../README.md).

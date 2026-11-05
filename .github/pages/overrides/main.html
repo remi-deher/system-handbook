@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {#- Site non indexé par défaut : retirer cette balise et passer --allow-indexing à prepare-site.py pour l'ouvrir. -#}
+  <meta name="robots" content="noindex, nofollow">
+{% endblock %}

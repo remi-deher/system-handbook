@@ -1,0 +1,39 @@
+minimum_pre_commit_version: '4.7.0'
+default_stages: [pre-commit]
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: 3e8a8703264a2f4a69428a0aa4dcb512790b2c8c # v6.0.0
+    hooks:
+      - id: check-yaml
+      - id: check-merge-conflict
+      - id: end-of-file-fixer
+        exclude: \.(patch|diff)$
+      - id: trailing-whitespace
+        exclude: \.(patch|diff)$
+      - id: detect-private-key
+
+  - repo: local
+    hooks:
+      - id: repository-policy
+        name: Repository structure and encrypted data policy
+        entry: python -B .github/scripts/check-repository.py
+        language: python
+        pass_filenames: false
+        always_run: true
+
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: 83d9cd684c87d95d656c1458ef04895a7f1cbd8e # v8.30.1
+    hooks:
+      - id: gitleaks
+        name: Detect secrets in current files
+        entry: gitleaks dir . --redact=100 --no-banner --no-color --log-level=error --ignore-gitleaks-allow
+        pass_filenames: false
+        always_run: true
+      - id: gitleaks
+        alias: secrets-history
+        name: Detect secrets in Git history
+        entry: gitleaks git . --log-opts=--all --redact=100 --no-banner --no-color --log-level=error --ignore-gitleaks-allow
+        pass_filenames: false
+        always_run: true
+        stages: [manual]

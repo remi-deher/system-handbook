@@ -1,0 +1,36 @@
+# Fichiers locaux et sauvegardes accidentelles
+.DS_Store
+*.swp
+*.swo
+*~
+*.bak
+.env
+.env.*
+!.env.example
+
+# Archives de sauvegarde et exports personnels : hors du dépôt
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.7z
+*.iso
+*.img
+*.vhd
+*.vhdx
+*.dmp
+
+# Identités et données locales : jamais versionnées
+__pycache__/
+*.pyc
+*.key
+*.pem
+*.p12
+*.pfx
+*.local.json
+.pending-*
+.restore-*
+
+# Site GitHub Pages généré en CI
+_site/
+_site-src/

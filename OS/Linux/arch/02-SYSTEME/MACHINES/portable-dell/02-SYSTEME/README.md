@@ -1,0 +1,11 @@
+# Système — Portable Dell sous Arch
+
+Fonctionnement, services, matériel et réglages système. Portée : Portable Dell sous Arch. Ce dossier est une rubrique, pas une nouvelle portée.
+
+Le squelette est prêt ; aucune fiche technique propre à ce dossier n’est encore ajoutée.
+
+## Où chercher
+
+Ajouter ici les futures fiches utiles et les référencer dans cet index.
+
+Voir les [instructions IA](00-AGENTS.md) et [l’index parent](../README.md).

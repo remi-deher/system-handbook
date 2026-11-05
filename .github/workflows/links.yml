@@ -1,0 +1,30 @@
+name: Links
+
+# Vérifie les liens externes des fiches. Hebdomadaire et manuel, jamais requis : un site tiers
+# peut tomber ou limiter les requêtes sans que cela concerne le contenu du dépôt.
+on:
+  schedule:
+    - cron: '41 5 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  external-links:
+    name: links (externes)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: lychee
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          args: >-
+            --no-progress --scheme https --max-concurrency 4 --timeout 20 --max-retries 2
+            --accept 200,206,429 --exclude-path .git './**/*.md'
+          fail: true

@@ -1,0 +1,4590 @@
+{
+  "version": 1,
+  "repository": "remi-deher/system-handbook",
+  "entries": [
+    {
+      "path": ".github/AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Intégration GitHub",
+      "summary": "Lire `../AGENTS.md`, puis `README.md` ici.",
+      "tags": []
+    },
+    {
+      "path": ".github/README.md",
+      "kind": "guide",
+      "title": "Intégration GitHub",
+      "summary": "Ce dossier contient les fichiers nécessaires à GitHub Actions.",
+      "tags": []
+    },
+    {
+      "path": ".github/pages/AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Configuration du site GitHub Pages",
+      "summary": "Lire `../../AGENTS.md`, puis `../AGENTS.md` et `README.md` ici.",
+      "tags": []
+    },
+    {
+      "path": ".github/pages/README.md",
+      "kind": "guide",
+      "title": "Configuration du site GitHub Pages",
+      "summary": "Ce dossier contient la configuration du site MkDocs Material publié par pages.yml : mkdocs.yml, les dépendances Python épinglées avec leurs empreintes (requirements.in et requirements.txt) et les modèles de surcharge du thème.",
+      "tags": []
+    },
+    {
+      "path": ".github/pages/overrides/AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Surcharges du thème du site",
+      "summary": "Lire `../../../AGENTS.md`, puis `../../AGENTS.md`, `../AGENTS.md` et `README.md` ici.",
+      "tags": []
+    },
+    {
+      "path": ".github/pages/overrides/README.md",
+      "kind": "guide",
+      "title": "Surcharges du thème du site",
+      "summary": "Ce dossier contient les modèles qui surchargent le thème Material du site GitHub Pages. main.html ajoute la balise `noindex` dans l'en-tête de chaque page pour que les moteurs de recherche n'indexent pas le site.",
+      "tags": []
+    },
+    {
+      "path": ".github/scripts/AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Contrôles propres au dépôt",
+      "summary": "Lire `../../AGENTS.md`, puis `../AGENTS.md` et `README.md` ici.",
+      "tags": []
+    },
+    {
+      "path": ".github/scripts/README.md",
+      "kind": "guide",
+      "title": "Contrôles spécifiques de System Handbook",
+      "summary": "Les tests de structure et de politique des données valident les cas acceptés et refusés.",
+      "tags": []
+    },
+    {
+      "path": ".github/workflows/AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Workflows",
+      "summary": "Lire `../../AGENTS.md`, puis `../AGENTS.md` et `README.md` ici.",
+      "tags": []
+    },
+    {
+      "path": ".github/workflows/README.md",
+      "kind": "guide",
+      "title": "Validation GitHub Actions",
+      "summary": "La CI réutilise .pre-commit-config.yaml pour les contrôles standards, Gitleaks et les conventions propres au dépôt.",
+      "tags": []
+    },
+    {
+      "path": "AGENTS.md",
+      "kind": "doc",
+      "title": "Instructions pour les IA — Notes et outils des systèmes",
+      "summary": "Ce dépôt est la mémoire technique de l’utilisateur pour Linux et Windows : notes, résolutions, scripts, configurations, logiciels, installation, maintenance et sauvegarde.",
+      "tags": []
+    },
+    {
+      "path": "CHIFFREMENT.md",
+      "kind": "doc",
+      "title": "Chiffrement des fichiers et dossiers",
+      "summary": "Le dépôt utilise age pour chiffrer et tar pour conserver ensemble le contenu, les noms d’origine et l’arborescence.",
+      "tags": []
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "kind": "doc",
+      "title": "Contribuer à System Handbook",
+      "summary": "Ce dépôt public conserve des connaissances, configurations et outils système.",
+      "tags": []
+    },
+    {
+      "path": "OS/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — OS",
+      "summary": "Lire `../AGENTS.md`, puis `README.md` ici.",
+      "tags": []
+    },
+    {
+      "path": "OS/Linux/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Linux",
+      "summary": "Lire `../../AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "tags": [
+        "linux"
+      ]
+    },
+    {
+      "path": "OS/Linux/README.md",
+      "kind": "guide",
+      "title": "Linux",
+      "summary": "Index des familles arch, ubuntu, fedora et debian.",
+      "os": "Linux",
+      "tags": [
+        "linux"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Arch",
+      "summary": "Lire `../../../AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "tags": [
+        "linux",
+        "arch"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/01-INSTALLATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Installation — Arch",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "01-INSTALLATION",
+      "tags": [
+        "linux",
+        "arch",
+        "installation"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/01-INSTALLATION/README.md",
+      "kind": "guide",
+      "title": "Installation — Arch",
+      "summary": "Installer, reconstruire et migrer ce contexte.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "01-INSTALLATION",
+      "tags": [
+        "linux",
+        "arch",
+        "installation"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/02-SYSTEME/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Système — Arch",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "02-SYSTEME",
+      "tags": [
+        "linux",
+        "arch",
+        "systeme"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/02-SYSTEME/MACHINES/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Machines — Arch",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "02-SYSTEME",
+      "category": "MACHINES",
+      "tags": [
+        "linux",
+        "arch",
+        "systeme",
+        "machines"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/02-SYSTEME/MACHINES/README.md",
+      "kind": "guide",
+      "title": "Machines — Arch",
+      "summary": "Index des machines dans cette portée.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "02-SYSTEME",
+      "category": "MACHINES",
+      "tags": [
+        "linux",
+        "arch",
+        "systeme",
+        "machines"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/02-SYSTEME/MACHINES/portable-dell/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Portable Dell sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "02-SYSTEME",
+      "category": "MACHINES/portable-dell",
+      "tags": [
+        "linux",
+        "arch",
+        "systeme",
+        "machines",
+        "portable-dell"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/02-SYSTEME/MACHINES/portable-dell/01-INSTALLATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Installation — Portable Dell sous Arch",
+      "summary": "Lire `../../../../../../../AGENTS.md`, `../../../../../../00-AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "02-SYSTEME",
+      "category": "MACHINES/portable-dell/01-INSTALLATION",
+      "tags": [
+        "linux",
+        "arch",
+        "systeme",
+        "machines",
+        "portable-dell",
+        "01-installation"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/02-SYSTEME/MACHINES/portable-dell/01-INSTALLATION/README.md",
+      "kind": "guide",
+      "title": "Installation — Portable Dell sous Arch",
+      "summary": "Installer, reconstruire et migrer ce contexte.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "02-SYSTEME",
+      "category": "MACHINES/portable-dell/01-INSTALLATION",
+      "tags": [
+        "linux",
+        "arch",
+        "systeme",
+        "machines",
+        "portable-dell",
+        "01-installation"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/02-SYSTEME/MACHINES/portable-dell/02-SYSTEME/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Système — Portable Dell sous Arch",
+      "summary": "Lire `../../../../../../../AGENTS.md`, `../../../../../../00-AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "02-SYSTEME",
+      "category": "MACHINES/portable-dell/02-SYSTEME",
+      "tags": [
+        "linux",
+        "arch",
+        "systeme",
+        "machines",
+        "portable-dell",
+        "02-systeme"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/02-SYSTEME/MACHINES/portable-dell/02-SYSTEME/README.md",
+      "kind": "guide",
+      "title": "Système — Portable Dell sous Arch",
+      "summary": "Fonctionnement, services, matériel et réglages système.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "02-SYSTEME",
+      "category": "MACHINES/portable-dell/02-SYSTEME",
+      "tags": [
+        "linux",
+        "arch",
+        "systeme",
+        "machines",
+        "portable-dell",
+        "02-systeme"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/02-SYSTEME/MACHINES/portable-dell/03-CONFIGURATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Configuration — Portable Dell sous Arch",
+      "summary": "Lire `../../../../../../../AGENTS.md`, `../../../../../../00-AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "02-SYSTEME",
+      "category": "MACHINES/portable-dell/03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "arch",
+        "systeme",
+        "machines",
+        "portable-dell",
+        "03-configuration"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/02-SYSTEME/MACHINES/portable-dell/03-CONFIGURATION/README.md",
+      "kind": "guide",
+      "title": "Configuration — Portable Dell sous Arch",
+      "summary": "Configurations de référence et adaptations sélectionnées ; chiffrer les données sensibles.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "02-SYSTEME",
+      "category": "MACHINES/portable-dell/03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "arch",
+        "systeme",
+        "machines",
+        "portable-dell",
+        "03-configuration"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/02-SYSTEME/MACHINES/portable-dell/04-LOGICIEL/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Logiciels — Portable Dell sous Arch",
+      "summary": "Lire `../../../../../../../AGENTS.md`, `../../../../../../00-AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "02-SYSTEME",
+      "category": "MACHINES/portable-dell/04-LOGICIEL",
+      "tags": [
+        "linux",
+        "arch",
+        "systeme",
+        "machines",
+        "portable-dell",
+        "04-logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/02-SYSTEME/MACHINES/portable-dell/04-LOGICIEL/README.md",
+      "kind": "guide",
+      "title": "Logiciels — Portable Dell sous Arch",
+      "summary": "Documentation et particularités par application.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "02-SYSTEME",
+      "category": "MACHINES/portable-dell/04-LOGICIEL",
+      "tags": [
+        "linux",
+        "arch",
+        "systeme",
+        "machines",
+        "portable-dell",
+        "04-logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/02-SYSTEME/MACHINES/portable-dell/05-SCRIPT/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Scripts — Portable Dell sous Arch",
+      "summary": "Lire `../../../../../../../AGENTS.md`, `../../../../../../00-AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "02-SYSTEME",
+      "category": "MACHINES/portable-dell/05-SCRIPT",
+      "tags": [
+        "linux",
+        "arch",
+        "systeme",
+        "machines",
+        "portable-dell",
+        "05-script"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/02-SYSTEME/MACHINES/portable-dell/05-SCRIPT/README.md",
+      "kind": "guide",
+      "title": "Scripts — Portable Dell sous Arch",
+      "summary": "Outils exécutables documentés, avec leurs dépendances et environnements testés.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "02-SYSTEME",
+      "category": "MACHINES/portable-dell/05-SCRIPT",
+      "tags": [
+        "linux",
+        "arch",
+        "systeme",
+        "machines",
+        "portable-dell",
+        "05-script"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/02-SYSTEME/MACHINES/portable-dell/06-MAINTENANCE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Maintenance — Portable Dell sous Arch",
+      "summary": "Lire `../../../../../../../AGENTS.md`, `../../../../../../00-AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "02-SYSTEME",
+      "category": "MACHINES/portable-dell/06-MAINTENANCE",
+      "tags": [
+        "linux",
+        "arch",
+        "systeme",
+        "machines",
+        "portable-dell",
+        "06-maintenance"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/02-SYSTEME/MACHINES/portable-dell/06-MAINTENANCE/README.md",
+      "kind": "guide",
+      "title": "Maintenance — Portable Dell sous Arch",
+      "summary": "Mises à jour, nettoyage, contrôles et opérations régulières.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "02-SYSTEME",
+      "category": "MACHINES/portable-dell/06-MAINTENANCE",
+      "tags": [
+        "linux",
+        "arch",
+        "systeme",
+        "machines",
+        "portable-dell",
+        "06-maintenance"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/02-SYSTEME/MACHINES/portable-dell/07-RESOLUTION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Résolutions — Portable Dell sous Arch",
+      "summary": "Lire `../../../../../../../AGENTS.md`, `../../../../../../00-AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "02-SYSTEME",
+      "category": "MACHINES/portable-dell/07-RESOLUTION",
+      "tags": [
+        "linux",
+        "arch",
+        "systeme",
+        "machines",
+        "portable-dell",
+        "07-resolution"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/02-SYSTEME/MACHINES/portable-dell/07-RESOLUTION/README.md",
+      "kind": "guide",
+      "title": "Résolutions — Portable Dell sous Arch",
+      "summary": "Problèmes, diagnostics et solutions, regroupés par catégorie.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "02-SYSTEME",
+      "category": "MACHINES/portable-dell/07-RESOLUTION",
+      "tags": [
+        "linux",
+        "arch",
+        "systeme",
+        "machines",
+        "portable-dell",
+        "07-resolution"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/02-SYSTEME/MACHINES/portable-dell/08-SAUVEGARDE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Sauvegarde — Portable Dell sous Arch",
+      "summary": "Lire `../../../../../../../AGENTS.md`, `../../../../../../00-AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "02-SYSTEME",
+      "category": "MACHINES/portable-dell/08-SAUVEGARDE",
+      "tags": [
+        "linux",
+        "arch",
+        "systeme",
+        "machines",
+        "portable-dell",
+        "08-sauvegarde"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/02-SYSTEME/MACHINES/portable-dell/08-SAUVEGARDE/README.md",
+      "kind": "guide",
+      "title": "Sauvegarde — Portable Dell sous Arch",
+      "summary": "Actions de sauvegarde, archivage, rétention et restauration.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "02-SYSTEME",
+      "category": "MACHINES/portable-dell/08-SAUVEGARDE",
+      "tags": [
+        "linux",
+        "arch",
+        "systeme",
+        "machines",
+        "portable-dell",
+        "08-sauvegarde"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/02-SYSTEME/MACHINES/portable-dell/09-NOTE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Notes — Portable Dell sous Arch",
+      "summary": "Lire `../../../../../../../AGENTS.md`, `../../../../../../00-AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "02-SYSTEME",
+      "category": "MACHINES/portable-dell/09-NOTE",
+      "tags": [
+        "linux",
+        "arch",
+        "systeme",
+        "machines",
+        "portable-dell",
+        "09-note"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/02-SYSTEME/MACHINES/portable-dell/09-NOTE/README.md",
+      "kind": "guide",
+      "title": "Notes — Portable Dell sous Arch",
+      "summary": "Connaissances, explications et observations utiles.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "02-SYSTEME",
+      "category": "MACHINES/portable-dell/09-NOTE",
+      "tags": [
+        "linux",
+        "arch",
+        "systeme",
+        "machines",
+        "portable-dell",
+        "09-note"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/02-SYSTEME/MACHINES/portable-dell/README.md",
+      "kind": "scope",
+      "title": "Portable Dell sous Arch",
+      "summary": "Particularités de cette machine ; inventaire matériel à compléter uniquement à partir d’observations vérifiées.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "02-SYSTEME",
+      "category": "MACHINES/portable-dell",
+      "tags": [
+        "linux",
+        "arch",
+        "systeme",
+        "machines",
+        "portable-dell"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/02-SYSTEME/README.md",
+      "kind": "guide",
+      "title": "Système — Arch",
+      "summary": "Fonctionnement, services, matériel et réglages système.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "02-SYSTEME",
+      "tags": [
+        "linux",
+        "arch",
+        "systeme"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/03-CONFIGURATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Configuration — Arch",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "arch",
+        "configuration"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/03-CONFIGURATION/COFFRE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Coffre facultatif — Arch",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "03-CONFIGURATION",
+      "category": "COFFRE",
+      "tags": [
+        "linux",
+        "arch",
+        "configuration",
+        "coffre"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/03-CONFIGURATION/COFFRE/README.md",
+      "kind": "guide",
+      "title": "Coffre facultatif — Arch",
+      "summary": "Emplacement facultatif pour des objets opaques.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "03-CONFIGURATION",
+      "category": "COFFRE",
+      "tags": [
+        "linux",
+        "arch",
+        "configuration",
+        "coffre"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/03-CONFIGURATION/README.md",
+      "kind": "guide",
+      "title": "Configuration — Arch",
+      "summary": "Configurations de référence et adaptations sélectionnées ; chiffrer les données sensibles.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "arch",
+        "configuration"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Logiciels — Arch",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/README.md",
+      "kind": "guide",
+      "title": "Logiciels — Arch",
+      "summary": "Documentation et particularités par application.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/firefox/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Firefox sous Arch",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "firefox",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "firefox"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/firefox/01-INSTALLATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Installation — Firefox sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "firefox/01-INSTALLATION",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "firefox",
+        "01-installation"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/firefox/01-INSTALLATION/README.md",
+      "kind": "guide",
+      "title": "Installation — Firefox sous Arch",
+      "summary": "Installer, reconstruire et migrer ce contexte.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "firefox/01-INSTALLATION",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "firefox",
+        "01-installation"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/firefox/02-SYSTEME/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Système — Firefox sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "firefox/02-SYSTEME",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "firefox",
+        "02-systeme"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/firefox/02-SYSTEME/README.md",
+      "kind": "guide",
+      "title": "Système — Firefox sous Arch",
+      "summary": "Fonctionnement, services, matériel et réglages système.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "firefox/02-SYSTEME",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "firefox",
+        "02-systeme"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/firefox/03-CONFIGURATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Configuration — Firefox sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "firefox/03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "firefox",
+        "03-configuration"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/firefox/03-CONFIGURATION/README.md",
+      "kind": "guide",
+      "title": "Configuration — Firefox sous Arch",
+      "summary": "Configurations de référence et adaptations sélectionnées ; chiffrer les données sensibles.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "firefox/03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "firefox",
+        "03-configuration"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/firefox/04-LOGICIEL/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Logiciels — Firefox sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "firefox/04-LOGICIEL",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "firefox",
+        "04-logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/firefox/04-LOGICIEL/README.md",
+      "kind": "guide",
+      "title": "Logiciels — Firefox sous Arch",
+      "summary": "Documentation et particularités par application.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "firefox/04-LOGICIEL",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "firefox",
+        "04-logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/firefox/05-SCRIPT/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Scripts — Firefox sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "firefox/05-SCRIPT",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "firefox",
+        "05-script"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/firefox/05-SCRIPT/README.md",
+      "kind": "guide",
+      "title": "Scripts — Firefox sous Arch",
+      "summary": "Outils exécutables documentés, avec leurs dépendances et environnements testés.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "firefox/05-SCRIPT",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "firefox",
+        "05-script"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/firefox/06-MAINTENANCE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Maintenance — Firefox sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "firefox/06-MAINTENANCE",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "firefox",
+        "06-maintenance"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/firefox/06-MAINTENANCE/README.md",
+      "kind": "guide",
+      "title": "Maintenance — Firefox sous Arch",
+      "summary": "Mises à jour, nettoyage, contrôles et opérations régulières.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "firefox/06-MAINTENANCE",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "firefox",
+        "06-maintenance"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/firefox/07-RESOLUTION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Résolutions — Firefox sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "firefox/07-RESOLUTION",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "firefox",
+        "07-resolution"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/firefox/07-RESOLUTION/README.md",
+      "kind": "guide",
+      "title": "Résolutions — Firefox sous Arch",
+      "summary": "Problèmes, diagnostics et solutions, regroupés par catégorie.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "firefox/07-RESOLUTION",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "firefox",
+        "07-resolution"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/firefox/08-SAUVEGARDE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Sauvegarde — Firefox sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "firefox/08-SAUVEGARDE",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "firefox",
+        "08-sauvegarde"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/firefox/08-SAUVEGARDE/README.md",
+      "kind": "guide",
+      "title": "Sauvegarde — Firefox sous Arch",
+      "summary": "Actions de sauvegarde, archivage, rétention et restauration.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "firefox/08-SAUVEGARDE",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "firefox",
+        "08-sauvegarde"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/firefox/09-NOTE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Notes — Firefox sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "firefox/09-NOTE",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "firefox",
+        "09-note"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/firefox/09-NOTE/README.md",
+      "kind": "guide",
+      "title": "Notes — Firefox sous Arch",
+      "summary": "Connaissances, explications et observations utiles.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "firefox/09-NOTE",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "firefox",
+        "09-note"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/firefox/README.md",
+      "kind": "scope",
+      "title": "Firefox sous Arch",
+      "summary": "Documentation Firefox dans la portée Arch ; préciser les versions réellement testées.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "firefox",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "firefox"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/git/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Git sous Arch",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "git",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "git"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/git/01-INSTALLATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Installation — Git sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "git/01-INSTALLATION",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "git",
+        "01-installation"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/git/01-INSTALLATION/README.md",
+      "kind": "guide",
+      "title": "Installation — Git sous Arch",
+      "summary": "Installer, reconstruire et migrer ce contexte.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "git/01-INSTALLATION",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "git",
+        "01-installation"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/git/02-SYSTEME/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Système — Git sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "git/02-SYSTEME",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "git",
+        "02-systeme"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/git/02-SYSTEME/README.md",
+      "kind": "guide",
+      "title": "Système — Git sous Arch",
+      "summary": "Fonctionnement, services, matériel et réglages système.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "git/02-SYSTEME",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "git",
+        "02-systeme"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/git/03-CONFIGURATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Configuration — Git sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "git/03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "git",
+        "03-configuration"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/git/03-CONFIGURATION/README.md",
+      "kind": "guide",
+      "title": "Configuration — Git sous Arch",
+      "summary": "Configurations de référence et adaptations sélectionnées ; chiffrer les données sensibles.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "git/03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "git",
+        "03-configuration"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/git/04-LOGICIEL/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Logiciels — Git sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "git/04-LOGICIEL",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "git",
+        "04-logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/git/04-LOGICIEL/README.md",
+      "kind": "guide",
+      "title": "Logiciels — Git sous Arch",
+      "summary": "Documentation et particularités par application.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "git/04-LOGICIEL",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "git",
+        "04-logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/git/05-SCRIPT/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Scripts — Git sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "git/05-SCRIPT",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "git",
+        "05-script"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/git/05-SCRIPT/README.md",
+      "kind": "guide",
+      "title": "Scripts — Git sous Arch",
+      "summary": "Outils exécutables documentés, avec leurs dépendances et environnements testés.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "git/05-SCRIPT",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "git",
+        "05-script"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/git/06-MAINTENANCE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Maintenance — Git sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "git/06-MAINTENANCE",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "git",
+        "06-maintenance"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/git/06-MAINTENANCE/README.md",
+      "kind": "guide",
+      "title": "Maintenance — Git sous Arch",
+      "summary": "Mises à jour, nettoyage, contrôles et opérations régulières.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "git/06-MAINTENANCE",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "git",
+        "06-maintenance"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/git/07-RESOLUTION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Résolutions — Git sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "git/07-RESOLUTION",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "git",
+        "07-resolution"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/git/07-RESOLUTION/README.md",
+      "kind": "guide",
+      "title": "Résolutions — Git sous Arch",
+      "summary": "Problèmes, diagnostics et solutions, regroupés par catégorie.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "git/07-RESOLUTION",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "git",
+        "07-resolution"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/git/08-SAUVEGARDE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Sauvegarde — Git sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "git/08-SAUVEGARDE",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "git",
+        "08-sauvegarde"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/git/08-SAUVEGARDE/README.md",
+      "kind": "guide",
+      "title": "Sauvegarde — Git sous Arch",
+      "summary": "Actions de sauvegarde, archivage, rétention et restauration.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "git/08-SAUVEGARDE",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "git",
+        "08-sauvegarde"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/git/09-NOTE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Notes — Git sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "git/09-NOTE",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "git",
+        "09-note"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/git/09-NOTE/README.md",
+      "kind": "guide",
+      "title": "Notes — Git sous Arch",
+      "summary": "Connaissances, explications et observations utiles.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "git/09-NOTE",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "git",
+        "09-note"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/git/README.md",
+      "kind": "scope",
+      "title": "Git sous Arch",
+      "summary": "Documentation Git dans la portée Arch.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "git",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "git"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/kitty/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Kitty sous Arch",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "kitty",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "kitty"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/kitty/01-INSTALLATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Installation — Kitty sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "kitty/01-INSTALLATION",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "kitty",
+        "01-installation"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/kitty/01-INSTALLATION/README.md",
+      "kind": "guide",
+      "title": "Installation — Kitty sous Arch",
+      "summary": "Installer, reconstruire et migrer ce contexte.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "kitty/01-INSTALLATION",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "kitty",
+        "01-installation"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/kitty/02-SYSTEME/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Système — Kitty sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "kitty/02-SYSTEME",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "kitty",
+        "02-systeme"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/kitty/02-SYSTEME/README.md",
+      "kind": "guide",
+      "title": "Système — Kitty sous Arch",
+      "summary": "Fonctionnement, services, matériel et réglages système.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "kitty/02-SYSTEME",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "kitty",
+        "02-systeme"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/kitty/03-CONFIGURATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Configuration — Kitty sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "kitty/03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "kitty",
+        "03-configuration"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/kitty/03-CONFIGURATION/README.md",
+      "kind": "guide",
+      "title": "Configuration — Kitty sous Arch",
+      "summary": "Configurations de référence et adaptations sélectionnées ; chiffrer les données sensibles.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "kitty/03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "kitty",
+        "03-configuration"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/kitty/04-LOGICIEL/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Logiciels — Kitty sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "kitty/04-LOGICIEL",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "kitty",
+        "04-logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/kitty/04-LOGICIEL/README.md",
+      "kind": "guide",
+      "title": "Logiciels — Kitty sous Arch",
+      "summary": "Documentation et particularités par application.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "kitty/04-LOGICIEL",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "kitty",
+        "04-logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/kitty/05-SCRIPT/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Scripts — Kitty sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "kitty/05-SCRIPT",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "kitty",
+        "05-script"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/kitty/05-SCRIPT/README.md",
+      "kind": "guide",
+      "title": "Scripts — Kitty sous Arch",
+      "summary": "Outils exécutables documentés, avec leurs dépendances et environnements testés.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "kitty/05-SCRIPT",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "kitty",
+        "05-script"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/kitty/06-MAINTENANCE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Maintenance — Kitty sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "kitty/06-MAINTENANCE",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "kitty",
+        "06-maintenance"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/kitty/06-MAINTENANCE/README.md",
+      "kind": "guide",
+      "title": "Maintenance — Kitty sous Arch",
+      "summary": "Mises à jour, nettoyage, contrôles et opérations régulières.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "kitty/06-MAINTENANCE",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "kitty",
+        "06-maintenance"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/kitty/07-RESOLUTION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Résolutions — Kitty sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "kitty/07-RESOLUTION",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "kitty",
+        "07-resolution"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/kitty/07-RESOLUTION/README.md",
+      "kind": "guide",
+      "title": "Résolutions — Kitty sous Arch",
+      "summary": "Problèmes, diagnostics et solutions, regroupés par catégorie.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "kitty/07-RESOLUTION",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "kitty",
+        "07-resolution"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/kitty/08-SAUVEGARDE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Sauvegarde — Kitty sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "kitty/08-SAUVEGARDE",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "kitty",
+        "08-sauvegarde"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/kitty/08-SAUVEGARDE/README.md",
+      "kind": "guide",
+      "title": "Sauvegarde — Kitty sous Arch",
+      "summary": "Actions de sauvegarde, archivage, rétention et restauration.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "kitty/08-SAUVEGARDE",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "kitty",
+        "08-sauvegarde"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/kitty/09-NOTE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Notes — Kitty sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "kitty/09-NOTE",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "kitty",
+        "09-note"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/kitty/09-NOTE/README.md",
+      "kind": "guide",
+      "title": "Notes — Kitty sous Arch",
+      "summary": "Connaissances, explications et observations utiles.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "kitty/09-NOTE",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "kitty",
+        "09-note"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/kitty/README.md",
+      "kind": "scope",
+      "title": "Kitty sous Arch",
+      "summary": "Documentation Kitty dans la portée Arch ; préciser les versions réellement testées.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "kitty",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "kitty"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/05-SCRIPT/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Scripts — Arch",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "05-SCRIPT",
+      "tags": [
+        "linux",
+        "arch",
+        "script"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/05-SCRIPT/README.md",
+      "kind": "guide",
+      "title": "Scripts — Arch",
+      "summary": "Outils exécutables documentés, avec leurs dépendances et environnements testés.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "05-SCRIPT",
+      "tags": [
+        "linux",
+        "arch",
+        "script"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/06-MAINTENANCE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Maintenance — Arch",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "06-MAINTENANCE",
+      "tags": [
+        "linux",
+        "arch",
+        "maintenance"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/06-MAINTENANCE/README.md",
+      "kind": "guide",
+      "title": "Maintenance — Arch",
+      "summary": "Mises à jour, nettoyage, contrôles et opérations régulières.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "06-MAINTENANCE",
+      "tags": [
+        "linux",
+        "arch",
+        "maintenance"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/07-RESOLUTION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Résolutions — Arch",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "07-RESOLUTION",
+      "tags": [
+        "linux",
+        "arch",
+        "resolution"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/07-RESOLUTION/README.md",
+      "kind": "guide",
+      "title": "Résolutions — Arch",
+      "summary": "Problèmes, diagnostics et solutions, regroupés par catégorie.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "07-RESOLUTION",
+      "tags": [
+        "linux",
+        "arch",
+        "resolution"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/08-SAUVEGARDE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Sauvegarde — Arch",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "08-SAUVEGARDE",
+      "tags": [
+        "linux",
+        "arch",
+        "sauvegarde"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/08-SAUVEGARDE/README.md",
+      "kind": "guide",
+      "title": "Sauvegarde — Arch",
+      "summary": "Actions de sauvegarde, archivage, rétention et restauration.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "08-SAUVEGARDE",
+      "tags": [
+        "linux",
+        "arch",
+        "sauvegarde"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/09-NOTE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Notes — Arch",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "09-NOTE",
+      "tags": [
+        "linux",
+        "arch",
+        "note"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/09-NOTE/README.md",
+      "kind": "guide",
+      "title": "Notes — Arch",
+      "summary": "Connaissances, explications et observations utiles.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "09-NOTE",
+      "tags": [
+        "linux",
+        "arch",
+        "note"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/README.md",
+      "kind": "scope",
+      "title": "Arch",
+      "summary": "Famille Arch ; les contenus communs à Ryoku et Omarchy peuvent être rangés ici.",
+      "os": "Linux",
+      "family": "arch",
+      "tags": [
+        "linux",
+        "arch"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/omarchy/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Omarchy",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/omarchy/01-INSTALLATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Installation — Omarchy",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "01-INSTALLATION",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "installation"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/omarchy/01-INSTALLATION/README.md",
+      "kind": "guide",
+      "title": "Installation — Omarchy",
+      "summary": "Installer, reconstruire et migrer ce contexte.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "01-INSTALLATION",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "installation"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/omarchy/02-SYSTEME/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Système — Omarchy",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "02-SYSTEME",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "systeme"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/omarchy/02-SYSTEME/README.md",
+      "kind": "guide",
+      "title": "Système — Omarchy",
+      "summary": "Fonctionnement, services, matériel et réglages système.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "02-SYSTEME",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "systeme"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/omarchy/03-CONFIGURATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Configuration — Omarchy",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "configuration"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/omarchy/03-CONFIGURATION/README.md",
+      "kind": "guide",
+      "title": "Configuration — Omarchy",
+      "summary": "Configurations de référence et adaptations sélectionnées ; chiffrer les données sensibles.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "configuration"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/omarchy/04-LOGICIEL/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Logiciels — Omarchy",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "04-LOGICIEL",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/omarchy/04-LOGICIEL/README.md",
+      "kind": "guide",
+      "title": "Logiciels — Omarchy",
+      "summary": "Documentation et particularités par application.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "04-LOGICIEL",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/omarchy/05-SCRIPT/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Scripts — Omarchy",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "05-SCRIPT",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "script"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/omarchy/05-SCRIPT/README.md",
+      "kind": "guide",
+      "title": "Scripts — Omarchy",
+      "summary": "Outils exécutables documentés, avec leurs dépendances et environnements testés.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "05-SCRIPT",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "script"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/omarchy/06-MAINTENANCE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Maintenance — Omarchy",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "06-MAINTENANCE",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "maintenance"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/omarchy/06-MAINTENANCE/README.md",
+      "kind": "guide",
+      "title": "Maintenance — Omarchy",
+      "summary": "Mises à jour, nettoyage, contrôles et opérations régulières.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "06-MAINTENANCE",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "maintenance"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/omarchy/07-RESOLUTION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Résolutions — Omarchy",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "07-RESOLUTION",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "resolution"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/omarchy/07-RESOLUTION/README.md",
+      "kind": "guide",
+      "title": "Résolutions — Omarchy",
+      "summary": "Problèmes, diagnostics et solutions, regroupés par catégorie.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "07-RESOLUTION",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "resolution"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/omarchy/08-SAUVEGARDE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Sauvegarde — Omarchy",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "08-SAUVEGARDE",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "sauvegarde"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/omarchy/08-SAUVEGARDE/README.md",
+      "kind": "guide",
+      "title": "Sauvegarde — Omarchy",
+      "summary": "Actions de sauvegarde, archivage, rétention et restauration.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "08-SAUVEGARDE",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "sauvegarde"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/omarchy/09-NOTE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Notes — Omarchy",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "09-NOTE",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "note"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/omarchy/09-NOTE/README.md",
+      "kind": "guide",
+      "title": "Notes — Omarchy",
+      "summary": "Connaissances, explications et observations utiles.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "09-NOTE",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "note"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/omarchy/README.md",
+      "kind": "scope",
+      "title": "Omarchy",
+      "summary": "Environnement Omarchy dans la famille Arch ; squelette prêt à documenter.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Ryoku",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/01-INSTALLATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Installation — Ryoku",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "01-INSTALLATION",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "installation"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/01-INSTALLATION/README.md",
+      "kind": "guide",
+      "title": "Installation — Ryoku",
+      "summary": "Installer, reconstruire et migrer ce contexte.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "01-INSTALLATION",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "installation"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/02-SYSTEME/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Système — Ryoku",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "02-SYSTEME",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "systeme"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/02-SYSTEME/README.md",
+      "kind": "guide",
+      "title": "Système — Ryoku",
+      "summary": "Fonctionnement, services, matériel et réglages système.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "02-SYSTEME",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "systeme"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/03-CONFIGURATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Configuration — Ryoku",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "configuration"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/03-CONFIGURATION/README.md",
+      "kind": "guide",
+      "title": "Configuration — Ryoku",
+      "summary": "Configurations de référence et adaptations sélectionnées ; chiffrer les données sensibles.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "configuration"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/04-LOGICIEL/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Logiciels — Ryoku",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "04-LOGICIEL",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/04-LOGICIEL/README.md",
+      "kind": "guide",
+      "title": "Logiciels — Ryoku",
+      "summary": "Documentation et particularités par application.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "04-LOGICIEL",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/05-SCRIPT/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Scripts — Ryoku",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "05-SCRIPT",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "script"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/05-SCRIPT/README.md",
+      "kind": "guide",
+      "title": "Scripts — Ryoku",
+      "summary": "Outils exécutables documentés, avec leurs dépendances et environnements testés.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "05-SCRIPT",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "script"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/06-MAINTENANCE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Maintenance — Ryoku",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "06-MAINTENANCE",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "maintenance"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/06-MAINTENANCE/README.md",
+      "kind": "guide",
+      "title": "Maintenance — Ryoku",
+      "summary": "Mises à jour, nettoyage, contrôles et opérations régulières.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "06-MAINTENANCE",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "maintenance"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/07-RESOLUTION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Résolutions — Ryoku",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "07-RESOLUTION",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "resolution"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/07-RESOLUTION/LANCEUR/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Lanceur d'applications — Ryoku",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "07-RESOLUTION",
+      "category": "LANCEUR",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "resolution",
+        "lanceur"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/07-RESOLUTION/LANCEUR/README.md",
+      "kind": "guide",
+      "title": "Lanceur d'applications — Ryoku",
+      "summary": "Catégorie des résolutions du lanceur Super+Espace (Quickshell), sous Niri et Hyprland.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "07-RESOLUTION",
+      "category": "LANCEUR",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "resolution",
+        "lanceur"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/07-RESOLUTION/LANCEUR/lanceur-hero-sans-resultat.md",
+      "kind": "fiche",
+      "title": "Lanceur Super+Espace sans résultat (variante hero)",
+      "summary": "Sous Ryoku (Niri et Hyprland), le lanceur Super+Espace n'affiche aucun résultat avec la variante `hero` ; contournement en passant à la variante `main`, sans cause identifiée.",
+      "status": "contournement confirmé par l'utilisateur le 5 novembre 2026 ; cause non identifiée",
+      "date": "2026-11-05",
+      "scope_note": "Ryoku (Niri et Hyprland), lanceur Quickshell (configuration `shell`)",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "07-RESOLUTION",
+      "category": "LANCEUR",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "resolution",
+        "lanceur"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/07-RESOLUTION/README.md",
+      "kind": "guide",
+      "title": "Résolutions — Ryoku",
+      "summary": "Problèmes, diagnostics et solutions, regroupés par catégorie.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "07-RESOLUTION",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "resolution"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/08-SAUVEGARDE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Sauvegarde — Ryoku",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "08-SAUVEGARDE",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "sauvegarde"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/08-SAUVEGARDE/README.md",
+      "kind": "guide",
+      "title": "Sauvegarde — Ryoku",
+      "summary": "Actions de sauvegarde, archivage, rétention et restauration.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "08-SAUVEGARDE",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "sauvegarde"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/09-NOTE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Notes — Ryoku",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "09-NOTE",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "note"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/09-NOTE/README.md",
+      "kind": "guide",
+      "title": "Notes — Ryoku",
+      "summary": "Connaissances, explications et observations utiles.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "09-NOTE",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "note"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/README.md",
+      "kind": "scope",
+      "title": "Ryoku",
+      "summary": "Environnement Ryoku dans la famille Arch ; les adaptations de compositeur vont dans leur branche.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/hyprland/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Hyprland sous Ryoku",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "hyprland"
+      ],
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "hyprland"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/hyprland/01-INSTALLATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Installation — Hyprland sous Ryoku",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "hyprland"
+      ],
+      "rubric": "01-INSTALLATION",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "hyprland",
+        "installation"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/hyprland/01-INSTALLATION/README.md",
+      "kind": "guide",
+      "title": "Installation — Hyprland sous Ryoku",
+      "summary": "Installer, reconstruire et migrer ce contexte.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "hyprland"
+      ],
+      "rubric": "01-INSTALLATION",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "hyprland",
+        "installation"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/hyprland/02-SYSTEME/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Système — Hyprland sous Ryoku",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "hyprland"
+      ],
+      "rubric": "02-SYSTEME",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "hyprland",
+        "systeme"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/hyprland/02-SYSTEME/README.md",
+      "kind": "guide",
+      "title": "Système — Hyprland sous Ryoku",
+      "summary": "Fonctionnement, services, matériel et réglages système.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "hyprland"
+      ],
+      "rubric": "02-SYSTEME",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "hyprland",
+        "systeme"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/hyprland/03-CONFIGURATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Configuration — Hyprland sous Ryoku",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "hyprland"
+      ],
+      "rubric": "03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "hyprland",
+        "configuration"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/hyprland/03-CONFIGURATION/README.md",
+      "kind": "guide",
+      "title": "Configuration — Hyprland sous Ryoku",
+      "summary": "Configurations de référence et adaptations sélectionnées ; chiffrer les données sensibles.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "hyprland"
+      ],
+      "rubric": "03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "hyprland",
+        "configuration"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/hyprland/04-LOGICIEL/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Logiciels — Hyprland sous Ryoku",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "hyprland"
+      ],
+      "rubric": "04-LOGICIEL",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "hyprland",
+        "logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/hyprland/04-LOGICIEL/README.md",
+      "kind": "guide",
+      "title": "Logiciels — Hyprland sous Ryoku",
+      "summary": "Documentation et particularités par application.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "hyprland"
+      ],
+      "rubric": "04-LOGICIEL",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "hyprland",
+        "logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/hyprland/05-SCRIPT/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Scripts — Hyprland sous Ryoku",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "hyprland"
+      ],
+      "rubric": "05-SCRIPT",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "hyprland",
+        "script"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/hyprland/05-SCRIPT/README.md",
+      "kind": "guide",
+      "title": "Scripts — Hyprland sous Ryoku",
+      "summary": "Outils exécutables documentés, avec leurs dépendances et environnements testés.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "hyprland"
+      ],
+      "rubric": "05-SCRIPT",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "hyprland",
+        "script"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/hyprland/06-MAINTENANCE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Maintenance — Hyprland sous Ryoku",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "hyprland"
+      ],
+      "rubric": "06-MAINTENANCE",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "hyprland",
+        "maintenance"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/hyprland/06-MAINTENANCE/README.md",
+      "kind": "guide",
+      "title": "Maintenance — Hyprland sous Ryoku",
+      "summary": "Mises à jour, nettoyage, contrôles et opérations régulières.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "hyprland"
+      ],
+      "rubric": "06-MAINTENANCE",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "hyprland",
+        "maintenance"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/hyprland/07-RESOLUTION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Résolutions — Hyprland sous Ryoku",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "hyprland"
+      ],
+      "rubric": "07-RESOLUTION",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "hyprland",
+        "resolution"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/hyprland/07-RESOLUTION/README.md",
+      "kind": "guide",
+      "title": "Résolutions — Hyprland sous Ryoku",
+      "summary": "Problèmes, diagnostics et solutions, regroupés par catégorie.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "hyprland"
+      ],
+      "rubric": "07-RESOLUTION",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "hyprland",
+        "resolution"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/hyprland/08-SAUVEGARDE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Sauvegarde — Hyprland sous Ryoku",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "hyprland"
+      ],
+      "rubric": "08-SAUVEGARDE",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "hyprland",
+        "sauvegarde"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/hyprland/08-SAUVEGARDE/README.md",
+      "kind": "guide",
+      "title": "Sauvegarde — Hyprland sous Ryoku",
+      "summary": "Actions de sauvegarde, archivage, rétention et restauration.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "hyprland"
+      ],
+      "rubric": "08-SAUVEGARDE",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "hyprland",
+        "sauvegarde"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/hyprland/09-NOTE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Notes — Hyprland sous Ryoku",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "hyprland"
+      ],
+      "rubric": "09-NOTE",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "hyprland",
+        "note"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/hyprland/09-NOTE/README.md",
+      "kind": "guide",
+      "title": "Notes — Hyprland sous Ryoku",
+      "summary": "Connaissances, explications et observations utiles.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "hyprland"
+      ],
+      "rubric": "09-NOTE",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "hyprland",
+        "note"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/hyprland/README.md",
+      "kind": "scope",
+      "title": "Hyprland sous Ryoku",
+      "summary": "Compositeur Hyprland dans Ryoku ; squelette prêt à documenter.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "hyprland"
+      ],
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "hyprland"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/niri/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Niri sous Ryoku",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "niri"
+      ],
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "niri"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/niri/01-INSTALLATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Installation — Niri sous Ryoku",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "niri"
+      ],
+      "rubric": "01-INSTALLATION",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "niri",
+        "installation"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/niri/01-INSTALLATION/README.md",
+      "kind": "guide",
+      "title": "Installation — Niri sous Ryoku",
+      "summary": "Installer, reconstruire et migrer ce contexte.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "niri"
+      ],
+      "rubric": "01-INSTALLATION",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "niri",
+        "installation"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/niri/02-SYSTEME/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Système — Niri sous Ryoku",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "niri"
+      ],
+      "rubric": "02-SYSTEME",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "niri",
+        "systeme"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/niri/02-SYSTEME/README.md",
+      "kind": "guide",
+      "title": "Système — Niri sous Ryoku",
+      "summary": "Fonctionnement, services, matériel et réglages système.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "niri"
+      ],
+      "rubric": "02-SYSTEME",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "niri",
+        "systeme"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/niri/03-CONFIGURATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Configuration — Niri sous Ryoku",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "niri"
+      ],
+      "rubric": "03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "niri",
+        "configuration"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/niri/03-CONFIGURATION/README.md",
+      "kind": "guide",
+      "title": "Configuration — Niri sous Ryoku",
+      "summary": "Configurations de référence et adaptations sélectionnées ; chiffrer les données sensibles.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "niri"
+      ],
+      "rubric": "03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "niri",
+        "configuration"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/niri/04-LOGICIEL/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Logiciels — Niri sous Ryoku",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "niri"
+      ],
+      "rubric": "04-LOGICIEL",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "niri",
+        "logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/niri/04-LOGICIEL/README.md",
+      "kind": "guide",
+      "title": "Logiciels — Niri sous Ryoku",
+      "summary": "Documentation et particularités par application.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "niri"
+      ],
+      "rubric": "04-LOGICIEL",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "niri",
+        "logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/niri/05-SCRIPT/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Scripts — Niri sous Ryoku",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "niri"
+      ],
+      "rubric": "05-SCRIPT",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "niri",
+        "script"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/niri/05-SCRIPT/README.md",
+      "kind": "guide",
+      "title": "Scripts — Niri sous Ryoku",
+      "summary": "Outils exécutables documentés, avec leurs dépendances et environnements testés.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "niri"
+      ],
+      "rubric": "05-SCRIPT",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "niri",
+        "script"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/niri/06-MAINTENANCE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Maintenance — Niri sous Ryoku",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "niri"
+      ],
+      "rubric": "06-MAINTENANCE",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "niri",
+        "maintenance"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/niri/06-MAINTENANCE/README.md",
+      "kind": "guide",
+      "title": "Maintenance — Niri sous Ryoku",
+      "summary": "Mises à jour, nettoyage, contrôles et opérations régulières.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "niri"
+      ],
+      "rubric": "06-MAINTENANCE",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "niri",
+        "maintenance"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/niri/07-RESOLUTION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Résolutions — Niri sous Ryoku",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "niri"
+      ],
+      "rubric": "07-RESOLUTION",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "niri",
+        "resolution"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/niri/07-RESOLUTION/CLAVIER/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Clavier et raccourcis — Niri sous Ryoku",
+      "summary": "Lire `../../../../../../../AGENTS.md`, `../../../../../../00-AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "niri"
+      ],
+      "rubric": "07-RESOLUTION",
+      "category": "CLAVIER",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "niri",
+        "resolution",
+        "clavier"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/niri/07-RESOLUTION/CLAVIER/README.md",
+      "kind": "guide",
+      "title": "Clavier et raccourcis — Niri sous Ryoku",
+      "summary": "Catégorie des résolutions du clavier, de la disposition et des raccourcis.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "niri"
+      ],
+      "rubric": "07-RESOLUTION",
+      "category": "CLAVIER",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "niri",
+        "resolution",
+        "clavier"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/niri/07-RESOLUTION/CLAVIER/raccourcis-azerty.md",
+      "kind": "fiche",
+      "title": "Raccourcis AZERTY dans Ryoku / Niri",
+      "summary": "Les raccourcis Super+Alt et Super+Maj avec la rangée AZERTY déplacent une fenêtre vers un bureau ; ils exigent les noms XKB français et `focus=false` pour Maj dans Ryoku avec Niri.",
+      "status": "résolu et confirmé par l'utilisateur le 4 novembre 2026",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "niri"
+      ],
+      "rubric": "07-RESOLUTION",
+      "category": "CLAVIER",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "niri",
+        "resolution",
+        "clavier"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/niri/07-RESOLUTION/README.md",
+      "kind": "guide",
+      "title": "Résolutions — Niri sous Ryoku",
+      "summary": "Problèmes, diagnostics et solutions, regroupés par catégorie.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "niri"
+      ],
+      "rubric": "07-RESOLUTION",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "niri",
+        "resolution"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/niri/08-SAUVEGARDE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Sauvegarde — Niri sous Ryoku",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "niri"
+      ],
+      "rubric": "08-SAUVEGARDE",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "niri",
+        "sauvegarde"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/niri/08-SAUVEGARDE/README.md",
+      "kind": "guide",
+      "title": "Sauvegarde — Niri sous Ryoku",
+      "summary": "Actions de sauvegarde, archivage, rétention et restauration.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "niri"
+      ],
+      "rubric": "08-SAUVEGARDE",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "niri",
+        "sauvegarde"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/niri/09-NOTE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Notes — Niri sous Ryoku",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "niri"
+      ],
+      "rubric": "09-NOTE",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "niri",
+        "note"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/niri/09-NOTE/README.md",
+      "kind": "guide",
+      "title": "Notes — Niri sous Ryoku",
+      "summary": "Connaissances, explications et observations utiles.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "niri"
+      ],
+      "rubric": "09-NOTE",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "niri",
+        "note"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/niri/README.md",
+      "kind": "scope",
+      "title": "Niri sous Ryoku",
+      "summary": "Compositeur Niri dans Ryoku ; configuration et raccourcis spécifiques.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "niri"
+      ],
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "niri"
+      ]
+    },
+    {
+      "path": "OS/Linux/debian/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Debian",
+      "summary": "Lire `../../../AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "debian",
+      "tags": [
+        "linux",
+        "debian"
+      ]
+    },
+    {
+      "path": "OS/Linux/debian/01-INSTALLATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Installation — Debian",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "debian",
+      "rubric": "01-INSTALLATION",
+      "tags": [
+        "linux",
+        "debian",
+        "installation"
+      ]
+    },
+    {
+      "path": "OS/Linux/debian/01-INSTALLATION/README.md",
+      "kind": "guide",
+      "title": "Installation — Debian",
+      "summary": "Installer, reconstruire et migrer ce contexte.",
+      "os": "Linux",
+      "family": "debian",
+      "rubric": "01-INSTALLATION",
+      "tags": [
+        "linux",
+        "debian",
+        "installation"
+      ]
+    },
+    {
+      "path": "OS/Linux/debian/02-SYSTEME/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Système — Debian",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "debian",
+      "rubric": "02-SYSTEME",
+      "tags": [
+        "linux",
+        "debian",
+        "systeme"
+      ]
+    },
+    {
+      "path": "OS/Linux/debian/02-SYSTEME/README.md",
+      "kind": "guide",
+      "title": "Système — Debian",
+      "summary": "Fonctionnement, services, matériel et réglages système.",
+      "os": "Linux",
+      "family": "debian",
+      "rubric": "02-SYSTEME",
+      "tags": [
+        "linux",
+        "debian",
+        "systeme"
+      ]
+    },
+    {
+      "path": "OS/Linux/debian/03-CONFIGURATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Configuration — Debian",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "debian",
+      "rubric": "03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "debian",
+        "configuration"
+      ]
+    },
+    {
+      "path": "OS/Linux/debian/03-CONFIGURATION/README.md",
+      "kind": "guide",
+      "title": "Configuration — Debian",
+      "summary": "Configurations de référence et adaptations sélectionnées ; chiffrer les données sensibles.",
+      "os": "Linux",
+      "family": "debian",
+      "rubric": "03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "debian",
+        "configuration"
+      ]
+    },
+    {
+      "path": "OS/Linux/debian/04-LOGICIEL/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Logiciels — Debian",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "debian",
+      "rubric": "04-LOGICIEL",
+      "tags": [
+        "linux",
+        "debian",
+        "logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/debian/04-LOGICIEL/README.md",
+      "kind": "guide",
+      "title": "Logiciels — Debian",
+      "summary": "Documentation et particularités par application.",
+      "os": "Linux",
+      "family": "debian",
+      "rubric": "04-LOGICIEL",
+      "tags": [
+        "linux",
+        "debian",
+        "logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/debian/05-SCRIPT/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Scripts — Debian",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "debian",
+      "rubric": "05-SCRIPT",
+      "tags": [
+        "linux",
+        "debian",
+        "script"
+      ]
+    },
+    {
+      "path": "OS/Linux/debian/05-SCRIPT/README.md",
+      "kind": "guide",
+      "title": "Scripts — Debian",
+      "summary": "Outils exécutables documentés, avec leurs dépendances et environnements testés.",
+      "os": "Linux",
+      "family": "debian",
+      "rubric": "05-SCRIPT",
+      "tags": [
+        "linux",
+        "debian",
+        "script"
+      ]
+    },
+    {
+      "path": "OS/Linux/debian/06-MAINTENANCE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Maintenance — Debian",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "debian",
+      "rubric": "06-MAINTENANCE",
+      "tags": [
+        "linux",
+        "debian",
+        "maintenance"
+      ]
+    },
+    {
+      "path": "OS/Linux/debian/06-MAINTENANCE/README.md",
+      "kind": "guide",
+      "title": "Maintenance — Debian",
+      "summary": "Mises à jour, nettoyage, contrôles et opérations régulières.",
+      "os": "Linux",
+      "family": "debian",
+      "rubric": "06-MAINTENANCE",
+      "tags": [
+        "linux",
+        "debian",
+        "maintenance"
+      ]
+    },
+    {
+      "path": "OS/Linux/debian/07-RESOLUTION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Résolutions — Debian",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "debian",
+      "rubric": "07-RESOLUTION",
+      "tags": [
+        "linux",
+        "debian",
+        "resolution"
+      ]
+    },
+    {
+      "path": "OS/Linux/debian/07-RESOLUTION/README.md",
+      "kind": "guide",
+      "title": "Résolutions — Debian",
+      "summary": "Problèmes, diagnostics et solutions, regroupés par catégorie.",
+      "os": "Linux",
+      "family": "debian",
+      "rubric": "07-RESOLUTION",
+      "tags": [
+        "linux",
+        "debian",
+        "resolution"
+      ]
+    },
+    {
+      "path": "OS/Linux/debian/08-SAUVEGARDE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Sauvegarde — Debian",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "debian",
+      "rubric": "08-SAUVEGARDE",
+      "tags": [
+        "linux",
+        "debian",
+        "sauvegarde"
+      ]
+    },
+    {
+      "path": "OS/Linux/debian/08-SAUVEGARDE/README.md",
+      "kind": "guide",
+      "title": "Sauvegarde — Debian",
+      "summary": "Actions de sauvegarde, archivage, rétention et restauration.",
+      "os": "Linux",
+      "family": "debian",
+      "rubric": "08-SAUVEGARDE",
+      "tags": [
+        "linux",
+        "debian",
+        "sauvegarde"
+      ]
+    },
+    {
+      "path": "OS/Linux/debian/09-NOTE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Notes — Debian",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "debian",
+      "rubric": "09-NOTE",
+      "tags": [
+        "linux",
+        "debian",
+        "note"
+      ]
+    },
+    {
+      "path": "OS/Linux/debian/09-NOTE/README.md",
+      "kind": "guide",
+      "title": "Notes — Debian",
+      "summary": "Connaissances, explications et observations utiles.",
+      "os": "Linux",
+      "family": "debian",
+      "rubric": "09-NOTE",
+      "tags": [
+        "linux",
+        "debian",
+        "note"
+      ]
+    },
+    {
+      "path": "OS/Linux/debian/README.md",
+      "kind": "scope",
+      "title": "Debian",
+      "summary": "Portée Debian ; aucune procédure spécifique n’est encore validée.",
+      "os": "Linux",
+      "family": "debian",
+      "tags": [
+        "linux",
+        "debian"
+      ]
+    },
+    {
+      "path": "OS/Linux/fedora/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Fedora",
+      "summary": "Lire `../../../AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "fedora",
+      "tags": [
+        "linux",
+        "fedora"
+      ]
+    },
+    {
+      "path": "OS/Linux/fedora/01-INSTALLATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Installation — Fedora",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "fedora",
+      "rubric": "01-INSTALLATION",
+      "tags": [
+        "linux",
+        "fedora",
+        "installation"
+      ]
+    },
+    {
+      "path": "OS/Linux/fedora/01-INSTALLATION/README.md",
+      "kind": "guide",
+      "title": "Installation — Fedora",
+      "summary": "Installer, reconstruire et migrer ce contexte.",
+      "os": "Linux",
+      "family": "fedora",
+      "rubric": "01-INSTALLATION",
+      "tags": [
+        "linux",
+        "fedora",
+        "installation"
+      ]
+    },
+    {
+      "path": "OS/Linux/fedora/02-SYSTEME/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Système — Fedora",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "fedora",
+      "rubric": "02-SYSTEME",
+      "tags": [
+        "linux",
+        "fedora",
+        "systeme"
+      ]
+    },
+    {
+      "path": "OS/Linux/fedora/02-SYSTEME/README.md",
+      "kind": "guide",
+      "title": "Système — Fedora",
+      "summary": "Fonctionnement, services, matériel et réglages système.",
+      "os": "Linux",
+      "family": "fedora",
+      "rubric": "02-SYSTEME",
+      "tags": [
+        "linux",
+        "fedora",
+        "systeme"
+      ]
+    },
+    {
+      "path": "OS/Linux/fedora/03-CONFIGURATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Configuration — Fedora",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "fedora",
+      "rubric": "03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "fedora",
+        "configuration"
+      ]
+    },
+    {
+      "path": "OS/Linux/fedora/03-CONFIGURATION/README.md",
+      "kind": "guide",
+      "title": "Configuration — Fedora",
+      "summary": "Configurations de référence et adaptations sélectionnées ; chiffrer les données sensibles.",
+      "os": "Linux",
+      "family": "fedora",
+      "rubric": "03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "fedora",
+        "configuration"
+      ]
+    },
+    {
+      "path": "OS/Linux/fedora/04-LOGICIEL/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Logiciels — Fedora",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "fedora",
+      "rubric": "04-LOGICIEL",
+      "tags": [
+        "linux",
+        "fedora",
+        "logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/fedora/04-LOGICIEL/README.md",
+      "kind": "guide",
+      "title": "Logiciels — Fedora",
+      "summary": "Documentation et particularités par application.",
+      "os": "Linux",
+      "family": "fedora",
+      "rubric": "04-LOGICIEL",
+      "tags": [
+        "linux",
+        "fedora",
+        "logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/fedora/05-SCRIPT/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Scripts — Fedora",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "fedora",
+      "rubric": "05-SCRIPT",
+      "tags": [
+        "linux",
+        "fedora",
+        "script"
+      ]
+    },
+    {
+      "path": "OS/Linux/fedora/05-SCRIPT/README.md",
+      "kind": "guide",
+      "title": "Scripts — Fedora",
+      "summary": "Outils exécutables documentés, avec leurs dépendances et environnements testés.",
+      "os": "Linux",
+      "family": "fedora",
+      "rubric": "05-SCRIPT",
+      "tags": [
+        "linux",
+        "fedora",
+        "script"
+      ]
+    },
+    {
+      "path": "OS/Linux/fedora/06-MAINTENANCE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Maintenance — Fedora",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "fedora",
+      "rubric": "06-MAINTENANCE",
+      "tags": [
+        "linux",
+        "fedora",
+        "maintenance"
+      ]
+    },
+    {
+      "path": "OS/Linux/fedora/06-MAINTENANCE/README.md",
+      "kind": "guide",
+      "title": "Maintenance — Fedora",
+      "summary": "Mises à jour, nettoyage, contrôles et opérations régulières.",
+      "os": "Linux",
+      "family": "fedora",
+      "rubric": "06-MAINTENANCE",
+      "tags": [
+        "linux",
+        "fedora",
+        "maintenance"
+      ]
+    },
+    {
+      "path": "OS/Linux/fedora/07-RESOLUTION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Résolutions — Fedora",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "fedora",
+      "rubric": "07-RESOLUTION",
+      "tags": [
+        "linux",
+        "fedora",
+        "resolution"
+      ]
+    },
+    {
+      "path": "OS/Linux/fedora/07-RESOLUTION/README.md",
+      "kind": "guide",
+      "title": "Résolutions — Fedora",
+      "summary": "Problèmes, diagnostics et solutions, regroupés par catégorie.",
+      "os": "Linux",
+      "family": "fedora",
+      "rubric": "07-RESOLUTION",
+      "tags": [
+        "linux",
+        "fedora",
+        "resolution"
+      ]
+    },
+    {
+      "path": "OS/Linux/fedora/08-SAUVEGARDE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Sauvegarde — Fedora",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "fedora",
+      "rubric": "08-SAUVEGARDE",
+      "tags": [
+        "linux",
+        "fedora",
+        "sauvegarde"
+      ]
+    },
+    {
+      "path": "OS/Linux/fedora/08-SAUVEGARDE/README.md",
+      "kind": "guide",
+      "title": "Sauvegarde — Fedora",
+      "summary": "Actions de sauvegarde, archivage, rétention et restauration.",
+      "os": "Linux",
+      "family": "fedora",
+      "rubric": "08-SAUVEGARDE",
+      "tags": [
+        "linux",
+        "fedora",
+        "sauvegarde"
+      ]
+    },
+    {
+      "path": "OS/Linux/fedora/09-NOTE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Notes — Fedora",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "fedora",
+      "rubric": "09-NOTE",
+      "tags": [
+        "linux",
+        "fedora",
+        "note"
+      ]
+    },
+    {
+      "path": "OS/Linux/fedora/09-NOTE/README.md",
+      "kind": "guide",
+      "title": "Notes — Fedora",
+      "summary": "Connaissances, explications et observations utiles.",
+      "os": "Linux",
+      "family": "fedora",
+      "rubric": "09-NOTE",
+      "tags": [
+        "linux",
+        "fedora",
+        "note"
+      ]
+    },
+    {
+      "path": "OS/Linux/fedora/README.md",
+      "kind": "scope",
+      "title": "Fedora",
+      "summary": "Portée Fedora ; aucune procédure spécifique n’est encore validée.",
+      "os": "Linux",
+      "family": "fedora",
+      "tags": [
+        "linux",
+        "fedora"
+      ]
+    },
+    {
+      "path": "OS/Linux/ubuntu/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Ubuntu",
+      "summary": "Lire `../../../AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "ubuntu",
+      "tags": [
+        "linux",
+        "ubuntu"
+      ]
+    },
+    {
+      "path": "OS/Linux/ubuntu/01-INSTALLATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Installation — Ubuntu",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "ubuntu",
+      "rubric": "01-INSTALLATION",
+      "tags": [
+        "linux",
+        "ubuntu",
+        "installation"
+      ]
+    },
+    {
+      "path": "OS/Linux/ubuntu/01-INSTALLATION/README.md",
+      "kind": "guide",
+      "title": "Installation — Ubuntu",
+      "summary": "Installer, reconstruire et migrer ce contexte.",
+      "os": "Linux",
+      "family": "ubuntu",
+      "rubric": "01-INSTALLATION",
+      "tags": [
+        "linux",
+        "ubuntu",
+        "installation"
+      ]
+    },
+    {
+      "path": "OS/Linux/ubuntu/02-SYSTEME/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Système — Ubuntu",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "ubuntu",
+      "rubric": "02-SYSTEME",
+      "tags": [
+        "linux",
+        "ubuntu",
+        "systeme"
+      ]
+    },
+    {
+      "path": "OS/Linux/ubuntu/02-SYSTEME/README.md",
+      "kind": "guide",
+      "title": "Système — Ubuntu",
+      "summary": "Fonctionnement, services, matériel et réglages système.",
+      "os": "Linux",
+      "family": "ubuntu",
+      "rubric": "02-SYSTEME",
+      "tags": [
+        "linux",
+        "ubuntu",
+        "systeme"
+      ]
+    },
+    {
+      "path": "OS/Linux/ubuntu/03-CONFIGURATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Configuration — Ubuntu",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "ubuntu",
+      "rubric": "03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "ubuntu",
+        "configuration"
+      ]
+    },
+    {
+      "path": "OS/Linux/ubuntu/03-CONFIGURATION/README.md",
+      "kind": "guide",
+      "title": "Configuration — Ubuntu",
+      "summary": "Configurations de référence et adaptations sélectionnées ; chiffrer les données sensibles.",
+      "os": "Linux",
+      "family": "ubuntu",
+      "rubric": "03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "ubuntu",
+        "configuration"
+      ]
+    },
+    {
+      "path": "OS/Linux/ubuntu/04-LOGICIEL/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Logiciels — Ubuntu",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "ubuntu",
+      "rubric": "04-LOGICIEL",
+      "tags": [
+        "linux",
+        "ubuntu",
+        "logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/ubuntu/04-LOGICIEL/README.md",
+      "kind": "guide",
+      "title": "Logiciels — Ubuntu",
+      "summary": "Documentation et particularités par application.",
+      "os": "Linux",
+      "family": "ubuntu",
+      "rubric": "04-LOGICIEL",
+      "tags": [
+        "linux",
+        "ubuntu",
+        "logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/ubuntu/05-SCRIPT/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Scripts — Ubuntu",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "ubuntu",
+      "rubric": "05-SCRIPT",
+      "tags": [
+        "linux",
+        "ubuntu",
+        "script"
+      ]
+    },
+    {
+      "path": "OS/Linux/ubuntu/05-SCRIPT/README.md",
+      "kind": "guide",
+      "title": "Scripts — Ubuntu",
+      "summary": "Outils exécutables documentés, avec leurs dépendances et environnements testés.",
+      "os": "Linux",
+      "family": "ubuntu",
+      "rubric": "05-SCRIPT",
+      "tags": [
+        "linux",
+        "ubuntu",
+        "script"
+      ]
+    },
+    {
+      "path": "OS/Linux/ubuntu/06-MAINTENANCE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Maintenance — Ubuntu",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "ubuntu",
+      "rubric": "06-MAINTENANCE",
+      "tags": [
+        "linux",
+        "ubuntu",
+        "maintenance"
+      ]
+    },
+    {
+      "path": "OS/Linux/ubuntu/06-MAINTENANCE/README.md",
+      "kind": "guide",
+      "title": "Maintenance — Ubuntu",
+      "summary": "Mises à jour, nettoyage, contrôles et opérations régulières.",
+      "os": "Linux",
+      "family": "ubuntu",
+      "rubric": "06-MAINTENANCE",
+      "tags": [
+        "linux",
+        "ubuntu",
+        "maintenance"
+      ]
+    },
+    {
+      "path": "OS/Linux/ubuntu/07-RESOLUTION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Résolutions — Ubuntu",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "ubuntu",
+      "rubric": "07-RESOLUTION",
+      "tags": [
+        "linux",
+        "ubuntu",
+        "resolution"
+      ]
+    },
+    {
+      "path": "OS/Linux/ubuntu/07-RESOLUTION/README.md",
+      "kind": "guide",
+      "title": "Résolutions — Ubuntu",
+      "summary": "Problèmes, diagnostics et solutions, regroupés par catégorie.",
+      "os": "Linux",
+      "family": "ubuntu",
+      "rubric": "07-RESOLUTION",
+      "tags": [
+        "linux",
+        "ubuntu",
+        "resolution"
+      ]
+    },
+    {
+      "path": "OS/Linux/ubuntu/08-SAUVEGARDE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Sauvegarde — Ubuntu",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "ubuntu",
+      "rubric": "08-SAUVEGARDE",
+      "tags": [
+        "linux",
+        "ubuntu",
+        "sauvegarde"
+      ]
+    },
+    {
+      "path": "OS/Linux/ubuntu/08-SAUVEGARDE/README.md",
+      "kind": "guide",
+      "title": "Sauvegarde — Ubuntu",
+      "summary": "Actions de sauvegarde, archivage, rétention et restauration.",
+      "os": "Linux",
+      "family": "ubuntu",
+      "rubric": "08-SAUVEGARDE",
+      "tags": [
+        "linux",
+        "ubuntu",
+        "sauvegarde"
+      ]
+    },
+    {
+      "path": "OS/Linux/ubuntu/09-NOTE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Notes — Ubuntu",
+      "summary": "Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "ubuntu",
+      "rubric": "09-NOTE",
+      "tags": [
+        "linux",
+        "ubuntu",
+        "note"
+      ]
+    },
+    {
+      "path": "OS/Linux/ubuntu/09-NOTE/README.md",
+      "kind": "guide",
+      "title": "Notes — Ubuntu",
+      "summary": "Connaissances, explications et observations utiles.",
+      "os": "Linux",
+      "family": "ubuntu",
+      "rubric": "09-NOTE",
+      "tags": [
+        "linux",
+        "ubuntu",
+        "note"
+      ]
+    },
+    {
+      "path": "OS/Linux/ubuntu/README.md",
+      "kind": "scope",
+      "title": "Ubuntu",
+      "summary": "Portée Ubuntu ; aucune procédure spécifique n’est encore validée.",
+      "os": "Linux",
+      "family": "ubuntu",
+      "tags": [
+        "linux",
+        "ubuntu"
+      ]
+    },
+    {
+      "path": "OS/README.md",
+      "kind": "guide",
+      "title": "OS",
+      "summary": "Regroupement Linux et Windows.",
+      "tags": []
+    },
+    {
+      "path": "OS/Windows/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Windows",
+      "summary": "Lire `../../AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Windows",
+      "tags": [
+        "windows"
+      ]
+    },
+    {
+      "path": "OS/Windows/01-INSTALLATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Installation — Windows",
+      "summary": "Lire `../../../AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Windows",
+      "rubric": "01-INSTALLATION",
+      "tags": [
+        "windows",
+        "installation"
+      ]
+    },
+    {
+      "path": "OS/Windows/01-INSTALLATION/README.md",
+      "kind": "guide",
+      "title": "Installation — Windows",
+      "summary": "Installer, reconstruire et migrer ce contexte.",
+      "os": "Windows",
+      "rubric": "01-INSTALLATION",
+      "tags": [
+        "windows",
+        "installation"
+      ]
+    },
+    {
+      "path": "OS/Windows/02-SYSTEME/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Système — Windows",
+      "summary": "Lire `../../../AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Windows",
+      "rubric": "02-SYSTEME",
+      "tags": [
+        "windows",
+        "systeme"
+      ]
+    },
+    {
+      "path": "OS/Windows/02-SYSTEME/README.md",
+      "kind": "guide",
+      "title": "Système — Windows",
+      "summary": "Fonctionnement, services, matériel et réglages système.",
+      "os": "Windows",
+      "rubric": "02-SYSTEME",
+      "tags": [
+        "windows",
+        "systeme"
+      ]
+    },
+    {
+      "path": "OS/Windows/03-CONFIGURATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Configuration — Windows",
+      "summary": "Lire `../../../AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Windows",
+      "rubric": "03-CONFIGURATION",
+      "tags": [
+        "windows",
+        "configuration"
+      ]
+    },
+    {
+      "path": "OS/Windows/03-CONFIGURATION/README.md",
+      "kind": "guide",
+      "title": "Configuration — Windows",
+      "summary": "Configurations de référence et adaptations sélectionnées ; chiffrer les données sensibles.",
+      "os": "Windows",
+      "rubric": "03-CONFIGURATION",
+      "tags": [
+        "windows",
+        "configuration"
+      ]
+    },
+    {
+      "path": "OS/Windows/04-LOGICIEL/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Logiciels — Windows",
+      "summary": "Lire `../../../AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Windows",
+      "rubric": "04-LOGICIEL",
+      "tags": [
+        "windows",
+        "logiciel"
+      ]
+    },
+    {
+      "path": "OS/Windows/04-LOGICIEL/README.md",
+      "kind": "guide",
+      "title": "Logiciels — Windows",
+      "summary": "Documentation et particularités par application.",
+      "os": "Windows",
+      "rubric": "04-LOGICIEL",
+      "tags": [
+        "windows",
+        "logiciel"
+      ]
+    },
+    {
+      "path": "OS/Windows/05-SCRIPT/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Scripts — Windows",
+      "summary": "Lire `../../../AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Windows",
+      "rubric": "05-SCRIPT",
+      "tags": [
+        "windows",
+        "script"
+      ]
+    },
+    {
+      "path": "OS/Windows/05-SCRIPT/README.md",
+      "kind": "guide",
+      "title": "Scripts — Windows",
+      "summary": "Outils exécutables documentés, avec leurs dépendances et environnements testés.",
+      "os": "Windows",
+      "rubric": "05-SCRIPT",
+      "tags": [
+        "windows",
+        "script"
+      ]
+    },
+    {
+      "path": "OS/Windows/06-MAINTENANCE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Maintenance — Windows",
+      "summary": "Lire `../../../AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Windows",
+      "rubric": "06-MAINTENANCE",
+      "tags": [
+        "windows",
+        "maintenance"
+      ]
+    },
+    {
+      "path": "OS/Windows/06-MAINTENANCE/README.md",
+      "kind": "guide",
+      "title": "Maintenance — Windows",
+      "summary": "Mises à jour, nettoyage, contrôles et opérations régulières.",
+      "os": "Windows",
+      "rubric": "06-MAINTENANCE",
+      "tags": [
+        "windows",
+        "maintenance"
+      ]
+    },
+    {
+      "path": "OS/Windows/07-RESOLUTION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Résolutions — Windows",
+      "summary": "Lire `../../../AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Windows",
+      "rubric": "07-RESOLUTION",
+      "tags": [
+        "windows",
+        "resolution"
+      ]
+    },
+    {
+      "path": "OS/Windows/07-RESOLUTION/README.md",
+      "kind": "guide",
+      "title": "Résolutions — Windows",
+      "summary": "Problèmes, diagnostics et solutions, regroupés par catégorie.",
+      "os": "Windows",
+      "rubric": "07-RESOLUTION",
+      "tags": [
+        "windows",
+        "resolution"
+      ]
+    },
+    {
+      "path": "OS/Windows/08-SAUVEGARDE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Sauvegarde — Windows",
+      "summary": "Lire `../../../AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Windows",
+      "rubric": "08-SAUVEGARDE",
+      "tags": [
+        "windows",
+        "sauvegarde"
+      ]
+    },
+    {
+      "path": "OS/Windows/08-SAUVEGARDE/README.md",
+      "kind": "guide",
+      "title": "Sauvegarde — Windows",
+      "summary": "Actions de sauvegarde, archivage, rétention et restauration.",
+      "os": "Windows",
+      "rubric": "08-SAUVEGARDE",
+      "tags": [
+        "windows",
+        "sauvegarde"
+      ]
+    },
+    {
+      "path": "OS/Windows/09-NOTE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Notes — Windows",
+      "summary": "Lire `../../../AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Windows",
+      "rubric": "09-NOTE",
+      "tags": [
+        "windows",
+        "note"
+      ]
+    },
+    {
+      "path": "OS/Windows/09-NOTE/README.md",
+      "kind": "guide",
+      "title": "Notes — Windows",
+      "summary": "Connaissances, explications et observations utiles.",
+      "os": "Windows",
+      "rubric": "09-NOTE",
+      "tags": [
+        "windows",
+        "note"
+      ]
+    },
+    {
+      "path": "OS/Windows/README.md",
+      "kind": "scope",
+      "title": "Windows",
+      "summary": "Portée Windows ; préciser édition, version et shell.",
+      "os": "Windows",
+      "tags": [
+        "windows"
+      ]
+    },
+    {
+      "path": "OUTILS/AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Outils communs",
+      "summary": "Lire `../AGENTS.md`, puis `README.md` ici.",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/CHIFFREMENT/AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Commandes de chiffrement",
+      "summary": "Lire `../../AGENTS.md`, `../AGENTS.md`, `README.md` et `../../CHIFFREMENT.md`.",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/CHIFFREMENT/README.md",
+      "kind": "guide",
+      "title": "Commandes communes de chiffrement",
+      "summary": "Cette rubrique explique comment utiliser age et tar directement, sans script de chiffrement maison.",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/CHIFFREMENT/linux.md",
+      "kind": "tool",
+      "title": "Chiffrer et récupérer — Linux / Bash",
+      "summary": "Commandes Bash pour chiffrer un fichier ou un dossier avec age et tar vers un objet à nom opaque, puis le déchiffrer en retrouvant les noms d'origine.",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/CHIFFREMENT/windows.md",
+      "kind": "tool",
+      "title": "Chiffrer et récupérer — Windows / PowerShell",
+      "summary": "Commandes PowerShell 5.1 et 7 pour chiffrer et déchiffrer avec age.exe et tar.exe sous Windows natif, avec les limites observées (noms japonais, ordre des tar.exe).",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/README.md",
+      "kind": "guide",
+      "title": "Outils communs",
+      "summary": "Outils réutilisables dans plusieurs portées du dépôt, avec leurs prérequis et limites de plateforme.",
+      "tags": []
+    },
+    {
+      "path": "README.md",
+      "kind": "doc",
+      "title": "System Handbook",
+      "summary": "Documentation personnelle des systèmes, configurations, résolutions et outils.",
+      "tags": []
+    }
+  ]
+}

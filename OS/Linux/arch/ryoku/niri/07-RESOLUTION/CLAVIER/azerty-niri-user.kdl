@@ -1,0 +1,51 @@
+// Yours, and the last file niri reads, so anything here beats both the seeds
+// and the Hub's generated config. Seeded once and never touched by an update.
+//
+// Add a bind, override a setting, or drop in a window rule:
+//
+//   binds {
+//       Mod+Shift+T { spawn "kitty"; }
+//   }
+
+// AZERTY: the unshifted number row produces symbols. These bindings move the
+// focused window to a workspace: Alt follows it, Shift stays on this workspace.
+// Niri 26.04 matches
+// unshifted keysyms even when Shift is held: use Shift+ampersand, not Shift+1.
+binds {
+    Super+Alt+ampersand { move-window-to-workspace 1; }
+    Super+Alt+eacute { move-window-to-workspace 2; }
+    Super+Alt+quotedbl { move-window-to-workspace 3; }
+    Super+Alt+apostrophe { move-window-to-workspace 4; }
+    Super+Alt+parenleft { move-window-to-workspace 5; }
+    Super+Alt+minus { move-window-to-workspace 6; }
+    Super+Alt+egrave { move-window-to-workspace 7; }
+    Super+Alt+underscore { move-window-to-workspace 8; }
+    Super+Alt+ccedilla { move-window-to-workspace 9; }
+    Super+Alt+agrave { move-window-to-workspace 10; }
+
+    Super+Alt+Shift+ampersand { move-window-to-workspace 1; }
+    Super+Alt+Shift+eacute { move-window-to-workspace 2; }
+    Super+Alt+Shift+quotedbl { move-window-to-workspace 3; }
+    Super+Alt+Shift+apostrophe { move-window-to-workspace 4; }
+    Super+Alt+Shift+parenleft { move-window-to-workspace 5; }
+    Super+Alt+Shift+minus { move-window-to-workspace 6; }
+    Super+Alt+Shift+egrave { move-window-to-workspace 7; }
+    Super+Alt+Shift+underscore { move-window-to-workspace 8; }
+    Super+Alt+Shift+ccedilla { move-window-to-workspace 9; }
+    Super+Alt+Shift+agrave { move-window-to-workspace 10; }
+
+    // Send quietly: move the window while keeping focus on the current workspace.
+    Super+Shift+ampersand { move-window-to-workspace 1 focus=false; }
+    Super+Shift+eacute { move-window-to-workspace 2 focus=false; }
+    Super+Shift+quotedbl { move-window-to-workspace 3 focus=false; }
+    Super+Shift+apostrophe { move-window-to-workspace 4 focus=false; }
+    Super+Shift+parenleft { move-window-to-workspace 5 focus=false; }
+    Super+Shift+minus { move-window-to-workspace 6 focus=false; }
+    Super+Shift+egrave { move-window-to-workspace 7 focus=false; }
+    Super+Shift+underscore { move-window-to-workspace 8 focus=false; }
+    Super+Shift+ccedilla { move-window-to-workspace 9 focus=false; }
+    Super+Shift+agrave { move-window-to-workspace 10 focus=false; }
+}
+
+//
+// A chord already bound in rebinds.kdl is replaced by one you set here.

@@ -1,0 +1,81 @@
+name: Encryption round-trip
+
+# Vérifie que age + tar chiffrent puis restituent un jeu de données fictif, sous
+# Linux (Bash) et Windows (PowerShell 5.1 et 7). La clé est créée et détruite dans
+# le job : aucun secret ni identité du dépôt n'est utilisé.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: encryption-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  AGE_VERSION: v1.3.2
+  AGE_LINUX_SHA256: cbe24006683f8eb669266162894b9a522a1af52f2665fbc63a4bb032ed26ac10
+  AGE_WINDOWS_SHA256: f48d8f8f9ebe903ab5027ed067652f2cc1db94bc206976430133b905dcd8e8c7
+
+jobs:
+  linux:
+    name: encryption (linux, bash)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install pinned age
+        run: |
+          set -euo pipefail
+          archive="age-${AGE_VERSION}-linux-amd64.tar.gz"
+          curl -fsSL -o "$RUNNER_TEMP/$archive" "https://github.com/FiloSottile/age/releases/download/${AGE_VERSION}/${archive}"
+          echo "${AGE_LINUX_SHA256}  $RUNNER_TEMP/$archive" | sha256sum --check --strict
+          tar -xzf "$RUNNER_TEMP/$archive" -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/age" >> "$GITHUB_PATH"
+
+      - name: Round-trip
+        run: bash .github/scripts/test-encryption.sh
+
+  windows:
+    name: encryption (windows, ${{ matrix.shell }})
+    runs-on: windows-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        shell: [powershell, pwsh]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install pinned age
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $archive = Join-Path $env:RUNNER_TEMP "age-$env:AGE_VERSION-windows-amd64.zip"
+          Invoke-WebRequest -Uri "https://github.com/FiloSottile/age/releases/download/$env:AGE_VERSION/age-$env:AGE_VERSION-windows-amd64.zip" -OutFile $archive
+          $hash = (Get-FileHash -LiteralPath $archive -Algorithm SHA256).Hash
+          if ($hash -ne $env:AGE_WINDOWS_SHA256.ToUpper()) { throw "Empreinte inattendue : $hash" }
+          Expand-Archive -LiteralPath $archive -DestinationPath $env:RUNNER_TEMP
+          Add-Content -Path $env:GITHUB_PATH -Value (Join-Path $env:RUNNER_TEMP 'age')
+
+      # `shell` n'accepte pas d'expression : une étape par interpréteur.
+      - name: Round-trip (Windows PowerShell 5.1)
+        if: matrix.shell == 'powershell'
+        shell: powershell
+        run: .github/scripts/test-encryption.ps1
+
+      - name: Round-trip (PowerShell 7)
+        if: matrix.shell == 'pwsh'
+        shell: pwsh
+        run: .github/scripts/test-encryption.ps1

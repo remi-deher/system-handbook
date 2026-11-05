@@ -1,0 +1,67 @@
+--- a/Combos.js
++++ b/Combos.js
+@@ -135,6 +135,15 @@
+         return String.fromCharCode(k);
+     if (k >= Qt.Key_F1 && k <= Qt.Key_F12)
+         return "F" + (k - Qt.Key_F1 + 1);
++    // Qt reports Latin letters in uppercase, including accented AZERTY keys.
++    // Keep XKB names here: recording '&' as '1' would bind a different symbol.
++    var azertyNames = {
++        38: "ampersand", 201: "eacute", 233: "eacute", 34: "quotedbl",
++        40: "parenleft", 200: "egrave", 232: "egrave", 95: "underscore",
++        199: "ccedilla", 231: "ccedilla", 192: "agrave", 224: "agrave"
++    };
++    if (azertyNames[k] !== undefined)
++        return azertyNames[k];
+     switch (k) {
+     case Qt.Key_Return: case Qt.Key_Enter: return "Return";
+     case Qt.Key_Space: return "Space";
+@@ -202,7 +211,14 @@
+         return "";
+     var key = toks[toks.length - 1];
+     var placeholder = "";
+-    if (key.length === 1 && key >= "0" && key <= "9")
++    // The family store uses numeric placeholders even when the recorder sees
++    // the unshifted French number-row symbols. Individual chords retain their
++    // actual XKB symbol; only this family selector treats the row as digits.
++    var azertyRow = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft",
++        "minus", "egrave", "underscore", "ccedilla", "agrave"];
++    if (azertyRow.indexOf(key) >= 0)
++        placeholder = "{n}";
++    else if (key.length === 1 && key >= "0" && key <= "9")
+         placeholder = "{n}";
+     else if (key.length === 4 && key.substring(0, 3) === "KP_" && key.charAt(3) >= "0" && key.charAt(3) <= "9")
+         placeholder = "KP_{n}";
+--- a/Combos.test.mjs
++++ b/Combos.test.mjs
+@@ -43,6 +43,30 @@
+ 
+ // A KeyEvent as Quickshell delivers it: key code + a modifier bitmask.
+ const ev = (key, ...mods) => ({ key, modifiers: mods.reduce((a, m) => a | m, 0) });
++
++test("AZERTY number row records actual XKB symbols and selects workspace families", () => {
++    const row = [
++        [0x26, "ampersand"], [0xc9, "eacute"], [0x22, "quotedbl"],
++        [0x27, "apostrophe"], [0x28, "parenleft"], [0x2d, "minus"],
++        [0xc8, "egrave"], [0x5f, "underscore"], [0xc7, "ccedilla"], [0xc0, "agrave"]
++    ];
++    for (const [key, symbol] of row) {
++        const chord = chordFrom(ev(key, Qt.MetaModifier, Qt.AltModifier));
++        assert.equal(chord, "SUPER + ALT + " + symbol);
++        assert.equal(familyFrom(chord), "SUPER + ALT + {n}");
++    }
++});
++
++test("Caps Lock digits and lowercase accented key codes remain recordable", () => {
++    for (let digit = 0; digit <= 9; digit++) {
++        const chord = chordFrom(ev(48 + digit, Qt.MetaModifier, Qt.AltModifier));
++        assert.equal(chord, "SUPER + ALT + " + digit);
++        assert.equal(familyFrom(chord), "SUPER + ALT + {n}");
++    }
++    for (const key of [0xe9, 0xe8, 0xe7, 0xe0])
++        assert.notEqual(chordFrom(ev(key, Qt.MetaModifier)), "");
++    assert.equal(familyFrom(chordFrom(ev(0x26, Qt.MetaModifier, Qt.ShiftModifier))), "SUPER + SHIFT + {n}");
++});
+ 
+ test("number-pad digits with NumLock on map to KP_<d>", () => {
+     assert.equal(qtKeyName(ev(Qt.Key_3, Qt.KeypadModifier)), "KP_3");

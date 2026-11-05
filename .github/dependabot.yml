@@ -1,0 +1,36 @@
+# Met à jour les actions épinglées par SHA et les hooks pre-commit. Les mises à jour sont groupées
+# en une seule pull request par écosystème pour limiter le bruit.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    groups:
+      github-actions:
+        patterns: ['*']
+    commit-message:
+      prefix: 'CI'
+
+  - package-ecosystem: pip
+    directory: /.github/pages
+    schedule:
+      interval: weekly
+      day: monday
+    groups:
+      pages-dependencies:
+        patterns: ['*']
+    commit-message:
+      prefix: 'Pages'
+
+  - package-ecosystem: pre-commit
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    groups:
+      pre-commit:
+        patterns: ['*']
+    commit-message:
+      prefix: 'Hooks'

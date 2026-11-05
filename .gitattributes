@@ -1,0 +1,2 @@
+# Les objets chiffrés sont binaires, quelle que soit leur rubrique.
+*.age binary

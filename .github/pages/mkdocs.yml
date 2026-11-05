@@ -1,0 +1,31 @@
+# Configuration du site GitHub Pages. Les sources sont préparées par .github/scripts/prepare-site.py
+# dans _site-src (ignoré par Git) ; le résultat est écrit dans _site.
+site_name: System Handbook
+site_description: Notes, résolutions, configurations et outils pour Linux et Windows
+site_url: https://remi-deher.github.io/system-handbook/
+repo_url: https://github.com/remi-deher/system-handbook
+docs_dir: ../../_site-src
+site_dir: ../../_site
+use_directory_urls: true
+
+theme:
+  name: material
+  language: fr
+  custom_dir: overrides
+  features:
+    - navigation.instant
+    - navigation.prune
+    - navigation.indexes
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+plugins:
+  - search
+
+markdown_extensions:
+  - tables
+  - toc:
+      permalink: true

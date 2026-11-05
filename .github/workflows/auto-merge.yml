@@ -1,0 +1,174 @@
+name: Auto-merge pull requests
+
+# Automatisation des pull requests de ce dépôt :
+#   - index : régénère INDEX.json, INDEX.md et llms.txt et pousse le commit sur la branche de la PR ;
+#   - auto-merge : active la fusion automatique (squash) une fois l'index à jour ; GitHub ne fusionne
+#     qu'avec les contrôles requis verts ;
+#   - update-behind : met à jour les PR en retard sur main après chaque fusion ;
+#   - delete-branch et cleanup-merged-branches : suppriment les branches fusionnées.
+#
+# Le secret AUTOMATION_TOKEN (PAT limité à ce dépôt) est nécessaire pour que les actions du robot
+# déclenchent les contrôles requis et les événements de fusion. Sans lui, seule l'activation de la
+# fusion automatique et le nettoyage fonctionnent, avec GITHUB_TOKEN.
+#
+# Sécurité : le workflow et le générateur proviennent de `main` (pull_request_target). Les fichiers de
+# la branche ne sont lus que comme données ; aucun code de la PR n'est exécuté et le jeton n'est jamais
+# présent pendant la génération.
+on:
+  pull_request_target:
+    types: [opened, reopened, ready_for_review, synchronize, closed]
+  push:
+    branches: [main]
+  schedule:
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: pr-automation-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  index:
+    name: index (régénération)
+    if: github.event_name == 'pull_request_target' && github.event.action != 'closed' && github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      HAS_TOKEN: ${{ secrets.AUTOMATION_TOKEN != '' }}
+      BRANCH: ${{ github.event.pull_request.head.ref }}
+      REPO: ${{ github.repository }}
+    steps:
+      - name: Token notice
+        if: env.HAS_TOKEN != 'true'
+        run: 'echo "::notice::AUTOMATION_TOKEN absent, l''index n''est pas régénéré automatiquement."'
+
+      - name: Checkout trusted scripts (main)
+        if: env.HAS_TOKEN == 'true'
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          path: trusted
+          persist-credentials: false
+
+      - name: Checkout pull request files (data only)
+        if: env.HAS_TOKEN == 'true'
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: work
+          persist-credentials: false
+
+      - name: Generate the index with the trusted script
+        id: generate
+        if: env.HAS_TOKEN == 'true'
+        run: |
+          set +e
+          python3 -B trusted/.github/scripts/build-index.py --root work
+          code=$?
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          # 0 : à jour ; 1 : fichiers régénérés ; 2 : fiche invalide (Résumé manquant, etc.).
+          if [ "$code" -ge 2 ]; then exit "$code"; fi
+          exit 0
+
+      - name: Commit and push the index to the pull request branch
+        if: env.HAS_TOKEN == 'true' && steps.generate.outputs.code == '1'
+        env:
+          TOKEN: ${{ secrets.AUTOMATION_TOKEN }}
+        run: |
+          set -euo pipefail
+          cd work
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- INDEX.json INDEX.md llms.txt
+          git commit -m "Mettre à jour l'index" -m "Généré automatiquement par la CI à partir des fichiers Markdown."
+          # Simple avance rapide : si la branche a bougé entre-temps, le push échoue et la
+          # prochaine exécution (événement `synchronize`) reprend sur le nouvel état.
+          git push "https://x-access-token:${TOKEN}@github.com/${REPO}.git" "HEAD:refs/heads/${BRANCH}"
+
+  auto-merge:
+    name: auto-merge (activation)
+    needs: index
+    # `!cancelled()` : on active la fusion automatique même si l'index est ignoré ou a échoué ;
+    # une fiche invalide fait échouer les contrôles requis, donc rien ne fusionne.
+    if: ${{ !cancelled() && github.event_name == 'pull_request_target' && github.event.action != 'closed' && github.event.pull_request.head.repo.full_name == github.repository && !github.event.pull_request.draft }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Enable auto-merge
+        env:
+          # Avec le PAT, la fusion est attribuée au propriétaire : les événements `closed` et `push`
+          # se déclenchent. Sans lui (ex. Dependabot), repli sur GITHUB_TOKEN.
+          GH_TOKEN: ${{ secrets.AUTOMATION_TOKEN || github.token }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: |
+          if ! gh pr merge --auto --squash "$PR_URL"; then
+            gh pr view "$PR_URL" --json autoMergeRequest --jq '.autoMergeRequest.mergeMethod' | grep -qx SQUASH
+          fi
+
+  update-behind:
+    name: update-behind (PR en retard)
+    # Après chaque fusion dans main, remet à jour les PR de branches du dépôt qui sont en retard :
+    # la protection exige une branche à jour, sinon l'auto-fusion attend indéfiniment.
+    if: github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      HAS_TOKEN: ${{ secrets.AUTOMATION_TOKEN != '' }}
+    steps:
+      - name: Token notice
+        if: env.HAS_TOKEN != 'true'
+        run: 'echo "::notice::AUTOMATION_TOKEN absent, les PR en retard ne sont pas mises à jour."'
+
+      - name: Update behind pull requests
+        if: env.HAS_TOKEN == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.AUTOMATION_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          gh pr list --repo "$REPO" --state open --json number,mergeStateStatus,isCrossRepository,isDraft \
+            --jq '.[] | select(.mergeStateStatus == "BEHIND" and (.isCrossRepository | not) and (.isDraft | not)) | .number' |
+          while read -r number; do
+            echo "Mise à jour de la PR #$number"
+            gh api --method PUT "repos/$REPO/pulls/$number/update-branch" --silent || echo "::warning::PR #$number non mise à jour"
+          done
+
+  delete-branch:
+    name: delete-branch (PR fusionnée)
+    if: github.event_name == 'pull_request_target' && github.event.action == 'closed' && github.event.pull_request.merged && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Delete merged branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ github.event.pull_request.head.ref }}
+          REPO: ${{ github.repository }}
+        run: gh api --method DELETE "repos/$REPO/git/refs/heads/$BRANCH" || true
+
+  cleanup-merged-branches:
+    name: cleanup (filet de sécurité)
+    # Supprime les branches dont la pointe est celle d'une PR fusionnée, sans PR ouverte.
+    if: github.event_name != 'pull_request_target' || github.event.action == 'opened'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Delete merged branches
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          gh api --paginate "repos/$REPO/branches" --jq '.[] | "\(.name) \(.commit.sha)"' |
+          while read -r branch sha; do
+            [ "$branch" != "main" ] || continue
+            open="$(gh pr list --repo "$REPO" --head "$branch" --state open --json number --jq length)"
+            merged="$(gh pr list --repo "$REPO" --head "$branch" --state merged --json headRefOid --jq '.[].headRefOid')"
+            if [ "$open" = "0" ] && grep -qx "$sha" <<<"$merged"; then
+              echo "Suppression de la branche $branch"
+              gh api --method DELETE "repos/$REPO/git/refs/heads/$branch" || true
+            fi
+          done

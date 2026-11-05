@@ -1,0 +1,14 @@
+{
+  // Règles adaptées à une documentation française rédigée à la main : on garde les règles de
+  // structure (titres, listes, blocs de code) et on retire celles qui sont purement typographiques.
+  "config": {
+    "default": true,
+    "MD013": false,
+    "MD024": { "siblings_only": true },
+    "MD033": false,
+    "MD036": false,
+    "MD041": true
+  },
+  "globs": ["**/*.md"],
+  "ignores": ["node_modules/**"]
+}
