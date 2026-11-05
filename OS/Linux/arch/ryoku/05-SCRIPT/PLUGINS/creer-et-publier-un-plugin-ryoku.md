@@ -35,26 +35,32 @@ CREDITS.md, AGENTS.md, LICENSE
 ## Procédure (bash ou fish)
 
 1. Créer :
+
    ```bash
    cd ~/Projets/linux-plugins
    scripts/new-plugin.sh ryoku mon-plugin "Mon plugin"
    ```
+
    Équivaut à `ryoku plugin new <id> --bar --name N --to linux/ryoku` ; l'id est en minuscules, chiffres et tirets. Le dossier contient `AGENTS.md` : les règles R1–R11 que le validateur applique (dont R2 : tout fichier supplémentaire est listé dans `files`, R6 : commandes externes dans `dependencies.commands`, R8 : écriture seulement dans `stateDir`).
 2. Écrire `service/Main.qml` (logique), `content/Widget.qml` (vue), `content/Panel.qml` (panneau de barre). Les noms de propriétés QML ne peuvent pas commencer par une majuscule : le panneau ne se charge pas sinon (le log est dans `/run/user/1000/quickshell/by-id/*/log.log`).
 3. Valider : `ryoku plugin validate linux/ryoku/mon-plugin` (0 blocage requis) puis `scripts/validate-all.sh`.
 4. Installer pour l'essayer :
+
    ```bash
    ryoku plugin add linux/ryoku/mon-plugin --bar --yes
    ryoku plugin remove mon-plugin     # nécessaire avant de réinstaller une nouvelle version
    ```
+
 5. Crédits : si le plugin dérive d'un autre travail, garder le copyright de l'auteur dans `LICENSE`, ajouter une ligne à `CREDITS.md` et une section Credits au README du plugin.
 6. Committer et pousser `linux-plugins`.
 7. Installation par URL : créer le dépôt miroir et ajouter la ligne à `mirrors.json` :
+
    ```bash
    gh repo create remi-deher/mon-plugin --public
    git subtree split --prefix=linux/ryoku/mon-plugin -b mirror-tmp
    git push https://github.com/remi-deher/mon-plugin.git mirror-tmp:main && git branch -D mirror-tmp
    ```
+
    Puis `mirrors.json` : `"linux/ryoku/mon-plugin": "remi-deher/mon-plugin"`. Ensuite `mirror.yml` republie à chaque push sur `main` si le secret `MIRROR_TOKEN` existe (jeton à granularité fine, écriture sur le contenu des dépôts miroirs ; ne pas y mettre le jeton `gh` personnel).
 8. Vérifier : `ryoku plugin add https://github.com/remi-deher/mon-plugin --bar --yes` (testé pour `ryoku-pods`).
 9. Catalogue officiel (seulement sur décision) : `ryoku plugin share mon-plugin`.
