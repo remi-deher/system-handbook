@@ -3964,6 +3964,30 @@
       ]
     },
     {
+      "path": "OS/Linux/arch/ryoku/niri/07-RESOLUTION/CLAVIER/1password-acces-rapide.md",
+      "kind": "fiche",
+      "title": "Raccourci d'accès rapide 1Password sous Niri",
+      "summary": "Sous Niri (Wayland), Ctrl+Maj+Espace n'ouvre pas l'accès rapide de 1Password car l'application ne peut pas enregistrer de raccourci global ; un raccourci Niri qui lance `1password --quick-access` via un script le ramène sur le bureau actif.",
+      "status": "résolu et confirmé par l'utilisateur le 5 novembre 2026",
+      "date": "2026-11-05",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "niri"
+      ],
+      "rubric": "07-RESOLUTION",
+      "category": "CLAVIER",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "niri",
+        "resolution",
+        "clavier"
+      ]
+    },
+    {
       "path": "OS/Linux/arch/ryoku/niri/07-RESOLUTION/CLAVIER/README.md",
       "kind": "guide",
       "title": "Clavier et raccourcis — Niri sous Ryoku",
