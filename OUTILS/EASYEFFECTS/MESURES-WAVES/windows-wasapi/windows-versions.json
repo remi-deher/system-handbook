@@ -1,0 +1,28 @@
+﻿{
+    "Windows":  "Microsoft Windows 11 Professionnel",
+    "Version":  "10.0.26300",
+    "Build":  "26300",
+    "WavesApp":  "2.0.54.0",
+    "Drivers":  [
+                    {
+                        "DeviceName":  "Realtek Audio Universal Service",
+                        "DriverVersion":  "1.0.960.0",
+                        "InfName":  "oem75.inf"
+                    },
+                    {
+                        "DeviceName":  "Realtek Audio Effects Component",
+                        "DriverVersion":  "13.5209.2429.786",
+                        "InfName":  "oem76.inf"
+                    },
+                    {
+                        "DeviceName":  "Waves APO",
+                        "DriverVersion":  "12.2.0.18243",
+                        "InfName":  "oem71.inf"
+                    },
+                    {
+                        "DeviceName":  "Realtek Audio",
+                        "DriverVersion":  "6.0.9954.2",
+                        "InfName":  "oem70.inf"
+                    }
+                ]
+}

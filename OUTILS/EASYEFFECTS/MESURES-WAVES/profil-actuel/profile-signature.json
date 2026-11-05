@@ -1,0 +1,32 @@
+{
+  "controls": {
+    "bass": "50 %",
+    "details": "35 %",
+    "width": "35 %",
+    "power": "On",
+    "midnight": "Off",
+    "EQ31": "0.0 dB",
+    "EQ63": "0.0 dB",
+    "EQ125": "0.0 dB",
+    "EQ250": "0.0 dB",
+    "EQ500": "0.0 dB",
+    "EQ1K": "0.0 dB",
+    "EQ2K": "0.0 dB",
+    "EQ4K": "0.0 dB",
+    "EQ8K": "0.0 dB",
+    "EQ16K": "0.0 dB"
+  },
+  "endpoint_id": "{0.0.0.00000000}.{GUID-DU-PERIPHERIQUE}",
+  "mix_format": {
+    "wFormatTag": 65534,
+    "nChannels": 2,
+    "nSamplesPerSec": 48000,
+    "nAvgBytesPerSec": 384000,
+    "nBlockAlign": 8,
+    "wBitsPerSample": 32,
+    "cbSize": 22,
+    "raw_hex": "feff020080bb000000dc05000800200016002000030000000300000000001000800000aa00389b71"
+  },
+  "initial_volume": 0.2800000011920929,
+  "signature_sha256": "e791a6222a96008c3a2f814c5cefe749534b7e3f759d61902c2759c96598900e"
+}

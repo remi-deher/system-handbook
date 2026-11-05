@@ -1,0 +1,441 @@
+{
+  "scope": "Every integer Windows endpoint volume 0..100 inclusive plus repeats; fixed current Waves profile",
+  "trials": [
+    {
+      "label": "probe-initial-a",
+      "volume_percent": 28
+    },
+    {
+      "label": "probe-initial-b",
+      "volume_percent": 28
+    },
+    {
+      "label": "probe-v000",
+      "volume_percent": 0
+    },
+    {
+      "label": "probe-v001",
+      "volume_percent": 1
+    },
+    {
+      "label": "probe-v002",
+      "volume_percent": 2
+    },
+    {
+      "label": "probe-v003",
+      "volume_percent": 3
+    },
+    {
+      "label": "probe-v004",
+      "volume_percent": 4
+    },
+    {
+      "label": "probe-v005",
+      "volume_percent": 5
+    },
+    {
+      "label": "probe-v006",
+      "volume_percent": 6
+    },
+    {
+      "label": "probe-v007",
+      "volume_percent": 7
+    },
+    {
+      "label": "probe-v008",
+      "volume_percent": 8
+    },
+    {
+      "label": "probe-v009",
+      "volume_percent": 9
+    },
+    {
+      "label": "probe-v010",
+      "volume_percent": 10
+    },
+    {
+      "label": "probe-v011",
+      "volume_percent": 11
+    },
+    {
+      "label": "probe-v012",
+      "volume_percent": 12
+    },
+    {
+      "label": "probe-v013",
+      "volume_percent": 13
+    },
+    {
+      "label": "probe-v014",
+      "volume_percent": 14
+    },
+    {
+      "label": "probe-v015",
+      "volume_percent": 15
+    },
+    {
+      "label": "probe-v016",
+      "volume_percent": 16
+    },
+    {
+      "label": "probe-v017",
+      "volume_percent": 17
+    },
+    {
+      "label": "probe-v018",
+      "volume_percent": 18
+    },
+    {
+      "label": "probe-v019",
+      "volume_percent": 19
+    },
+    {
+      "label": "probe-v020",
+      "volume_percent": 20
+    },
+    {
+      "label": "probe-v021",
+      "volume_percent": 21
+    },
+    {
+      "label": "probe-v022",
+      "volume_percent": 22
+    },
+    {
+      "label": "probe-v023",
+      "volume_percent": 23
+    },
+    {
+      "label": "probe-v024",
+      "volume_percent": 24
+    },
+    {
+      "label": "probe-v025",
+      "volume_percent": 25
+    },
+    {
+      "label": "probe-v026",
+      "volume_percent": 26
+    },
+    {
+      "label": "probe-v027",
+      "volume_percent": 27
+    },
+    {
+      "label": "probe-v028",
+      "volume_percent": 28
+    },
+    {
+      "label": "probe-v029",
+      "volume_percent": 29
+    },
+    {
+      "label": "probe-v030",
+      "volume_percent": 30
+    },
+    {
+      "label": "probe-v031",
+      "volume_percent": 31
+    },
+    {
+      "label": "probe-v032",
+      "volume_percent": 32
+    },
+    {
+      "label": "probe-v033",
+      "volume_percent": 33
+    },
+    {
+      "label": "probe-v034",
+      "volume_percent": 34
+    },
+    {
+      "label": "probe-v035",
+      "volume_percent": 35
+    },
+    {
+      "label": "probe-v036",
+      "volume_percent": 36
+    },
+    {
+      "label": "probe-v037",
+      "volume_percent": 37
+    },
+    {
+      "label": "probe-v038",
+      "volume_percent": 38
+    },
+    {
+      "label": "probe-v039",
+      "volume_percent": 39
+    },
+    {
+      "label": "probe-v040",
+      "volume_percent": 40
+    },
+    {
+      "label": "probe-v041",
+      "volume_percent": 41
+    },
+    {
+      "label": "probe-v042",
+      "volume_percent": 42
+    },
+    {
+      "label": "probe-v043",
+      "volume_percent": 43
+    },
+    {
+      "label": "probe-v044",
+      "volume_percent": 44
+    },
+    {
+      "label": "probe-v045",
+      "volume_percent": 45
+    },
+    {
+      "label": "probe-v046",
+      "volume_percent": 46
+    },
+    {
+      "label": "probe-v047",
+      "volume_percent": 47
+    },
+    {
+      "label": "probe-v048",
+      "volume_percent": 48
+    },
+    {
+      "label": "probe-v049",
+      "volume_percent": 49
+    },
+    {
+      "label": "probe-v050",
+      "volume_percent": 50
+    },
+    {
+      "label": "probe-v051",
+      "volume_percent": 51
+    },
+    {
+      "label": "probe-v052",
+      "volume_percent": 52
+    },
+    {
+      "label": "probe-v053",
+      "volume_percent": 53
+    },
+    {
+      "label": "probe-v054",
+      "volume_percent": 54
+    },
+    {
+      "label": "probe-v055",
+      "volume_percent": 55
+    },
+    {
+      "label": "probe-v056",
+      "volume_percent": 56
+    },
+    {
+      "label": "probe-v057",
+      "volume_percent": 57
+    },
+    {
+      "label": "probe-v058",
+      "volume_percent": 58
+    },
+    {
+      "label": "probe-v059",
+      "volume_percent": 59
+    },
+    {
+      "label": "probe-v060",
+      "volume_percent": 60
+    },
+    {
+      "label": "probe-v061",
+      "volume_percent": 61
+    },
+    {
+      "label": "probe-v062",
+      "volume_percent": 62
+    },
+    {
+      "label": "probe-v063",
+      "volume_percent": 63
+    },
+    {
+      "label": "probe-v064",
+      "volume_percent": 64
+    },
+    {
+      "label": "probe-v065",
+      "volume_percent": 65
+    },
+    {
+      "label": "probe-v066",
+      "volume_percent": 66
+    },
+    {
+      "label": "probe-v067",
+      "volume_percent": 67
+    },
+    {
+      "label": "probe-v068",
+      "volume_percent": 68
+    },
+    {
+      "label": "probe-v069",
+      "volume_percent": 69
+    },
+    {
+      "label": "probe-v070",
+      "volume_percent": 70
+    },
+    {
+      "label": "probe-v071",
+      "volume_percent": 71
+    },
+    {
+      "label": "probe-v072",
+      "volume_percent": 72
+    },
+    {
+      "label": "probe-v073",
+      "volume_percent": 73
+    },
+    {
+      "label": "probe-v074",
+      "volume_percent": 74
+    },
+    {
+      "label": "probe-v075",
+      "volume_percent": 75
+    },
+    {
+      "label": "probe-v076",
+      "volume_percent": 76
+    },
+    {
+      "label": "probe-v077",
+      "volume_percent": 77
+    },
+    {
+      "label": "probe-v078",
+      "volume_percent": 78
+    },
+    {
+      "label": "probe-v079",
+      "volume_percent": 79
+    },
+    {
+      "label": "probe-v080",
+      "volume_percent": 80
+    },
+    {
+      "label": "probe-v081",
+      "volume_percent": 81
+    },
+    {
+      "label": "probe-v082",
+      "volume_percent": 82
+    },
+    {
+      "label": "probe-v083",
+      "volume_percent": 83
+    },
+    {
+      "label": "probe-v084",
+      "volume_percent": 84
+    },
+    {
+      "label": "probe-v085",
+      "volume_percent": 85
+    },
+    {
+      "label": "probe-v086",
+      "volume_percent": 86
+    },
+    {
+      "label": "probe-v087",
+      "volume_percent": 87
+    },
+    {
+      "label": "probe-v088",
+      "volume_percent": 88
+    },
+    {
+      "label": "probe-v089",
+      "volume_percent": 89
+    },
+    {
+      "label": "probe-v090",
+      "volume_percent": 90
+    },
+    {
+      "label": "probe-v091",
+      "volume_percent": 91
+    },
+    {
+      "label": "probe-v092",
+      "volume_percent": 92
+    },
+    {
+      "label": "probe-v093",
+      "volume_percent": 93
+    },
+    {
+      "label": "probe-v094",
+      "volume_percent": 94
+    },
+    {
+      "label": "probe-v095",
+      "volume_percent": 95
+    },
+    {
+      "label": "probe-v096",
+      "volume_percent": 96
+    },
+    {
+      "label": "probe-v097",
+      "volume_percent": 97
+    },
+    {
+      "label": "probe-v098",
+      "volume_percent": 98
+    },
+    {
+      "label": "probe-v099",
+      "volume_percent": 99
+    },
+    {
+      "label": "probe-v100",
+      "volume_percent": 100
+    },
+    {
+      "label": "probe-return-v100",
+      "volume_percent": 100
+    },
+    {
+      "label": "probe-return-v075",
+      "volume_percent": 75
+    },
+    {
+      "label": "probe-return-v050",
+      "volume_percent": 50
+    },
+    {
+      "label": "probe-return-v025",
+      "volume_percent": 25
+    },
+    {
+      "label": "probe-return-v000",
+      "volume_percent": 0
+    },
+    {
+      "label": "probe-return-v028",
+      "volume_percent": 28
+    }
+  ]
+}

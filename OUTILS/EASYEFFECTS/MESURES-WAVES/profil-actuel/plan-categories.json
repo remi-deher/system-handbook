@@ -1,0 +1,47 @@
+{
+  "method": "Independent IAudioClient2 renderer; explicit categories; shared, non-offloaded, RAW disabled",
+  "trials": [
+    {
+      "label": "category-other-v028",
+      "source_name": "volume-probe.wav",
+      "percent": 28,
+      "enabled": true,
+      "category": 0
+    },
+    {
+      "label": "category-other-v100",
+      "source_name": "volume-probe.wav",
+      "percent": 100,
+      "enabled": true,
+      "category": 0
+    },
+    {
+      "label": "category-media-v028",
+      "source_name": "volume-probe.wav",
+      "percent": 28,
+      "enabled": true,
+      "category": 11
+    },
+    {
+      "label": "category-media-v100",
+      "source_name": "volume-probe.wav",
+      "percent": 100,
+      "enabled": true,
+      "category": 11
+    },
+    {
+      "label": "category-movie-v028",
+      "source_name": "volume-probe.wav",
+      "percent": 28,
+      "enabled": true,
+      "category": 10
+    },
+    {
+      "label": "category-movie-v100",
+      "source_name": "volume-probe.wav",
+      "percent": 100,
+      "enabled": true,
+      "category": 10
+    }
+  ]
+}

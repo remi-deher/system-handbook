@@ -1,0 +1,27 @@
+{
+  "reason": "Resolve history/cross-band recovery exposed by normal-level tone sequences",
+  "trials": [
+    {
+      "label": "deep-recovery-v028",
+      "percent": 28,
+      "enabled": true
+    },
+    {
+      "label": "deep-recovery-v100",
+      "percent": 100,
+      "enabled": true
+    },
+    {
+      "label": "deep-recovery-off-v028",
+      "percent": 28,
+      "enabled": false
+    },
+    {
+      "label": "deep-recovery-native-v100",
+      "percent": 100,
+      "enabled": true,
+      "category": 0
+    }
+  ],
+  "source": "reference/recovery-suite.wav"
+}
