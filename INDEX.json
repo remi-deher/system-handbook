@@ -5233,6 +5233,30 @@
       "tags": []
     },
     {
+      "path": "OUTILS/GIT/AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Outils Git",
+      "summary": "Lire `../../AGENTS.md`, `../AGENTS.md` et `README.md`.",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/GIT/README.md",
+      "kind": "guide",
+      "title": "Outils Git",
+      "summary": "Outils Git réutilisables dans plusieurs portées du dépôt.",
+      "tags": []
+    },
+    {
+      "path": "OUTILS/GIT/nettoyer-branches.md",
+      "kind": "tool",
+      "title": "Nettoyer les branches locales validées",
+      "summary": "script bash qui supprime les branches locales (et leurs worktrees) dont les commits sont déjà dans une pull request fusionnée ou dans la branche par défaut, en conservant tout ce qui n'est pas publié.",
+      "status": "testé (dépôt jetable avec worktree ; simulation sur ce dépôt). La suppression réelle n'a pas été lancée sur le dépôt de travail",
+      "date": "2026-11-05",
+      "scope_note": "outil commun, Linux, bash",
+      "tags": []
+    },
+    {
       "path": "OUTILS/README.md",
       "kind": "guide",
       "title": "Outils communs",

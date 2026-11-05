@@ -21,6 +21,7 @@ Lire d'abord AGENTS.md, puis les 00-AGENTS.md de la branche concernée. L'index 
 
 - [Chiffrer et récupérer — Linux / Bash](https://raw.githubusercontent.com/remi-deher/system-handbook/main/OUTILS/CHIFFREMENT/linux.md): Commandes Bash pour chiffrer un fichier ou un dossier avec age et tar vers un objet à nom opaque, puis le déchiffrer en retrouvant les noms d'origine.
 - [Chiffrer et récupérer — Windows / PowerShell](https://raw.githubusercontent.com/remi-deher/system-handbook/main/OUTILS/CHIFFREMENT/windows.md): Commandes PowerShell 5.1 et 7 pour chiffrer et déchiffrer avec age.exe et tar.exe sous Windows natif, avec les limites observées (noms japonais, ordre des tar.exe).
+- [Nettoyer les branches locales validées](https://raw.githubusercontent.com/remi-deher/system-handbook/main/OUTILS/GIT/nettoyer-branches.md): script bash qui supprime les branches locales (et leurs worktrees) dont les commits sont déjà dans une pull request fusionnée ou dans la branche par défaut, en conservant tout ce qui n'est pas publié.
 
 ## Portées
 
