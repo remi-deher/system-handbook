@@ -2439,6 +2439,69 @@
       ]
     },
     {
+      "path": "OS/Linux/arch/ryoku/07-RESOLUTION/AUTHENTIFICATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Authentification — Résolutions Ryoku",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "07-RESOLUTION",
+      "category": "AUTHENTIFICATION",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "resolution",
+        "authentification"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/07-RESOLUTION/AUTHENTIFICATION/README.md",
+      "kind": "guide",
+      "title": "Authentification — Résolutions Ryoku",
+      "summary": "Écran de connexion, saisie du mot de passe, PAM et empreinte sous Ryoku.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "07-RESOLUTION",
+      "category": "AUTHENTIFICATION",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "resolution",
+        "authentification"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/07-RESOLUTION/AUTHENTIFICATION/greeter-clavier-qwerty.md",
+      "kind": "fiche",
+      "title": "Écran de connexion Ryoku en QWERTY au lieu d'AZERTY",
+      "summary": "l'écran de connexion (greeter weston de SDDM) tape en QWERTY alors que le système est en `fr` ; ajouter `keymap_layout` à la section `[keyboard]` générée par `ryoku-greeter` règle le problème.",
+      "status": "résolu (confirmé par l'utilisateur, défaut reproduit avec l'ancien fichier) ; la cause exacte dans weston reste une hypothèse",
+      "date": "2026-11-05",
+      "scope_note": "Ryoku, paquet `ryoku-desktop` ; indépendant du compositeur de session",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "07-RESOLUTION",
+      "category": "AUTHENTIFICATION",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "resolution",
+        "authentification"
+      ]
+    },
+    {
       "path": "OS/Linux/arch/ryoku/07-RESOLUTION/LANCEUR/00-AGENTS.md",
       "kind": "guide",
       "title": "Instructions pour les IA — Lanceur d'applications — Ryoku",
