@@ -36,7 +36,7 @@ Les campagnes suivantes utilisent le Python local de la première (`../Mesures-W
 
 ### Prérequis
 
-1. Sous Windows, lancer `bootstrap-tools.ps1` dans le dossier `Mesures-Windows-WASAPI` : il recrée un Python 3.13.9 embarqué local, sans toucher au Python du système. Les dépendances sont dans `requirements-lock.txt` ; `pyloudnorm` (sonie BS.1770, utilisé par `prepare_sources.py` et le protocole approfondi) n'y figure pas et s'installe à part.
+1. Sous Windows, lancer `bootstrap-tools.ps1` dans le dossier `Mesures-Windows-WASAPI` : il recrée un Python 3.13.9 embarqué local, sans toucher au Python du système. Les dépendances sont dans `requirements-lock.txt`, dont `pyloudnorm==0.2.0` (sonie BS.1770, utilisé par `prepare_sources.py`, `analyze.py` et le protocole approfondi) : la version vient du Python embarqué des campagnes d'origine.
 2. Prévoir ffmpeg pour la contre-vérification de sonie du profil approfondi, et des extraits musicaux FLAC pour `prepare_sources.py` (6 extraits ont été utilisés : instrumental, musique 96 kHz, chanson 24 bits, ultra 192 kHz, voix, jeu de test).
 3. Relever l'identifiant du périphérique de rendu Realtek et l'état initial de Waves avant toute modification, et mettre la sortie physique en muet pendant les captures. Chaque script restaure ensuite volume, mute et réglages dans un bloc `finally`.
 
