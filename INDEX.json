@@ -353,6 +353,27 @@
       ]
     },
     {
+      "path": "OS/Linux/arch/02-SYSTEME/MACHINES/portable-dell/03-CONFIGURATION/easyeffects-modele-waves-on.md",
+      "kind": "fiche",
+      "title": "EasyEffects : modèle « Waves ON » des haut-parleurs du Dell Latitude 7440",
+      "summary": "deux presets de sortie EasyEffects qui approchent le traitement audio Windows (Waves ON) des haut-parleurs intégrés, ajustés sur des mesures musicales ; à importer dans EasyEffects, en commençant par la variante -6 dB.",
+      "status": "proposé (modèle expérimental, rendu sonore non validé par écoute A/B)",
+      "date": "2026-11-05",
+      "scope_note": "Arch Linux, machine Dell Latitude 7440, EasyEffects ; sortie « Haut-parleurs » intégrée",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "02-SYSTEME",
+      "category": "MACHINES/portable-dell/03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "arch",
+        "systeme",
+        "machines",
+        "portable-dell",
+        "03-configuration"
+      ]
+    },
+    {
       "path": "OS/Linux/arch/02-SYSTEME/MACHINES/portable-dell/04-LOGICIEL/00-AGENTS.md",
       "kind": "guide",
       "title": "Instructions pour les IA — Logiciels — Portable Dell sous Arch",
