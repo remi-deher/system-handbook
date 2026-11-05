@@ -709,6 +709,404 @@
       ]
     },
     {
+      "path": "OS/Linux/arch/04-LOGICIEL/claude-code/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Claude Code sous Arch",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "claude-code",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "claude-code"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/claude-code/01-INSTALLATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Installation — Claude Code sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "claude-code/01-INSTALLATION",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "claude-code",
+        "01-installation"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/claude-code/01-INSTALLATION/README.md",
+      "kind": "guide",
+      "title": "Installation — Claude Code sous Arch",
+      "summary": "Installer, reconstruire et migrer ce contexte.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "claude-code/01-INSTALLATION",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "claude-code",
+        "01-installation"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/claude-code/02-SYSTEME/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Système — Claude Code sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "claude-code/02-SYSTEME",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "claude-code",
+        "02-systeme"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/claude-code/02-SYSTEME/README.md",
+      "kind": "guide",
+      "title": "Système — Claude Code sous Arch",
+      "summary": "Fonctionnement, services, matériel et réglages système.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "claude-code/02-SYSTEME",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "claude-code",
+        "02-systeme"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/claude-code/02-SYSTEME/service-systemd-remote-control.md",
+      "kind": "fiche",
+      "title": "Claude Code en service systemd avec Remote Control",
+      "summary": "un service systemd utilisateur lance `claude remote-control` au démarrage, ce qui garde une session Claude Code accessible depuis le téléphone ou claude.ai/code et la reprend après un redémarrage du service.",
+      "status": "testé (confirmé par l'utilisateur : session visible et synchronisée des deux côtés, reprise après redémarrage du service)",
+      "date": "2026-11-05",
+      "scope_note": "Arch Linux, Claude Code (CLI), systemd en mode utilisateur",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "claude-code/02-SYSTEME",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "claude-code",
+        "02-systeme"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/claude-code/03-CONFIGURATION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Configuration — Claude Code sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "claude-code/03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "claude-code",
+        "03-configuration"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/claude-code/03-CONFIGURATION/README.md",
+      "kind": "guide",
+      "title": "Configuration — Claude Code sous Arch",
+      "summary": "Configurations de référence et adaptations sélectionnées ; chiffrer les données sensibles.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "claude-code/03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "claude-code",
+        "03-configuration"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/claude-code/04-LOGICIEL/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Logiciels — Claude Code sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "claude-code/04-LOGICIEL",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "claude-code",
+        "04-logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/claude-code/04-LOGICIEL/README.md",
+      "kind": "guide",
+      "title": "Logiciels — Claude Code sous Arch",
+      "summary": "Documentation et particularités par application.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "claude-code/04-LOGICIEL",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "claude-code",
+        "04-logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/claude-code/05-SCRIPT/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Scripts — Claude Code sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "claude-code/05-SCRIPT",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "claude-code",
+        "05-script"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/claude-code/05-SCRIPT/README.md",
+      "kind": "guide",
+      "title": "Scripts — Claude Code sous Arch",
+      "summary": "Outils exécutables documentés, avec leurs dépendances et environnements testés.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "claude-code/05-SCRIPT",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "claude-code",
+        "05-script"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/claude-code/05-SCRIPT/setup-claude-remote-control.md",
+      "kind": "fiche",
+      "title": "setup-claude-remote-control : installer le service Remote Control",
+      "summary": "script bash idempotent qui crée et active le service systemd utilisateur `claude-remote-control` ; sans chemin ni nom de machine en dur.",
+      "status": "testé (exécuté plusieurs fois, relance sans effet de bord)",
+      "date": "2026-11-05",
+      "scope_note": "Arch Linux et distributions avec systemd, Claude Code CLI",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "claude-code/05-SCRIPT",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "claude-code",
+        "05-script"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/claude-code/06-MAINTENANCE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Maintenance — Claude Code sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "claude-code/06-MAINTENANCE",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "claude-code",
+        "06-maintenance"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/claude-code/06-MAINTENANCE/README.md",
+      "kind": "guide",
+      "title": "Maintenance — Claude Code sous Arch",
+      "summary": "Mises à jour, nettoyage, contrôles et opérations régulières.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "claude-code/06-MAINTENANCE",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "claude-code",
+        "06-maintenance"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/claude-code/07-RESOLUTION/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Résolutions — Claude Code sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "claude-code/07-RESOLUTION",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "claude-code",
+        "07-resolution"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/claude-code/07-RESOLUTION/README.md",
+      "kind": "guide",
+      "title": "Résolutions — Claude Code sous Arch",
+      "summary": "Problèmes, diagnostics et solutions, regroupés par catégorie.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "claude-code/07-RESOLUTION",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "claude-code",
+        "07-resolution"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/claude-code/07-RESOLUTION/remote-control-session-introuvable.md",
+      "kind": "fiche",
+      "title": "Remote Control : session introuvable, sans réponse ou service bloqué",
+      "summary": "liste des pièges rencontrés avec `claude remote-control` en service (session absente de l'application, message sans réponse, erreur « already served », service actif mais mort) et leur cause.",
+      "status": "résolu (confirmé par l'utilisateur) ; certaines causes restent des hypothèses signalées comme telles",
+      "date": "2026-11-05",
+      "scope_note": "Claude Code CLI sur Linux avec le service de la fiche service systemd Remote Control",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "claude-code/07-RESOLUTION",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "claude-code",
+        "07-resolution"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/claude-code/08-SAUVEGARDE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Sauvegarde — Claude Code sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "claude-code/08-SAUVEGARDE",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "claude-code",
+        "08-sauvegarde"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/claude-code/08-SAUVEGARDE/README.md",
+      "kind": "guide",
+      "title": "Sauvegarde — Claude Code sous Arch",
+      "summary": "Actions de sauvegarde, archivage, rétention et restauration.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "claude-code/08-SAUVEGARDE",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "claude-code",
+        "08-sauvegarde"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/claude-code/09-NOTE/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Notes — Claude Code sous Arch",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "claude-code/09-NOTE",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "claude-code",
+        "09-note"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/claude-code/09-NOTE/README.md",
+      "kind": "guide",
+      "title": "Notes — Claude Code sous Arch",
+      "summary": "Connaissances, explications et observations utiles.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "claude-code/09-NOTE",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "claude-code",
+        "09-note"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/04-LOGICIEL/claude-code/README.md",
+      "kind": "scope",
+      "title": "Claude Code sous Arch",
+      "summary": "Documentation Claude Code dans la portée Arch ; préciser les versions réellement testées.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "claude-code",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "claude-code"
+      ]
+    },
+    {
       "path": "OS/Linux/arch/04-LOGICIEL/firefox/00-AGENTS.md",
       "kind": "guide",
       "title": "Instructions pour les IA — Firefox sous Arch",
