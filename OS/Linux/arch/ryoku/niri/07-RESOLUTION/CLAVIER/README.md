@@ -7,6 +7,8 @@ Catégorie des résolutions du clavier, de la disposition et des raccourcis. Une
 - [raccourcis-azerty.md](raccourcis-azerty.md)
 - [azerty-niri-user.kdl](azerty-niri-user.kdl)
 - [ryoku-capture-azerty.patch](ryoku-capture-azerty.patch)
+- [1password-acces-rapide.md](1password-acces-rapide.md)
+- [acces-rapide-1p.sh](acces-rapide-1p.sh)
 
 Voir les [instructions IA](00-AGENTS.md) et [l’index parent](../README.md).
 
