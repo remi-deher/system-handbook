@@ -1,8 +1,8 @@
 # Remote Control : session introuvable, sans réponse ou service bloqué
 
 - Résumé : liste des pièges rencontrés avec `claude remote-control` en service (session absente de l'application ou de `/resume`, message sans réponse, erreur « already served », service actif mais mort) et leur cause.
-- Statut : résolu (confirmé par l'utilisateur) ; certaines causes restent des hypothèses signalées comme telles.
-- Date : 2026-11-05.
+- Statut : résolu en partie (confirmé par l'utilisateur) ; certaines causes restent des hypothèses signalées comme telles. Le service a finalement été désactivé le 2026-11-06, voir la fiche de fonctionnement.
+- Date : 2026-11-06.
 - Portée : Claude Code CLI sur Linux avec le service de la fiche [service systemd Remote Control](../02-SYSTEME/service-systemd-remote-control.md).
 - Environnements testés : Claude Code 2.1.318 sous Arch Linux.
 - Prérequis et exclusions : service installé et connecté ; ne couvre pas les problèmes d'authentification Claude.
@@ -20,6 +20,10 @@ Symptômes : la session créée depuis le téléphone n'apparaît pas, ou appara
 - **`--continue` inutilisable ici** : incompatible avec `--no-create-session-in-dir`, et il se rattache à la dernière session enregistrée (supprimée dans notre cas), qui échoue.
 - **Anciennes sessions** : un arrêt du service archive ses sessions ; les désarchiver dans l'application et leur envoyer un message pour qu'elles reviennent.
 - **Session créée depuis claude.ai ou le téléphone absente de `/resume` et du tableau de bord** : elle est bien enregistrée sur la machine mais Claude Code la masque du sélecteur ; ce n'est pas propre à Linux. Voir [Sessions Remote Control absentes de `/resume`](../../../../../../OUTILS/CLAUDE-CODE/sessions-masquees-resume.md) pour la cause et la reprise par identifiant.
+- **Conversations « perdues » alors que les transcripts existent** : vérifier d'abord `ls ~/.claude/projects/<dossier>/*.jsonl`. Dans nos essais, aucun transcript n'avait disparu : les conversations étaient masquées de `/resume` (sessions du service) ou archivées côté Claude après un redémarrage du service (voir la fiche de fonctionnement, « Limites constatées »).
+- **Conversation web « Remote Control déconnecté »** : le processus `claude --print --sdk-url …` qui la servait a été terminé. La reprise locale (`claude --bg --resume <IDENTIFIANT>`, `claude attach <ID_COURT>`) fonctionne mais ne la rattache pas ; activer Remote Control sur la session reprise crée une nouvelle conversation web liée au même transcript.
+- **Message envoyé depuis la CLI absent de claude.ai** : la session locale reprise n'est reliée à aucune conversation web tant que Remote Control n'y est pas activé.
+- **Vue agents (`claude agents`, flèche gauche)** : elle liste les sessions actives, pas l'historique ; voir [la fiche outils](../../../../../../OUTILS/CLAUDE-CODE/vue-agents-sessions-actives.md).
 
 Pour voir ce que le serveur reçoit, ajouter temporairement `--debug-file <chemin>` à la commande : le journal contient le contenu des conversations. Le supprimer ensuite.
 

@@ -4,7 +4,7 @@ Fonctionnement, services, matériel et réglages système. Portée : Claude Code
 
 ## Où chercher
 
-- [Service systemd Remote Control](service-systemd-remote-control.md) : Claude Code en arrière-plan, reprenable depuis le téléphone.
+- [Service systemd Remote Control](service-systemd-remote-control.md) : Claude Code en arrière-plan, reprenable depuis le téléphone ; service finalement désactivé, limites constatées dans la fiche.
 
 Ajouter ici les futures fiches utiles et les référencer dans cet index.
 

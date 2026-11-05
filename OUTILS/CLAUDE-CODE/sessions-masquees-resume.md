@@ -2,7 +2,7 @@
 
 - Résumé : les sessions créées depuis claude.ai ou le téléphone dans un environnement Remote Control sont enregistrées sur la machine mais masquées de `/resume` et du tableau de bord ; on les reprend avec `claude --resume <IDENTIFIANT>`.
 - Statut : testé sous Linux (reprise par identifiant confirmée par l'utilisateur) ; la cause est déduite, pas lue à l'endroit de l'appel.
-- Date : 2026-11-05.
+- Date : 2026-11-06.
 - Portée : outil commun, Claude Code CLI, tous systèmes (le comportement ne dépend pas de l'OS).
 - Environnements testés : Claude Code 2.1.318 sous Arch Linux. Windows et macOS : non testés.
 - Prérequis et exclusions : environnement lancé avec `claude remote-control`. Ne couvre pas le service systemd, voir la [fiche Arch](../../OS/Linux/arch/04-LOGICIEL/claude-code/07-RESOLUTION/remote-control-session-introuvable.md).
@@ -20,6 +20,8 @@ Une session créée depuis claude.ai ou l'application mobile, dans son propre en
 - Les identifiants de ces sessions sont des UUID de version 5 (le troisième groupe commence par `5`), ceux du terminal des UUID de version 4. Cela permet de les repérer.
 
 Ce n'est ni une perte de sauvegarde, ni un défaut de configuration. Aucun réglage pour afficher ces sessions n'a été trouvé.
+
+Constat du 2026-11-06 : un transcript ne disparaît pas parce qu'il est masqué. Sur un poste réel, 32 transcripts étaient présents dans un dossier de projet, dont une dizaine d'UUID de version 5 (sessions du service ou de claude.ai), toutes absentes ou difficiles à retrouver dans `/resume`. Les sessions du terminal (`cli`, UUID de version 4) restaient dans `/resume`, mais leur affichage au lancement dépend aussi de la vue agents, voir [la fiche vue agents](vue-agents-sessions-actives.md).
 
 ## Procédure ou utilisation
 
