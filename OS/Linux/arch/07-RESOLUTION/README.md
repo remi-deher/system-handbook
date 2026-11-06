@@ -5,6 +5,7 @@ Problèmes, diagnostics et solutions, regroupés par catégorie. Portée : Arch.
 ## Où chercher
 
 - [AUTHENTIFICATION/](AUTHENTIFICATION/README.md) : PAM, polkit, sudo, empreinte.
+- [LOGICIEL/](LOGICIEL/README.md) : problèmes d'affichage ou de fonctionnement des logiciels.
 
 Ajouter ici les futures catégories et les référencer dans cet index.
 

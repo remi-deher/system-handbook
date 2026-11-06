@@ -2242,6 +2242,57 @@
       ]
     },
     {
+      "path": "OS/Linux/arch/07-RESOLUTION/LOGICIEL/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Résolutions — Logiciels — Arch",
+      "summary": "Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "07-RESOLUTION",
+      "category": "LOGICIEL",
+      "tags": [
+        "linux",
+        "arch",
+        "resolution",
+        "logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/07-RESOLUTION/LOGICIEL/README.md",
+      "kind": "guide",
+      "title": "Logiciels — Résolutions Arch",
+      "summary": "Problèmes d'affichage ou de fonctionnement des logiciels sous Arch.",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "07-RESOLUTION",
+      "category": "LOGICIEL",
+      "tags": [
+        "linux",
+        "arch",
+        "resolution",
+        "logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/07-RESOLUTION/LOGICIEL/plex-desktop-carres-blancs-defilement.md",
+      "kind": "fiche",
+      "title": "Plex Desktop : carrés blancs pendant le défilement",
+      "summary": "Plex Desktop Flatpak peut afficher des carrés blancs sur l'interface pendant le défilement sous Linux ; forcer le backend Qt Quick sur OpenGL a supprimé le problème sur cette machine.",
+      "status": "résolu (confirmé par l'utilisateur)",
+      "date": "2026-11-06",
+      "scope_note": "Arch Linux, client Plex Desktop Flatpak `tv.plex.PlexDesktop`",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "07-RESOLUTION",
+      "category": "LOGICIEL",
+      "tags": [
+        "linux",
+        "arch",
+        "resolution",
+        "logiciel"
+      ]
+    },
+    {
       "path": "OS/Linux/arch/07-RESOLUTION/README.md",
       "kind": "guide",
       "title": "Résolutions — Arch",
