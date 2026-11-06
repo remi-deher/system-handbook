@@ -2901,6 +2901,49 @@
       ]
     },
     {
+      "path": "OS/Linux/arch/ryoku/05-SCRIPT/AUDIO/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Audio — Ryoku",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "05-SCRIPT",
+      "category": "AUDIO",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "script",
+        "audio"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/05-SCRIPT/AUDIO/README.md",
+      "kind": "guide",
+      "title": "Audio — Ryoku",
+      "summary": "installateur pour retrouver le trajet audio du Dell Latitude 7440 : retask HDA `0x14`, filtres WirePlumber pour les haut-parleurs et les AirPods, volume des touches lié au PCM interne, et base ALSA sauvegardée.",
+      "status": "script rédigé depuis la configuration du Latitude 7440 de référence ; il n'a pas encore été exécuté ni validé sur une installation propre",
+      "date": "2026-11-06",
+      "scope_note": "Arch Linux, Ryoku, PipeWire, WirePlumber et Niri",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "05-SCRIPT",
+      "category": "AUDIO",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "script",
+        "audio"
+      ]
+    },
+    {
       "path": "OS/Linux/arch/ryoku/05-SCRIPT/PLUGINS/00-AGENTS.md",
       "kind": "guide",
       "title": "Instructions pour les IA — Plugins — Ryoku",

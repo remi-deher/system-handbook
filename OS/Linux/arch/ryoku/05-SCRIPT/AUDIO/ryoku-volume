@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+if (($# == 0)); then
+	set -- up
+fi
+exec ryoku-audio-output "$@"

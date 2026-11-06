@@ -1,0 +1,311 @@
+# Generated from the EasyEffects presets present on 2026-11-06.
+# Uses WirePlumber smart filters to attach each processing graph to its physical sink;
+# no effects sink is the system default. The source EasyEffects presets remain untouched.
+wireplumber.profiles = {
+  main = {
+    filter.sink.ryoku-speakers-smartfx = required
+    filter.sink.ryoku-airpods-smartfx = required
+  }
+}
+wireplumber.components = [
+
+  {
+    name = libpipewire-module-filter-chain, type = pw-module-client
+    arguments = {
+      node.name = "ryoku-speakers-smartfx"
+      node.description = "Traitement interne automatique — haut-parleurs"
+      media.name = "Traitement interne automatique — haut-parleurs"
+      filter.graph = {
+        nodes = [
+          { type = builtin name = eq_L_band0 label = bq_peaking control = { "Freq" = 50.0 "Q" = 2.0 "Gain" = -6.26 } }
+          { type = builtin name = eq_L_band1 label = bq_peaking control = { "Freq" = 70.0 "Q" = 2.0 "Gain" = -0.14 } }
+          { type = builtin name = eq_L_band2 label = bq_peaking control = { "Freq" = 90.0 "Q" = 2.0 "Gain" = 5.17 } }
+          { type = builtin name = eq_L_band3 label = bq_peaking control = { "Freq" = 110.0 "Q" = 2.0 "Gain" = 8.48 } }
+          { type = builtin name = eq_L_band4 label = bq_peaking control = { "Freq" = 135.0 "Q" = 2.0 "Gain" = 9.78 } }
+          { type = builtin name = eq_L_band5 label = bq_peaking control = { "Freq" = 160.0 "Q" = 2.0 "Gain" = 9.76 } }
+          { type = builtin name = eq_L_band6 label = bq_peaking control = { "Freq" = 190.0 "Q" = 2.0 "Gain" = 8.4 } }
+          { type = builtin name = eq_L_band7 label = bq_peaking control = { "Freq" = 225.0 "Q" = 2.0 "Gain" = 5.16 } }
+          { type = builtin name = eq_L_band8 label = bq_peaking control = { "Freq" = 270.0 "Q" = 2.0 "Gain" = 0.99 } }
+          { type = builtin name = eq_L_band9 label = bq_peaking control = { "Freq" = 330.0 "Q" = 2.0 "Gain" = -1.97 } }
+          { type = builtin name = eq_L_band10 label = bq_peaking control = { "Freq" = 450.0 "Q" = 1.2 "Gain" = -2.31 } }
+          { type = builtin name = eq_L_band11 label = bq_peaking control = { "Freq" = 630.0 "Q" = 1.2 "Gain" = -0.82 } }
+          { type = builtin name = eq_L_band12 label = bq_peaking control = { "Freq" = 900.0 "Q" = 1.2 "Gain" = 0.45 } }
+          { type = builtin name = eq_L_band13 label = bq_peaking control = { "Freq" = 1300.0 "Q" = 1.2 "Gain" = 1.37 } }
+          { type = builtin name = eq_L_band14 label = bq_peaking control = { "Freq" = 2000.0 "Q" = 1.2 "Gain" = 1.92 } }
+          { type = builtin name = eq_L_band15 label = bq_peaking control = { "Freq" = 3000.0 "Q" = 1.2 "Gain" = 3.41 } }
+          { type = builtin name = eq_L_band16 label = bq_peaking control = { "Freq" = 4500.0 "Q" = 1.2 "Gain" = 6.37 } }
+          { type = builtin name = eq_L_band17 label = bq_peaking control = { "Freq" = 6500.0 "Q" = 1.2 "Gain" = 5.73 } }
+          { type = builtin name = eq_L_band18 label = bq_peaking control = { "Freq" = 9500.0 "Q" = 1.2 "Gain" = 4.63 } }
+          { type = builtin name = eq_L_band19 label = bq_peaking control = { "Freq" = 14000.0 "Q" = 1.2 "Gain" = 8.17 } }
+          { type = builtin name = eq_R_band0 label = bq_peaking control = { "Freq" = 50.0 "Q" = 2.0 "Gain" = -23.11 } }
+          { type = builtin name = eq_R_band1 label = bq_peaking control = { "Freq" = 70.0 "Q" = 2.0 "Gain" = -14.24 } }
+          { type = builtin name = eq_R_band2 label = bq_peaking control = { "Freq" = 90.0 "Q" = 2.0 "Gain" = -5.65 } }
+          { type = builtin name = eq_R_band3 label = bq_peaking control = { "Freq" = 110.0 "Q" = 2.0 "Gain" = 0.2 } }
+          { type = builtin name = eq_R_band4 label = bq_peaking control = { "Freq" = 135.0 "Q" = 2.0 "Gain" = 2.86 } }
+          { type = builtin name = eq_R_band5 label = bq_peaking control = { "Freq" = 160.0 "Q" = 2.0 "Gain" = 3.66 } }
+          { type = builtin name = eq_R_band6 label = bq_peaking control = { "Freq" = 190.0 "Q" = 2.0 "Gain" = 2.13 } }
+          { type = builtin name = eq_R_band7 label = bq_peaking control = { "Freq" = 225.0 "Q" = 2.0 "Gain" = -0.29 } }
+          { type = builtin name = eq_R_band8 label = bq_peaking control = { "Freq" = 270.0 "Q" = 2.0 "Gain" = -1.82 } }
+          { type = builtin name = eq_R_band9 label = bq_peaking control = { "Freq" = 330.0 "Q" = 2.0 "Gain" = -1.89 } }
+          { type = builtin name = eq_R_band10 label = bq_peaking control = { "Freq" = 450.0 "Q" = 1.2 "Gain" = -0.98 } }
+          { type = builtin name = eq_R_band11 label = bq_peaking control = { "Freq" = 630.0 "Q" = 1.2 "Gain" = 0.5 } }
+          { type = builtin name = eq_R_band12 label = bq_peaking control = { "Freq" = 900.0 "Q" = 1.2 "Gain" = 2.57 } }
+          { type = builtin name = eq_R_band13 label = bq_peaking control = { "Freq" = 1300.0 "Q" = 1.2 "Gain" = 4.93 } }
+          { type = builtin name = eq_R_band14 label = bq_peaking control = { "Freq" = 2000.0 "Q" = 1.2 "Gain" = 6.08 } }
+          { type = builtin name = eq_R_band15 label = bq_peaking control = { "Freq" = 3000.0 "Q" = 1.2 "Gain" = 6.31 } }
+          { type = builtin name = eq_R_band16 label = bq_peaking control = { "Freq" = 4500.0 "Q" = 1.2 "Gain" = 5.46 } }
+          { type = builtin name = eq_R_band17 label = bq_peaking control = { "Freq" = 6500.0 "Q" = 1.2 "Gain" = 2.81 } }
+          { type = builtin name = eq_R_band18 label = bq_peaking control = { "Freq" = 9500.0 "Q" = 1.2 "Gain" = 2.47 } }
+          { type = builtin name = eq_R_band19 label = bq_peaking control = { "Freq" = 14000.0 "Q" = 1.2 "Gain" = 10.39 } }
+          { type = lv2 name = mbc plugin = "http://lsp-plug.in/plugins/lv2/mb_compressor_stereo"
+        control = {
+          "enabled" = 1
+          "mode" = 1
+          "g_in" = 1.0
+          "g_out" = 1.0
+          "g_dry" = 0
+          "g_wet" = 1
+          "drywet" = 100
+          "envb" = 0
+          "ssplit" = 0
+          "cbe_1" = 1
+          "sf_1" = 120.0
+          "cbe_2" = 1
+          "sf_2" = 500.0
+          "cbe_3" = 1
+          "sf_3" = 2000.0
+          "cbe_4" = 1
+          "sf_4" = 6000.0
+          "cbe_5" = 0
+          "cbe_6" = 0
+          "cbe_7" = 0
+          "ce_0" = 1
+          "cm_0" = 0
+          "al_0" = 0.11614486138403429
+          "at_0" = 20.0
+          "rrl_0" = 9.988493699365037e-05
+          "rt_0" = 200.0
+          "cr_0" = 6.49
+          "kn_0" = 0.5011872336272722
+          "mk_0" = 1.0
+          "sce_0" = 0
+          "scm_0" = 1
+          "scs_0" = 0
+          "scr_0" = 10.0
+          "ce_1" = 1
+          "cm_1" = 0
+          "al_1" = 0.25409727055493053
+          "at_1" = 20.0
+          "rrl_1" = 9.988493699365037e-05
+          "rt_1" = 200.0
+          "cr_1" = 8.0
+          "kn_1" = 0.5011872336272722
+          "mk_1" = 1.0
+          "sce_1" = 0
+          "scm_1" = 1
+          "scs_1" = 0
+          "scr_1" = 10.0
+          "ce_2" = 1
+          "cm_2" = 0
+          "al_2" = 0.034673685045253165
+          "at_2" = 20.0
+          "rrl_2" = 9.988493699365037e-05
+          "rt_2" = 200.0
+          "cr_2" = 2.78
+          "kn_2" = 0.5011872336272722
+          "mk_2" = 1.0
+          "sce_2" = 0
+          "scm_2" = 1
+          "scs_2" = 0
+          "scr_2" = 10.0
+          "ce_3" = 1
+          "cm_3" = 0
+          "al_3" = 0.05128613839913648
+          "at_3" = 20.0
+          "rrl_3" = 9.988493699365037e-05
+          "rt_3" = 200.0
+          "cr_3" = 8.0
+          "kn_3" = 0.5011872336272722
+          "mk_3" = 1.0
+          "sce_3" = 0
+          "scm_3" = 1
+          "scs_3" = 0
+          "scr_3" = 10.0
+          "ce_4" = 1
+          "cm_4" = 0
+          "al_4" = 0.050699070827470445
+          "at_4" = 20.0
+          "rrl_4" = 9.988493699365037e-05
+          "rt_4" = 200.0
+          "cr_4" = 2.78
+          "kn_4" = 0.5011872336272722
+          "mk_4" = 1.0
+          "sce_4" = 0
+          "scm_4" = 1
+          "scs_4" = 0
+          "scr_4" = 10.0
+          "ce_5" = 0
+          "ce_6" = 0
+          "ce_7" = 0
+        }
+          }
+          { type = lv2 name = limiter plugin = "http://lsp-plug.in/plugins/lv2/limiter_stereo"
+        control = {
+          "enabled" = 1
+          "g_in" = 1.0
+          "g_out" = 1.0
+          "scp" = 1.0
+          "alr" = 0
+          "mode" = 0
+          "th" = 0.9660508789898133
+          "boost" = 0
+          "lk" = 5.0
+          "at" = 5.0
+          "rt" = 5.0
+          "ovs" = 0
+          "dith" = 0
+          "extsc" = 0
+          "slink" = 1
+        }
+          }
+        ]
+        links = [
+          { output = "eq_L_band0:Out" input = "eq_L_band1:In" }
+          { output = "eq_L_band1:Out" input = "eq_L_band2:In" }
+          { output = "eq_L_band2:Out" input = "eq_L_band3:In" }
+          { output = "eq_L_band3:Out" input = "eq_L_band4:In" }
+          { output = "eq_L_band4:Out" input = "eq_L_band5:In" }
+          { output = "eq_L_band5:Out" input = "eq_L_band6:In" }
+          { output = "eq_L_band6:Out" input = "eq_L_band7:In" }
+          { output = "eq_L_band7:Out" input = "eq_L_band8:In" }
+          { output = "eq_L_band8:Out" input = "eq_L_band9:In" }
+          { output = "eq_L_band9:Out" input = "eq_L_band10:In" }
+          { output = "eq_L_band10:Out" input = "eq_L_band11:In" }
+          { output = "eq_L_band11:Out" input = "eq_L_band12:In" }
+          { output = "eq_L_band12:Out" input = "eq_L_band13:In" }
+          { output = "eq_L_band13:Out" input = "eq_L_band14:In" }
+          { output = "eq_L_band14:Out" input = "eq_L_band15:In" }
+          { output = "eq_L_band15:Out" input = "eq_L_band16:In" }
+          { output = "eq_L_band16:Out" input = "eq_L_band17:In" }
+          { output = "eq_L_band17:Out" input = "eq_L_band18:In" }
+          { output = "eq_L_band18:Out" input = "eq_L_band19:In" }
+          { output = "eq_R_band0:Out" input = "eq_R_band1:In" }
+          { output = "eq_R_band1:Out" input = "eq_R_band2:In" }
+          { output = "eq_R_band2:Out" input = "eq_R_band3:In" }
+          { output = "eq_R_band3:Out" input = "eq_R_band4:In" }
+          { output = "eq_R_band4:Out" input = "eq_R_band5:In" }
+          { output = "eq_R_band5:Out" input = "eq_R_band6:In" }
+          { output = "eq_R_band6:Out" input = "eq_R_band7:In" }
+          { output = "eq_R_band7:Out" input = "eq_R_band8:In" }
+          { output = "eq_R_band8:Out" input = "eq_R_band9:In" }
+          { output = "eq_R_band9:Out" input = "eq_R_band10:In" }
+          { output = "eq_R_band10:Out" input = "eq_R_band11:In" }
+          { output = "eq_R_band11:Out" input = "eq_R_band12:In" }
+          { output = "eq_R_band12:Out" input = "eq_R_band13:In" }
+          { output = "eq_R_band13:Out" input = "eq_R_band14:In" }
+          { output = "eq_R_band14:Out" input = "eq_R_band15:In" }
+          { output = "eq_R_band15:Out" input = "eq_R_band16:In" }
+          { output = "eq_R_band16:Out" input = "eq_R_band17:In" }
+          { output = "eq_R_band17:Out" input = "eq_R_band18:In" }
+          { output = "eq_R_band18:Out" input = "eq_R_band19:In" }
+          { output = "eq_L_band19:Out" input = "mbc:in_l" }
+          { output = "eq_R_band19:Out" input = "mbc:in_r" }
+          { output = "mbc:out_l" input = "limiter:in_l" }
+          { output = "mbc:out_r" input = "limiter:in_r" }
+        ]
+        inputs = [ "eq_L_band0:In" "eq_R_band0:In" ]
+        outputs = [ "limiter:out_l" "limiter:out_r" ]
+      }
+      audio.channels = 2
+      audio.position = [ FL FR ]
+      capture.props = {
+        node.name = "effect_input.ryoku-speakers-smartfx"
+        media.class = Audio/Sink
+        filter.smart = true
+        filter.smart.name = "ryoku-speakers-smartfx"
+        filter.smart.target = "{\"node.name\":\"alsa_output.pci-0000_00_1f.3.analog-stereo\"}"
+      }
+      playback.props = {
+        node.name = "effect_output.ryoku-speakers-smartfx"
+        node.passive = true
+        stream.dont-remix = true
+        media.role = "DSP"
+      }
+    }
+    provides = filter.sink.ryoku-speakers-smartfx
+    requires = [ support.client-context ]
+  }
+# BEGIN RYOKU OPTIONAL AIRPODS PROFILE
+  {
+    name = libpipewire-module-filter-chain, type = pw-module-client
+    arguments = {
+      node.name = "ryoku-airpods-smartfx"
+      node.description = "Traitement interne automatique — AirPods"
+      media.name = "Traitement interne automatique — AirPods"
+      filter.graph = {
+        nodes = [
+          { type = builtin name = eq_L_band0 label = bq_peaking control = { "Freq" = 32.0 "Q" = 1.41 "Gain" = 2.9 } }
+          { type = builtin name = eq_L_band1 label = bq_peaking control = { "Freq" = 64.0 "Q" = 1.41 "Gain" = 3.6 } }
+          { type = builtin name = eq_L_band2 label = bq_peaking control = { "Freq" = 125.0 "Q" = 1.41 "Gain" = 3.0 } }
+          { type = builtin name = eq_L_band3 label = bq_peaking control = { "Freq" = 250.0 "Q" = 1.41 "Gain" = 2.0 } }
+          { type = builtin name = eq_L_band4 label = bq_peaking control = { "Freq" = 500.0 "Q" = 1.41 "Gain" = 1.75 } }
+          { type = builtin name = eq_L_band5 label = bq_peaking control = { "Freq" = 1000.0 "Q" = 1.41 "Gain" = 1.6 } }
+          { type = builtin name = eq_L_band6 label = bq_peaking control = { "Freq" = 2000.0 "Q" = 1.41 "Gain" = 2.3 } }
+          { type = builtin name = eq_L_band7 label = bq_peaking control = { "Freq" = 4000.0 "Q" = 1.41 "Gain" = 2.4 } }
+          { type = builtin name = eq_L_band8 label = bq_peaking control = { "Freq" = 8000.0 "Q" = 1.41 "Gain" = 2.2 } }
+          { type = builtin name = eq_L_band9 label = bq_peaking control = { "Freq" = 16000.0 "Q" = 1.41 "Gain" = 3.3 } }
+          { type = builtin name = eq_R_band0 label = bq_peaking control = { "Freq" = 32.0 "Q" = 1.41 "Gain" = 2.9 } }
+          { type = builtin name = eq_R_band1 label = bq_peaking control = { "Freq" = 64.0 "Q" = 1.41 "Gain" = 3.6 } }
+          { type = builtin name = eq_R_band2 label = bq_peaking control = { "Freq" = 125.0 "Q" = 1.41 "Gain" = 3.0 } }
+          { type = builtin name = eq_R_band3 label = bq_peaking control = { "Freq" = 250.0 "Q" = 1.41 "Gain" = 2.0 } }
+          { type = builtin name = eq_R_band4 label = bq_peaking control = { "Freq" = 500.0 "Q" = 1.41 "Gain" = 1.75 } }
+          { type = builtin name = eq_R_band5 label = bq_peaking control = { "Freq" = 1000.0 "Q" = 1.41 "Gain" = 1.6 } }
+          { type = builtin name = eq_R_band6 label = bq_peaking control = { "Freq" = 2000.0 "Q" = 1.41 "Gain" = 2.3 } }
+          { type = builtin name = eq_R_band7 label = bq_peaking control = { "Freq" = 4000.0 "Q" = 1.41 "Gain" = 2.4 } }
+          { type = builtin name = eq_R_band8 label = bq_peaking control = { "Freq" = 8000.0 "Q" = 1.41 "Gain" = 2.2 } }
+          { type = builtin name = eq_R_band9 label = bq_peaking control = { "Freq" = 16000.0 "Q" = 1.41 "Gain" = 3.3 } }
+        ]
+        links = [
+          { output = "eq_L_band0:Out" input = "eq_L_band1:In" }
+          { output = "eq_L_band1:Out" input = "eq_L_band2:In" }
+          { output = "eq_L_band2:Out" input = "eq_L_band3:In" }
+          { output = "eq_L_band3:Out" input = "eq_L_band4:In" }
+          { output = "eq_L_band4:Out" input = "eq_L_band5:In" }
+          { output = "eq_L_band5:Out" input = "eq_L_band6:In" }
+          { output = "eq_L_band6:Out" input = "eq_L_band7:In" }
+          { output = "eq_L_band7:Out" input = "eq_L_band8:In" }
+          { output = "eq_L_band8:Out" input = "eq_L_band9:In" }
+          { output = "eq_R_band0:Out" input = "eq_R_band1:In" }
+          { output = "eq_R_band1:Out" input = "eq_R_band2:In" }
+          { output = "eq_R_band2:Out" input = "eq_R_band3:In" }
+          { output = "eq_R_band3:Out" input = "eq_R_band4:In" }
+          { output = "eq_R_band4:Out" input = "eq_R_band5:In" }
+          { output = "eq_R_band5:Out" input = "eq_R_band6:In" }
+          { output = "eq_R_band6:Out" input = "eq_R_band7:In" }
+          { output = "eq_R_band7:Out" input = "eq_R_band8:In" }
+          { output = "eq_R_band8:Out" input = "eq_R_band9:In" }
+        ]
+        inputs = [ "eq_L_band0:In" "eq_R_band0:In" ]
+        outputs = [ "eq_L_band9:Out" "eq_R_band9:Out" ]
+      }
+      audio.channels = 2
+      audio.position = [ FL FR ]
+      capture.props = {
+        node.name = "effect_input.ryoku-airpods-smartfx"
+        media.class = Audio/Sink
+        filter.smart = true
+        filter.smart.name = "ryoku-airpods-smartfx"
+        filter.smart.target = "{\"node.name\":\"__RYOKU_AIRPODS_SINK__\"}"
+      }
+      playback.props = {
+        node.name = "effect_output.ryoku-airpods-smartfx"
+        node.passive = true
+        stream.dont-remix = true
+        media.role = "DSP"
+      }
+    }
+    provides = filter.sink.ryoku-airpods-smartfx
+    requires = [ support.client-context ]
+  }
+# END RYOKU OPTIONAL AIRPODS PROFILE
+]
