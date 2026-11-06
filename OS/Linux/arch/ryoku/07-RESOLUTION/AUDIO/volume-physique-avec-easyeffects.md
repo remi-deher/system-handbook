@@ -139,6 +139,10 @@ Le helper et son wrapper résident dans `~/.local/bin/`; les raccourcis source s
 
 Pour revenir à l'ancien ciblage, restaurer les fichiers Niri et Quickshell depuis une copie de configuration, puis retirer `~/.local/bin/ryoku-audio-output` et `~/.local/bin/ryoku-volume`. Cela rétablit les raccourcis qui ciblent le sink par défaut et supprime l'affichage OSD matériel.
 
+## Réinstallation du trajet audio
+
+L'installateur documenté dans [Scripts Ryoku — Audio](../../05-SCRIPT/AUDIO/README.md) regroupe les réglages validés pour le Latitude 7440 : packages PipeWire et LV2, filtres WirePlumber pour les haut-parleurs/AirPods, raccourcis PCM, état ALSA `Speaker`/`Master`/`Bass Speaker` et override HDA de la broche `0x14`. Il sauvegarde les fichiers remplacés et laisse le niveau PCM courant inchangé. Le script est rédigé d'après la configuration de cette machine ; sa fiche précise qu'il reste à valider sur une installation vierge.
+
 ## Références
 
 - [Autoload EasyEffects par appareil](../../../../../../OUTILS/EASYEFFECTS/autoload-par-appareil.md) : profils séparés pour AirPods et haut-parleurs.

@@ -1,0 +1,213 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+	echo "Usage: ryoku-audio-output {up|down|mute}" >&2
+	exit 2
+}
+
+resolve_linked_sink() {
+	local output_port="$1"
+	pw-link -l | awk -v port="$output_port" '
+		$0 == port { found=1; next }
+		found && /^[^[:space:]]/ { found=0 }
+		found && /->/ {
+			sub(/^[[:space:]]*[^[:space:]]+[[:space:]]*/, "")
+			sub(/:playback_FL.*$/, "")
+			print
+			exit
+		}'
+}
+
+action="${1:-up}"
+case "$action" in
+	up|down|mute) ;;
+	*) usage ;;
+esac
+
+# The internal ALC289 speaker path has a useful, audible PCM control. Handle
+# its volume keys directly through ALSA so repeated key events do not need to
+# resolve the PipeWire graph or sink ID. Keep the PipeWire path below for
+# virtual outputs and physical sinks other than the internal card and BlueZ.
+if [[ "$action" == up || "$action" == down ]]; then
+	default_sink="$(pactl get-default-sink 2>/dev/null || true)"
+	if [[ "$default_sink" == alsa_output.pci-0000_00_1f.3.* ]]; then
+		card="${RYOKU_PCM_CARD:-PCH}"
+		step="5%+"
+		[[ "$action" == down ]] && step="5%-"
+
+		mixer_output="$(amixer -c "$card" sset PCM "$step")"
+		percent="$(awk -F'[][]' '/Playback/ && $2 ~ /%/ {gsub(/%/, "", $2); print $2; exit}' <<<"$mixer_output")"
+		if [[ ! "$percent" =~ ^[0-9]+$ ]]; then
+			echo "Could not read the updated PCM volume on ALSA card $card" >&2
+			exit 1
+		fi
+
+		# Keep the key action responsive; the on-screen display is not part of
+		# the audio-control path.
+		(
+			muted=false
+			state="$(wpctl get-volume @DEFAULT_AUDIO_SINK@ 2>/dev/null || true)"
+			[[ "$state" == *MUTED* ]] && muted=true
+			qs ipc --config shell call osd showVolume "$percent" "$muted" >/dev/null 2>&1 || true
+		) </dev/null >/dev/null 2>&1 &
+		exit 0
+	fi
+	if [[ "$default_sink" == bluez_output.* ]]; then
+		lim=1
+		cfg="${XDG_CONFIG_HOME:-$HOME/.config}/ryoku/shell.json"
+		if jq -e '.qsbar.audioBoost == true' "$cfg" >/dev/null 2>&1; then
+			lim=1.5
+		fi
+
+		state="$(wpctl get-volume @DEFAULT_AUDIO_SINK@)"
+		if [[ "$action" == up && "$state" == *MUTED* ]]; then
+			wpctl set-mute @DEFAULT_AUDIO_SINK@ 0
+		fi
+		step="5%+"
+		[[ "$action" == down ]] && step="5%-"
+		wpctl set-volume -l "$lim" @DEFAULT_AUDIO_SINK@ "$step"
+
+		state="$(wpctl get-volume @DEFAULT_AUDIO_SINK@)"
+		percent="$(awk '{printf "%d", $2 * 100 + 0.5}' <<<"$state")"
+		muted=false
+		[[ "$state" == *MUTED* ]] && muted=true
+		(
+			qs ipc --config shell call osd showVolume "$percent" "$muted" >/dev/null 2>&1 || true
+		) </dev/null >/dev/null 2>&1 &
+		exit 0
+	fi
+fi
+
+# Use EasyEffects' physical output only when its output pipeline is active.
+# With the native WirePlumber smart filters, the current physical default sink
+# is the output receiving the audio and follows the AirPods/speakers switch.
+sink_name="$(pw-link -l | awk '
+	/^ee_soe_output_level:output_FL$/ { found=1; next }
+	found && /^[^[:space:]]/ { found=0 }
+	found && !printed && /->/ {
+		sub(/^[[:space:]]*[^[:space:]]+[[:space:]]*/, "")
+		sub(/:playback_FL.*$/, "")
+		print
+		printed=1
+	}')"
+
+if [[ -z "$sink_name" ]]; then
+	# In native mode, the default normally names the physical output. If the
+	# user selected a WirePlumber smart-filter input in the output picker,
+	# resolve its output link so volume still targets the physical device.
+	current_default="$(pactl get-default-sink 2>/dev/null || true)"
+	if [[ "$current_default" == effect_input.ryoku-* ]]; then
+		filter_name="${current_default#effect_input.}"
+		sink_name="$(resolve_linked_sink "effect_output.${filter_name}:output_FL")"
+		if [[ -z "$sink_name" ]]; then
+			echo "Could not resolve the physical output linked to $current_default" >&2
+			exit 1
+		fi
+	elif [[ -n "$current_default" && "$current_default" != "easyeffects_sink" ]]; then
+		sink_name="$current_default"
+	else
+		# Retain compatibility if EasyEffects is restarted manually and has
+		# reclaimed the default sink but has not linked its output pipeline yet.
+		cfg_db="${XDG_CONFIG_HOME:-$HOME/.config}/easyeffects/db/easyeffectsrc"
+		sink_name="$(awk -F= '$1 == "outputDevice" { sub(/^[^=]*=/, ""); print; exit }' "$cfg_db" 2>/dev/null || true)"
+		[[ -n "$sink_name" ]] || sink_name="$current_default"
+	fi
+fi
+
+if [[ -z "$sink_name" ]]; then
+	sink_name="$(pactl get-default-sink)"
+fi
+
+sink_id="$(wpctl status -n | awk -v name="$sink_name" '
+	index($0, name) {
+		if (match($0, /[0-9]+[.]/)) id = substr($0, RSTART, RLENGTH - 1)
+	}
+	END { if (id != "") print id }
+')"
+
+if [[ -z "$sink_id" ]]; then
+	echo "Could not find the active audio output: $sink_name" >&2
+	exit 1
+fi
+
+show_volume_osd() {
+	local state percent muted
+	state="$(wpctl get-volume "$sink_id")"
+	percent="$(awk '{printf "%d", $2 * 100 + 0.5}' <<<"$state")"
+	muted=false
+	[[ "$state" == *MUTED* ]] && muted=true
+	qs ipc --config shell call osd showVolume "$percent" "$muted" >/dev/null 2>&1 || true
+}
+
+if [[ "$action" == mute ]]; then
+	wpctl set-mute "$sink_id" toggle
+	show_volume_osd
+	exit 0
+fi
+
+cfg="${XDG_CONFIG_HOME:-$HOME/.config}/ryoku/shell.json"
+lim=1
+if jq -e '.qsbar.audioBoost == true' "$cfg" >/dev/null 2>&1; then
+	lim=1.5
+fi
+
+cur="$(wpctl get-volume "$sink_id" | awk '{printf "%d", $2 * 100 + 0.5}')"
+max="$(awk -v l="$lim" 'BEGIN{printf "%d", l * 100 + 0.5}')"
+
+# Volume-up should also recover a sink muted at zero.
+if [[ "$action" == up ]] && wpctl get-volume "$sink_id" | rg -q 'MUTED'; then
+	wpctl set-mute "$sink_id" 0
+fi
+
+case "$action" in
+up)
+	if [[ "$cur" -eq 65 ]]; then
+		next=67
+	elif [[ "$cur" -eq 67 ]]; then
+		next=70
+	else
+		next=$(((cur / 5) * 5 + 5))
+	fi
+	;;
+down)
+	if [[ "$cur" -eq 70 ]]; then
+		next=67
+	elif [[ "$cur" -eq 67 ]]; then
+		next=65
+	else
+		next=$((((cur + 4) / 5) * 5 - 5))
+	fi
+	;;
+esac
+
+(( next < 0 )) && next=0
+(( next > max )) && next="$max"
+
+# Hardware volume controls have discrete steps. If the requested percentage
+# rounds back to the current value (for example, 35% -> 34%), walk toward the
+# next percentage until PipeWire reports a real change.
+target="$next"
+while :; do
+	wpctl set-volume -l "$lim" "$sink_id" "${target}%"
+	actual="$(wpctl get-volume "$sink_id" | awk '{printf "%d", $2 * 100 + 0.5}')"
+	if [[ "$action" == up && "$actual" -gt "$cur" ]]; then
+		break
+	fi
+	if [[ "$action" == down && "$actual" -lt "$cur" ]]; then
+		break
+	fi
+	if [[ "$action" == up && "$target" -ge "$max" ]]; then
+		break
+	fi
+	if [[ "$action" == down && "$target" -le 0 ]]; then
+		break
+	fi
+	if [[ "$action" == up ]]; then
+		target=$((target + 1))
+	else
+		target=$((target - 1))
+	fi
+done
+
+show_volume_osd
