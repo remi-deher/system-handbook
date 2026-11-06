@@ -4,6 +4,7 @@ Problèmes, diagnostics et solutions, regroupés par catégorie. Portée : Ryoku
 
 ## Où chercher
 
+- [AUDIO/](AUDIO/README.md) : sorties PipeWire, volume matériel et EasyEffects.
 - [AUTHENTIFICATION/](AUTHENTIFICATION/README.md) : écran de connexion, mot de passe.
 - [LANCEUR/](LANCEUR/README.md)
 
