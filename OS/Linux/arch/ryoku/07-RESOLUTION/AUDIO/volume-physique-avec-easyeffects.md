@@ -1,12 +1,12 @@
 # Routage audio natif et volume matériel sous Ryoku
 
-Résumé : WirePlumber choisit automatiquement entre les haut-parleurs et les AirPods, tandis que des smart filters appliquent le profil audio adapté. Le helper Ryoku règle le volume du sink matériel actif, avec ou sans EasyEffects.
+Résumé : WirePlumber choisit automatiquement entre les haut-parleurs et les AirPods. Le helper Ryoku règle le volume du sink matériel actif, avec ou sans EasyEffects. Les smart filters créés pour remplacer EasyEffects sont temporairement désactivés après la découverte d'une conversion incomplète des presets.
 
-- Statut : résolu ; l'utilisateur a confirmé la bascule automatique dans les deux sens et le fonctionnement du bouton de volume avec le routage natif.
+- Statut : à investiguer ; la bascule et le bouton de volume ont été confirmés, mais la conversion des presets a été désactivée après des artefacts sonores.
 - Date : 2026-11-06
 - Portée : Arch Linux, Ryoku sous Niri, PipeWire et EasyEffects ; test réalisé sur un Dell Latitude 7440.
 - Environnements testés : EasyEffects 8.3.2, PipeWire 1.6.10, raccourcis Niri et barre Quickshell Ryoku.
-- Configuration actuelle : EasyEffects reste installé et ses presets sont conservés, mais son démarrage automatique est désactivé. WirePlumber applique les traitements par smart filters, choisit automatiquement le sink physique de sortie et conserve « Audio interne Stéréo analogique » comme source d'entrée par défaut.
+- Configuration actuelle : EasyEffects reste installé et ses presets sont conservés, mais son démarrage automatique est désactivé. Les smart filters WirePlumber sont conservés dans `~/.config/wireplumber/wireplumber.conf.d/80-ryoku-audio-smart-filters.conf.disabled` et ne chargent plus de traitement. WirePlumber garde la sélection des sinks physiques et « Audio interne Stéréo analogique » comme source d'entrée par défaut.
 - Historique : les sections EasyEffects ci-dessous consignent l'ancienne correction du volume en mode sink virtuel ; l'essai natif est devenu la configuration actuelle.
 
 ## Symptôme historique en mode EasyEffects
@@ -57,7 +57,7 @@ Le 2026-11-06, EasyEffects a été arrêté temporairement pour vérifier la sé
 
 La section `Default Configured Devices` conservait une sélection de sortie `easyeffects_sink`, qui empêchait WirePlumber d'élire la sortie par priorité. `wpctl clear-default 0` a effacé la sélection mémorisée de sortie (sans toucher à la source par défaut) ; WirePlumber a alors choisi les AirPods. L'utilisateur a confirmé que la bascule entre AirPods portés et haut-parleurs se fait dans les deux sens. La sélection est automatique selon les sinks disponibles et leur priorité ; les applications dont le flux suit la sortie par défaut suivent ce changement.
 
-Limite observée : lorsque l'utilisateur met ses AirPods, la sortie bascule correctement vers ceux-ci, mais la lecture en cours se met en pause au lieu de continuer sur les écouteurs. La cause n'est pas encore diagnostiquée et aucun correctif n'a été appliqué ; le routage de sortie fonctionne, mais la continuité de lecture reste à examiner.
+Pause à l'insertion : les journaux de LibrePods ont montré qu'il envoie une commande MPRIS `Pause` au lecteur actif lors d'un événement de détection d'oreille. En mode « One », retirer un seul écouteur suffit à déclencher la pause ; le mode « Both » correspond à `PauseWhenBothRemoved` et attend le retrait des deux. Il s'agit de la politique de détection de LibrePods, distincte du routage WirePlumber.
 
 EasyEffects était arrêté pendant cet essai : les fichiers de presets et d'autoload sont restés présents, mais aucun traitement EasyEffects n'était appliqué. Ensuite, des smart filters WirePlumber ont été créés dans `~/.config/wireplumber/wireplumber.conf.d/80-ryoku-audio-smart-filters.conf`, avec une chaîne de traitement propre aux haut-parleurs et une propre aux AirPods. Le sink matériel reste le défaut ; WirePlumber insère le filtre correspondant à sa cible. L'EQ a été transcrit en biquads PipeWire ; le compresseur multibande et le limiteur des haut-parleurs ont été remappés vers des plugins LV2 LSP. Les algorithmes de compresseur/limiteur et les coefficients biquad peuvent différer de ceux d'EasyEffects : le rendu doit être confirmé par écoute. Les presets EasyEffects source restent intacts.
 
@@ -71,7 +71,15 @@ L'utilisateur a ensuite confirmé que le changement de sortie et le bouton de vo
 
 À la demande de l'utilisateur, la source d'entrée par défaut est fixée sur `alsa_input.pci-0000_00_1f.3.analog-stereo`, affichée « Audio interne Stéréo analogique ». Le réglage a été appliqué avec `wpctl set-default` et vérifié dans `wpctl status` et via `pactl get-default-source`. Ce choix d'entrée est mémorisé séparément et ne modifie pas la sélection automatique de la sortie.
 
-Le sélecteur audio peut afficher « Traitement interne automatique — haut-parleurs », « Traitement interne automatique — AirPods » et le sink matériel « Audio interne Stéréo analogique ». Les deux entrées « Traitement interne automatique » sont les smart filters `effect_input.*`, pas des sorties matérielles supplémentaires. Il faut les conserver pour garder les profils audio ; WirePlumber les applique automatiquement. Leur présence dans la liste ne signifie pas qu'elles sont la sortie physique active. Éviter de les choisir manuellement si l'on souhaite laisser WirePlumber décider entre les périphériques. L'utilisateur a confirmé le fonctionnement courant ; le cas de secours du helper après sélection manuelle d'un filtre n'a pas été vérifié séparément.
+Quand les smart filters sont actifs, le sélecteur audio peut afficher « Traitement interne automatique — haut-parleurs » et « Traitement interne automatique — AirPods ». Ce sont les entrées `effect_input.*` des traitements, pas des sorties matérielles. Leur présence ne signifie pas qu'elles sont la sortie physique active. Éviter de les choisir manuellement si l'on souhaite laisser WirePlumber décider entre les périphériques.
+
+## Diagnostic du rendu et désactivation temporaire des filtres
+
+Le 2026-11-06, l'utilisateur a signalé un son grésillant sur les AirPods, puis un rendu étrange aussi sur les haut-parleurs après l'installation des smart filters. Pendant la lecture dans Microsoft Edge, `pw-link -l` a confirmé que le flux passait par `effect_input.ryoku-speakers-smartfx` avant de rejoindre le sink physique.
+
+La comparaison avec les presets EasyEffects a révélé que la conversion vers PipeWire était incomplète : les bandes d'EQ des AirPods correspondaient, mais le pré-gain `-2.5 dB` du preset n'avait pas été transcrit. Pour les haut-parleurs, les deux étages `stereo_tools` n'étaient pas présents et le compresseur multibande et le limiteur avaient été remplacés par des plugins LSP différents. Le preset source des haut-parleurs indique `0 dB` de gain d'entrée ; les différences de traitement restent donc un point important à corriger et valider par écoute.
+
+Les smart filters ont été désactivés en renommant leur fichier de configuration en `.conf.disabled`, puis en redémarrant WirePlumber. Après ce changement, `wpctl status` montrait le sink physique des haut-parleurs par défaut, le micro interne toujours sélectionné et aucun filtre de traitement chargé. Le routage natif reste configuré, mais la bascule après cette désactivation et le retour du rendu normal doivent être confirmés par l'utilisateur. Les AirPods étaient encore connectés en Bluetooth, mais leur profil audio PipeWire était `off` après une erreur de transport Bluetooth ; le son des AirPods n'a donc pas été revalidé.
 
 ## Persistance et retour arrière
 
