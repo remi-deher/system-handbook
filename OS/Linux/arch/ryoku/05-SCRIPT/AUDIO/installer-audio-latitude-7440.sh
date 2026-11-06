@@ -13,6 +13,7 @@ LOCAL_BIN="$HOME/.local/bin"
 AIRPODS_SINK=""
 DRY_RUN=false
 CHANGED_WIREPLUMBER=false
+ALSA_STORED=false
 
 usage() {
 	cat <<'EOF'
@@ -83,6 +84,12 @@ install_file() {
 	if [[ "$target" == "$WIREPLUMBER_DIR/"* ]]; then
 		CHANGED_WIREPLUMBER=true
 	fi
+}
+
+set_mixer_baseline() {
+	amixer -c PCH sset Speaker unmute || return 1
+	amixer -c PCH sset Master 100% unmute || return 1
+	amixer -c PCH sset 'Bass Speaker' 100% unmute || return 1
 }
 
 detect_airpods_sink() {
@@ -252,21 +259,26 @@ install_file "$ASSET_DIR/ryoku-volume" "$LOCAL_BIN/ryoku-volume" 0755
 patch_niri_volume_keys
 
 if [[ "$DRY_RUN" == false ]]; then
-	log "Activation des interrupteurs Speaker et Bass Speaker, Master/Bass Speaker à 100 % ; PCM reste inchangé."
-	amixer -c PCH sset Speaker unmute
-	amixer -c PCH sset Master 100% unmute
-	amixer -c PCH sset 'Bass Speaker' 100% unmute
-	backup_target /var/lib/alsa/asound.state
-	as_root alsactl store PCH
-
 	install_file "$ASSET_DIR/hda-jack-retask.conf" /etc/modprobe.d/hda-jack-retask.conf 0644 true
 	install_file "$ASSET_DIR/hda-jack-retask.fw" /lib/firmware/hda-jack-retask.fw 0644 true
+
+	log "Activation des interrupteurs Speaker et Bass Speaker, Master/Bass Speaker à 100 % ; PCM reste inchangé."
+	if set_mixer_baseline; then
+		backup_target /var/lib/alsa/asound.state
+		as_root alsactl store PCH
+		ALSA_STORED=true
+	else
+		warn "contrôle ALSA absent avant retask ; redémarrez puis relancez le script pour enregistrer Speaker/Master/Bass Speaker."
+	fi
 
 	if [[ "$CHANGED_WIREPLUMBER" == true ]]; then
 		log "Redémarrage de WirePlumber pour charger les profils."
 		systemctl --user restart wireplumber.service || warn "redémarrez manuellement WirePlumber."
 	fi
-	log "Réglages ALSA enregistrés pour la prochaine session. Le retask de la broche 0x14 nécessite un redémarrage du PC."
+	if [[ "$ALSA_STORED" == true ]]; then
+		log "Réglages ALSA enregistrés pour la prochaine session."
+	fi
+	log "Le retask de la broche 0x14 nécessite un redémarrage du PC."
 else
 	log "Simulation : installation des fichiers, ALSA, services et retask non exécutés."
 fi
