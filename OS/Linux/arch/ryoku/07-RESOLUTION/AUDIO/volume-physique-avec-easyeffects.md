@@ -1,9 +1,9 @@
 # Routage audio natif et volume matériel sous Ryoku
 
-Résumé : WirePlumber choisit automatiquement entre les haut-parleurs et les AirPods. Le helper Ryoku règle le volume du sink matériel actif, avec ou sans EasyEffects. Les smart filters WirePlumber issus des presets EasyEffects sont actuellement réactivés ; leur conversion reste à compléter et à valider par écoute.
+Résumé : WirePlumber choisit automatiquement entre les haut-parleurs et les AirPods. Les touches et le widget QSbar affichent le volume PCM des haut-parleurs internes et PipeWire pour les autres sorties. Les smart filters issus des presets EasyEffects restent à compléter et à valider par écoute.
 
-- Statut : routage, filtres WirePlumber, remappage HDA au démarrage et lien de volume PipeWire/ALSA vérifiés le 2026-11-06 ; le retour audible des haut-parleurs supérieurs après retask de `0x14` est confirmé par l'utilisateur. La conversion des presets reste incomplète.
-- Date : 2026-11-06
+- Statut : routage, filtres WirePlumber, remappage HDA au démarrage et lien de volume PipeWire/ALSA vérifiés le 2026-11-06 ; l'indicateur PCM QSbar a été rechargé et confirmé le 2026-11-07. Le retour audible des haut-parleurs supérieurs après retask de `0x14` est confirmé par l'utilisateur. La conversion des presets reste incomplète.
+- Date : 2026-11-07
 - Portée : Arch Linux, Ryoku sous Niri, PipeWire et EasyEffects ; test réalisé sur un Dell Latitude 7440.
 - Environnements testés : EasyEffects 8.3.2, PipeWire 1.6.10, raccourcis Niri et barre Quickshell Ryoku.
 - Configuration actuelle : EasyEffects reste installé et ses presets sont conservés, mais son démarrage automatique est désactivé. Les smart filters WirePlumber sont actifs dans `~/.config/wireplumber/wireplumber.conf.d/80-ryoku-audio-smart-filters.conf` ; une copie `.conf.disabled` est conservée. La règle temporaire `soft-mixer` a été désactivée. Les raccourcis de volume pilotent désormais `PCM` sur la sortie analogique interne PCH ; ils gardent PipeWire pour les autres sorties. WirePlumber garde la sélection des sinks physiques et « Audio interne Stéréo analogique » comme source d'entrée par défaut.
@@ -43,7 +43,13 @@ qs ipc --config shell call osd showVolume <pourcentage> <true-ou-false>
 
 ### Barre QS après rechargement
 
-Lors du rechargement de Quickshell nécessaire à l'OSD, le catalogue intégré de widgets QSbar n'était pas chargé avant la normalisation du layout : l'IPC ne retournait que `ryoku-pods` alors que `shell.json` conservait la disposition complète. Dans `~/.config/quickshell/shell/modules/bar/barstyles/qsbar/core/BarCatalog.qml`, le `DeferredFileView` du catalogue a été remplacé par un `FileView` bloquant le chargement et appelant `_load(text())` dans `onLoaded`. Après le rechargement, la disposition IPC complète est revenue.
+Un essai a remplacé le `DeferredFileView` de `BarCatalog.qml` par un `FileView` bloquant ; il a modifié le rendu de QSbar et a été retiré le 2026-11-07. Le fichier actif est revenu à la version fournie par Ryoku. Si le catalogue est incomplet après un rechargement, réétudier la migration du layout avant de réappliquer ce changement.
+
+### Indicateur de volume QSbar
+
+Depuis le 2026-11-07, le chiffre du widget audio QSbar suit le niveau `PCM` ALSA lorsque le sink par défaut commence par `alsa_output.pci-0000_00_1f.3.`. Le singleton `PcmVolume.qml` relit `PCM` avec `amixer -c PCH sget PCM` chaque seconde, seulement lorsque cette sortie est active ; cette lecture ponctuelle évite de laisser un processus d'écoute ALSA après un rechargement Quickshell. Le nom de carte suit `RYOKU_PCM_CARD` si cette variable est définie, comme le helper des touches. Pour les autres sorties, le widget garde le volume PipeWire. La molette du widget appelle `ryoku-volume` sur la sortie interne ; le panneau de volume ouvert par clic conserve son curseur PipeWire.
+
+Les fichiers de cette adaptation sont `shell/audio/PcmVolume.qml`, `shell/audio/qmldir` et `shell/modules/bar/barstyles/qsbar/modules/AudioWidget.qml`, dans `~/.config/quickshell/` et `~/.config/ryoku/user_edits/quickshell/`. L'installateur audio conserve ces overlays dans `05-SCRIPT/AUDIO/`, les déploie dans `user_edits` et les applique aussi aux fichiers actifs.
 
 ## Validation de l'ancien mode EasyEffects
 
@@ -135,7 +141,7 @@ Les filtres réactivés sont une traduction des presets EasyEffects : ils ne rep
 
 ## Persistance et retour arrière
 
-Le helper et son wrapper résident dans `~/.local/bin/`; les raccourcis source se trouvent dans les deux fichiers Niri indiqués plus haut. Les adaptations OSD et le chargement du catalogue QSbar résident dans `~/.config/quickshell/` et doivent être conservés si le shell est réinstallé ou réinitialisé.
+Le helper et son wrapper résident dans `~/.local/bin/`; les raccourcis source se trouvent dans les deux fichiers Niri indiqués plus haut. Les adaptations OSD et l'indicateur PCM QSbar résident dans `~/.config/quickshell/` et `~/.config/ryoku/user_edits/quickshell/`, et doivent être conservés si le shell est réinstallé ou réinitialisé.
 
 Pour revenir à l'ancien ciblage, restaurer les fichiers Niri et Quickshell depuis une copie de configuration, puis retirer `~/.local/bin/ryoku-audio-output` et `~/.local/bin/ryoku-volume`. Cela rétablit les raccourcis qui ciblent le sink par défaut et supprime l'affichage OSD matériel.
 
