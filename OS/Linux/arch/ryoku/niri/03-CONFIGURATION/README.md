@@ -2,7 +2,9 @@
 
 Configurations de référence et adaptations sélectionnées ; chiffrer les données sensibles. Portée : Niri sous Ryoku. Ce dossier est une rubrique, pas une nouvelle portée.
 
-Le squelette est prêt ; aucune fiche technique propre à ce dossier n’est encore ajoutée.
+## Fiches
+
+- [Rotation automatique de l’écran — Niri](rotation-automatique.md) — rotation par accéléromètre et paires de fenêtres pleine largeur en portrait.
 
 ## Où chercher
 

@@ -3959,6 +3959,29 @@
       ]
     },
     {
+      "path": "OS/Linux/arch/ryoku/niri/03-CONFIGURATION/rotation-automatique.md",
+      "kind": "fiche",
+      "title": "Rotation automatique de l’écran — Niri",
+      "summary": "sous Ryoku avec Niri, `iio-niri` écoute l’orientation fournie par `iio-sensor-proxy` et applique une transformation à l’écran `eDP-1`. En portrait, un compagnon IPC Niri empile les colonnes simples par paires pleine largeur et restaure leurs largeurs en paysage.",
+      "status": "rotation automatique et disposition portrait vérifiées par l’utilisateur",
+      "date": "2026-11-06",
+      "scope_note": "Arch Linux, Ryoku, Niri, portable Dell",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku",
+        "niri"
+      ],
+      "rubric": "03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "niri",
+        "configuration"
+      ]
+    },
+    {
       "path": "OS/Linux/arch/ryoku/niri/04-LOGICIEL/00-AGENTS.md",
       "kind": "guide",
       "title": "Instructions pour les IA — Logiciels — Niri sous Ryoku",
