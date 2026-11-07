@@ -2,7 +2,7 @@
 
 Résumé : WirePlumber choisit automatiquement entre les haut-parleurs et les AirPods. Les touches et le widget QSbar affichent le volume PCM des haut-parleurs internes et PipeWire pour les autres sorties. Les smart filters issus des presets EasyEffects restent à compléter et à valider par écoute.
 
-- Statut : routage, filtres WirePlumber, remappage HDA au démarrage et lien de volume PipeWire/ALSA vérifiés le 2026-11-06 ; l'indicateur PCM QSbar a été rechargé et confirmé le 2026-11-07. Le retour audible des haut-parleurs supérieurs après retask de `0x14` est confirmé par l'utilisateur. La conversion des presets reste incomplète.
+- Statut : routage, filtres WirePlumber, remappage HDA au démarrage et lien de volume PipeWire/ALSA vérifiés le 2026-11-06 ; l'indicateur PCM QSbar et le curseur du panneau de volume ont été confirmés par l'utilisateur le 2026-11-07. Le retour audible des haut-parleurs supérieurs après retask de `0x14` est confirmé par l'utilisateur. La conversion des presets reste incomplète.
 - Date : 2026-11-07
 - Portée : Arch Linux, Ryoku sous Niri, PipeWire et EasyEffects ; test réalisé sur un Dell Latitude 7440.
 - Environnements testés : EasyEffects 8.3.2, PipeWire 1.6.10, raccourcis Niri et barre Quickshell Ryoku.
@@ -50,6 +50,8 @@ Un essai a remplacé le `DeferredFileView` de `BarCatalog.qml` par un `FileView`
 Depuis le 2026-11-07, le chiffre du widget audio QSbar suit le niveau `PCM` ALSA lorsque le sink par défaut commence par `alsa_output.pci-0000_00_1f.3.`. Le singleton `PcmVolume.qml` relit `PCM` avec `amixer -c PCH sget PCM` chaque seconde, seulement lorsque cette sortie est active ; cette lecture ponctuelle évite de laisser un processus d'écoute ALSA après un rechargement Quickshell. Le nom de carte suit `RYOKU_PCM_CARD` si cette variable est définie, comme le helper des touches. Pour les autres sorties, le widget garde le volume PipeWire. La molette du widget appelle `ryoku-volume` sur la sortie interne ; le panneau de volume ouvert par clic conserve son curseur PipeWire.
 
 Les fichiers de cette adaptation sont `shell/audio/PcmVolume.qml`, `shell/audio/qmldir` et `shell/modules/bar/barstyles/qsbar/modules/AudioWidget.qml`, dans `~/.config/quickshell/` et `~/.config/ryoku/user_edits/quickshell/`. L'installateur audio conserve ces overlays dans `05-SCRIPT/AUDIO/`, les déploie dans `user_edits` et les applique aussi aux fichiers actifs.
+
+Le panneau de volume ouvert par clic a ensuite été corrigé de la même façon : pour le sink analogique PCH, son curseur et sa molette écrivent `PCM` via `PcmVolume.setVolume()` et affichent le pourcentage PCM. Les autres sorties gardent le contrôle PipeWire. La sourdine reste celle du sink PipeWire ; le réglage PCM au-dessus de 100 % est désactivé pour les haut-parleurs internes. Fichiers actifs et overlays persistants : `shell/modules/bar/barstyles/qsbar/panels/VolumePanel.qml` et `shell/audio/PcmVolume.qml`. Après rechargement de Quickshell, l'utilisateur a confirmé que le résultat est correct (2026-11-07).
 
 ## Validation de l'ancien mode EasyEffects
 
