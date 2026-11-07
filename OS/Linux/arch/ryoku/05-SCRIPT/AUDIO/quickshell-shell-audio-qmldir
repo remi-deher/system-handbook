@@ -1,0 +1,2 @@
+module shell.audio
+singleton PcmVolume PcmVolume.qml

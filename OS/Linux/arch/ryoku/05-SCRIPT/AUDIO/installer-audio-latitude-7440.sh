@@ -13,6 +13,7 @@ LOCAL_BIN="$HOME/.local/bin"
 AIRPODS_SINK=""
 DRY_RUN=false
 CHANGED_WIREPLUMBER=false
+CHANGED_QUICKSHELL=false
 ALSA_STORED=false
 
 usage() {
@@ -83,6 +84,10 @@ install_file() {
 	log "Installé : $target"
 	if [[ "$target" == "$WIREPLUMBER_DIR/"* ]]; then
 		CHANGED_WIREPLUMBER=true
+	fi
+	if [[ "$target" == "$CONFIG_HOME/ryoku/user_edits/quickshell/"* \
+		|| "$target" == "$CONFIG_HOME/quickshell/"* ]]; then
+		CHANGED_QUICKSHELL=true
 	fi
 }
 
@@ -177,6 +182,14 @@ done
 
 [[ "$EUID" -ne 0 ]] || die "lancez le script comme utilisateur de bureau, sans sudo."
 [[ -f "$ASSET_DIR/80-ryoku-audio-smart-filters.conf.in" ]] || die "fichiers assets introuvables à côté du script."
+for asset in \
+	quickshell-OsdFeed.qml \
+	quickshell-OsdSource.qml \
+	quickshell-PcmVolume.qml \
+	quickshell-shell-audio-qmldir \
+	quickshell-qsbar-AudioWidget.qml; do
+	[[ -f "$ASSET_DIR/$asset" ]] || die "asset Quickshell manquant : $asset."
+done
 
 if [[ "$AIRPODS_SINK" != "" && ! "$AIRPODS_SINK" =~ ^bluez_output\.[A-Za-z0-9_.-]+$ ]]; then
 	die "nom AirPods invalide : attendez-vous à bluez_output.<identifiant>.1."
@@ -256,6 +269,16 @@ install_file "$ASSET_DIR/51-ryoku-bluetooth.conf" "$WIREPLUMBER_DIR/51-ryoku-blu
 install_file "$smart_filters" "$WIREPLUMBER_DIR/80-ryoku-audio-smart-filters.conf" 0644
 install_file "$ASSET_DIR/ryoku-audio-output" "$LOCAL_BIN/ryoku-audio-output" 0755
 install_file "$ASSET_DIR/ryoku-volume" "$LOCAL_BIN/ryoku-volume" 0755
+install_file "$ASSET_DIR/quickshell-OsdFeed.qml" "$CONFIG_HOME/ryoku/user_edits/quickshell/shell/services/OsdFeed.qml" 0644
+install_file "$ASSET_DIR/quickshell-OsdFeed.qml" "$CONFIG_HOME/quickshell/shell/services/OsdFeed.qml" 0644
+install_file "$ASSET_DIR/quickshell-OsdSource.qml" "$CONFIG_HOME/ryoku/user_edits/quickshell/shell/modules/osd/OsdSource.qml" 0644
+install_file "$ASSET_DIR/quickshell-OsdSource.qml" "$CONFIG_HOME/quickshell/shell/modules/osd/OsdSource.qml" 0644
+install_file "$ASSET_DIR/quickshell-PcmVolume.qml" "$CONFIG_HOME/ryoku/user_edits/quickshell/shell/audio/PcmVolume.qml" 0644
+install_file "$ASSET_DIR/quickshell-PcmVolume.qml" "$CONFIG_HOME/quickshell/shell/audio/PcmVolume.qml" 0644
+install_file "$ASSET_DIR/quickshell-shell-audio-qmldir" "$CONFIG_HOME/ryoku/user_edits/quickshell/shell/audio/qmldir" 0644
+install_file "$ASSET_DIR/quickshell-shell-audio-qmldir" "$CONFIG_HOME/quickshell/shell/audio/qmldir" 0644
+install_file "$ASSET_DIR/quickshell-qsbar-AudioWidget.qml" "$CONFIG_HOME/ryoku/user_edits/quickshell/shell/modules/bar/barstyles/qsbar/modules/AudioWidget.qml" 0644
+install_file "$ASSET_DIR/quickshell-qsbar-AudioWidget.qml" "$CONFIG_HOME/quickshell/shell/modules/bar/barstyles/qsbar/modules/AudioWidget.qml" 0644
 patch_niri_volume_keys
 
 if [[ "$DRY_RUN" == false ]]; then
@@ -274,6 +297,14 @@ if [[ "$DRY_RUN" == false ]]; then
 	if [[ "$CHANGED_WIREPLUMBER" == true ]]; then
 		log "Redémarrage de WirePlumber pour charger les profils."
 		systemctl --user restart wireplumber.service || warn "redémarrez manuellement WirePlumber."
+	fi
+	if [[ "$CHANGED_QUICKSHELL" == true ]]; then
+		if command -v ryoku-shell >/dev/null 2>&1; then
+			log "Rechargement de Quickshell pour appliquer les adaptations audio."
+			ryoku-shell reload || warn "rechargez Quickshell manuellement pour appliquer les adaptations audio."
+		else
+			warn "ryoku-shell introuvable ; rechargez Quickshell après l'installation."
+		fi
 	fi
 	if [[ "$ALSA_STORED" == true ]]; then
 		log "Réglages ALSA enregistrés pour la prochaine session."
