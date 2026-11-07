@@ -3,6 +3,7 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import Quickshell.Services.Pipewire
 import shell.services
+import shell.audio
 import Ryoku.Ui.Singletons
 
 // One state source feeds both the shipped visuals and installed designs.
@@ -28,6 +29,7 @@ QtObject {
     readonly property var device: isVolume ? Pipewire.defaultAudioSink
         : isMic ? Pipewire.defaultAudioSource : null
     readonly property var audio: (device && device.audio) ? device.audio : null
+    readonly property bool usesPcm: isVolume && PcmVolume.usesPcm && PcmVolume.pcmReady
     readonly property bool customVolume: isVolume && flashing && OsdFeed.expectedVolumeAt > 0
     readonly property bool muted: customVolume
         ? OsdFeed.expectedVolumeMuted : (audio ? audio.muted : false)
@@ -38,8 +40,9 @@ QtObject {
     readonly property real value: isBrightness
         ? OsdFeed.brightness
         : (customVolume ? OsdFeed.expectedVolume
+        : (usesPcm ? PcmVolume.pcmVolume / 100
         : ((isVolume || isMic) && audio
-            ? Math.max(0, Math.min(root.maxValue, audio.volume)) : 0)
+            ? Math.max(0, Math.min(root.maxValue, audio.volume)) : 0))
         )
     readonly property bool over: root.value > 1.005
     readonly property string layout: KeyboardLayout.variant || I18n.tr("Unknown")
