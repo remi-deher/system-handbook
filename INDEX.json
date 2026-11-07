@@ -3174,7 +3174,7 @@
       "kind": "fiche",
       "title": "Routage audio natif et volume matériel sous Ryoku",
       "summary": "WirePlumber choisit automatiquement entre les haut-parleurs et les AirPods. Les touches et le widget QSbar affichent le volume PCM des haut-parleurs internes et PipeWire pour les autres sorties. Les smart filters issus des presets EasyEffects restent à compléter et à valider par écoute.",
-      "status": "routage, filtres WirePlumber, remappage HDA au démarrage et lien de volume PipeWire/ALSA vérifiés le 2026-11-06 ; l'indicateur PCM QSbar a été rechargé et confirmé le 2026-11-07. Le retour audible des haut-parleurs supérieurs après retask de `0x14` est confirmé par l'utilisateur. La conversion des presets reste incomplète",
+      "status": "routage, filtres WirePlumber, remappage HDA au démarrage et lien de volume PipeWire/ALSA vérifiés le 2026-11-06 ; l'indicateur PCM QSbar et le curseur du panneau de volume ont été confirmés par l'utilisateur le 2026-11-07. Le retour audible des haut-parleurs supérieurs après retask de `0x14` est confirmé par l'utilisateur. La conversion des presets reste incomplète",
       "date": "2026-11-07",
       "scope_note": "Arch Linux, Ryoku sous Niri, PipeWire et EasyEffects ; test réalisé sur un Dell Latitude 7440",
       "os": "Linux",
