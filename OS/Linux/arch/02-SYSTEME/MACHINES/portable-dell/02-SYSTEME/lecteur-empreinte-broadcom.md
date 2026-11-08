@@ -1,10 +1,10 @@
 # Lecteur d'empreinte Broadcom 0a5c:5843 (Dell Latitude 7440)
 
 - Résumé : le lecteur d'empreinte Broadcom `0a5c:5843` du Dell Latitude 7440 demande `libfprint-tod` et le pilote propriétaire `libfprint-2-tod1-broadcom` (AUR) ; l'enregistrement se fait ensuite dans les paramètres Ryoku (Super + ,), rubrique « Écran de verrouillage ».
-- Statut : testé (installation et configuration réalisées par l'utilisateur ; enregistrement vu en cours dans les paramètres Ryoku).
-- Date : 2026-11-05.
+- Statut : lecteur reconnu et configuré ; contournement de l’autosuspend USB installé le 2026-11-08 après des erreurs du verrouillage de session au bout de 10 à 20 minutes. Son efficacité reste à confirmer après une période d’inactivité comparable.
+- Date : 2026-11-08.
 - Portée : Arch Linux, machine Dell Latitude 7440, environnement Ryoku.
-- Environnements testés : Arch (noyau 7.2.x), fprintd 1.94.5, `libfprint-tod` 1.95.2+tod1, `libfprint-2-tod1-broadcom` 5.15.021.0, Ryoku Arch (paramètres).
+- Environnements : installation initiale sous Arch (noyau 7.2.x), fprintd 1.94.5, `libfprint-tod` 1.95.2+tod1, `libfprint-2-tod1-broadcom` 5.15.021.0 ; constat actuel sous CachyOS (noyau 7.3.3-1) avec les mêmes versions des paquets et Ryoku.
 - Prérequis et exclusions : accès AUR (`yay`), mot de passe sudo. Le paquet `libfprint-2-tod1-broadcom-cv3plus` vise les lecteurs `0a5c:586*` (ControlVault 3 Plus) et ne convient pas à `0a5c:5843`.
 
 ## But ou problème
@@ -16,6 +16,7 @@ Faire reconnaître le lecteur d'empreinte du portable. Avant l'installation, `fp
 - Le lecteur apparaît dans la liste USB sous `0a5c:5843` (Broadcom BCM58200, nom USB « 58200 »).
 - Aucun pilote libre de `libfprint` standard ne le gère : il faut le module TOD propriétaire de Dell/Broadcom, chargé par une `libfprint` compilée avec le support TOD.
 - Le PKGBUILD AUR de `libfprint-2-tod1-broadcom` annonce explicitement la prise en charge de `0a5c:5843`.
+- Lors du défaut après 10 à 20 minutes de verrouillage, le lecteur apparaissait en `power/control=auto`, `runtime_status=suspended`, et `usbcore.autosuspend=2`. Cela autorise l’autosuspend runtime et constitue une cause plausible, pas encore confirmée, de l’arrêt du scan.
 
 ## Procédure ou utilisation
 
@@ -41,6 +42,16 @@ Shell : fish ou bash, sur Arch.
 
 4. Dans la même section des paramètres, choisir où l'empreinte sert : déverrouillage de l'écran, `sudo`, écran de connexion, invites administrateur (polkit). Si l'option polkit échoue avec « open /etc/pam.d/polkit-1: no such file or directory », voir [la résolution dédiée](../../../../07-RESOLUTION/AUTHENTIFICATION/polkit-pam-introuvable.md).
 
+## Contournement de l’autosuspend USB
+
+Une règle udev propre à ce lecteur désactive l’autosuspend runtime, sans changer le réglage des autres périphériques USB :
+
+```udev
+ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="0a5c", ATTR{idProduct}=="5843", TEST=="power/control", ATTR{power/control}="on"
+```
+
+Elle est installée dans `/etc/udev/rules.d/99-fprintd-no-autosuspend.rules`. Le réglage courant est également passé à `on` pour réveiller le périphérique sans redémarrage.
+
 ## Validation
 
 - Détection USB du lecteur et disponibilité des paquets AUR : constatées avant installation.
@@ -54,7 +65,9 @@ Shell : fish ou bash, sur Arch.
 
 ## Sauvegarde et retour arrière
 
-Les empreintes sont stockées par `fprintd` sous `/var/lib/fprint/` et ne doivent jamais être versionnées. Pour revenir en arrière : `fprintd-delete "$USER"`, puis retirer `libfprint-2-tod1-broadcom` et `libfprint-tod` et réinstaller `libfprint`.
+Pour rétablir l’autosuspend : supprimer `/etc/udev/rules.d/99-fprintd-no-autosuspend.rules`, recharger les règles udev, puis écrire `auto` dans le fichier `power/control` du périphérique USB `0a5c:5843`.
+
+Les empreintes sont stockées par `fprintd` sous `/var/lib/fprint/` et ne doivent jamais être versionnées. Pour retirer le pilote : `fprintd-delete "$USER"`, puis retirer `libfprint-2-tod1-broadcom` et `libfprint-tod` et réinstaller `libfprint`.
 
 ## Références
 
