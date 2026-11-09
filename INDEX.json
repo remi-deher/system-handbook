@@ -2499,6 +2499,27 @@
       ]
     },
     {
+      "path": "OS/Linux/arch/omarchy/03-CONFIGURATION/disposition-defilante-niri.md",
+      "kind": "fiche",
+      "title": "Disposition défilante et vue d’ensemble inspirées de Niri",
+      "summary": "configurer sous Omarchy la disposition défilante native de Hyprland, les gestes du pavé tactile et la vue d’ensemble ScrollOverview pour retrouver des éléments de l’expérience Niri.",
+      "status": "configuration appliquée ; rechargement et options vérifiés, gestes physiques et vue d’ensemble à confirmer séparément",
+      "date": "2026-11-10",
+      "scope_note": "Arch Linux, Omarchy et Hyprland ; ne configure pas Niri lui-même",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "configuration"
+      ]
+    },
+    {
       "path": "OS/Linux/arch/omarchy/04-LOGICIEL/00-AGENTS.md",
       "kind": "guide",
       "title": "Instructions pour les IA — Logiciels — Omarchy",
