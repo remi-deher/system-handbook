@@ -35,15 +35,17 @@ hl.config({
     column_width = 0.5,
     fullscreen_on_one_column = false,
     focus_fit_method = 1,
+    explicit_column_widths = "0.5, 1.0",
     wrap_focus = false,
     wrap_swapcol = false,
   },
+  plugin = { scrolloverview = { scale = 0.7 } },
 })
 
 hl.animation({ leaf = "workspaces", enabled = true, speed = 4, bezier = "easeOutQuint", style = "slidevert" })
 ```
 
-La courbe `easeOutQuint` est définie par Omarchy. Les fenêtres n’ont ni marges ni bordures ; leurs coins restent arrondis. Les colonnes occupent par défaut la moitié de l’écran, même si une seule est présente.
+La courbe `easeOutQuint` est définie par Omarchy. Les fenêtres n’ont ni marges ni bordures ; leurs coins restent arrondis. Les colonnes occupent par défaut la moitié de l’écran, même si une seule est présente. La vue d’ensemble utilise une échelle de 70 %.
 
 Dans `~/.config/hypr/input.lua` :
 
@@ -63,12 +65,12 @@ o.rebind("SUPER + TAB", "Workspace overview", function()
   hl.plugin.scrolloverview.overview("toggle all")
 end)
 hl.unbind("SUPER + ALT + F")
-o.bind("SUPER + D", "Full width", hl.dsp.window.fullscreen({ mode = "maximized" }))
+o.bind("SUPER + D", "Cycle column width", hl.dsp.layout("colresize +conf"))
 ```
 
 - `Super+Tab` ouvre ou ferme la vue d’ensemble sur tous les écrans ; auparavant, il passait à l’espace suivant.
 - `Alt+Tab` passe à l’espace suivant ; il remplace le changement de fenêtre et sa mise au premier plan.
-- `Super+D` maximise la fenêtre avec le mode `maximized` ; `Super+Alt+F` est désactivé.
+- `Super+D` alterne la largeur de la colonne entre une demi-largeur et une largeur complète, sans passer la fenêtre en mode maximisé ; `Super+Alt+F` est désactivé. La largeur complète peut rester partiellement visible quand la vue défile vers une nouvelle colonne.
 - `Super+Maj+Tab` conserve l’action Omarchy vers l’espace précédent.
 
 Dans `~/.config/hypr/autostart.lua`, charger les plugins activés au démarrage de session :
@@ -90,7 +92,7 @@ hyprpm list
 hyprctl plugins list
 ```
 
-Le rechargement a été effectué sans erreur ; la disposition `scrolling`, le chargement du plugin et les raccourcis ont été vérifiés. Après la dernière modification, les deux marges et la bordure ont été vérifiées à zéro. L’exécution physique des gestes et du raccourci de vue d’ensemble n’a pas été vérifiée par l’agent ; le rechargement automatique du plugin à une nouvelle connexion reste à confirmer.
+Le rechargement a été effectué sans erreur ; la disposition `scrolling`, le chargement du plugin et les raccourcis ont été vérifiés. Les marges et la bordure ont été vérifiées à zéro, l’échelle à 0,7 et les largeurs prédéfinies à 0,5 et 1,0. L’exécution physique des gestes, du raccourci de vue d’ensemble et le scénario à deux fenêtres n’ont pas été vérifiés par l’agent ; le rechargement automatique du plugin à une nouvelle connexion reste à confirmer.
 
 Pour revenir en arrière, retirer les extraits personnels concernés ou restaurer les fichiers `.bak.<horodatage>` appropriés après inspection ; recharger et vérifier les erreurs. `hyprpm disable scrolloverview` désactive le plugin si la vue d’ensemble n’est plus souhaitée. Une restauration complète Omarchy peut écraser d’autres préférences et n’est pas nécessaire.
 
