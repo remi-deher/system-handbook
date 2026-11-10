@@ -39,13 +39,15 @@ hl.config({
     wrap_focus = false,
     wrap_swapcol = false,
   },
-  plugin = { scrolloverview = { scale = 0.7 } },
+  plugin = { scrolloverview = { scale = 0.7, wallpaper = 2, blur = true, shadow = { enabled = false } } },
 })
 
-hl.animation({ leaf = "workspaces", enabled = true, speed = 4, bezier = "easeOutQuint", style = "slidevert" })
+hl.animation({ leaf = "windowsMove", enabled = true, speed = 4.5, bezier = "easeOutQuint" })
+hl.curve("niriWorkspace", { type = "spring", mass = 1, stiffness = 1000, dampening = 63.25 })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 4, spring = "niriWorkspace", style = "slidevert" })
 ```
 
-La courbe `easeOutQuint` est définie par Omarchy. Les fenêtres n’ont ni marges ni bordures ; leurs coins restent arrondis. Les colonnes occupent par défaut la moitié de l’écran, même si une seule est présente. La vue d’ensemble utilise une échelle de 70 %.
+La courbe `easeOutQuint` est définie par Omarchy. La configuration de l’aperçu et sa navigation sont détaillées dans [la fiche ScrollOverview](scrolloverview-hyprland.md). Les fenêtres n’ont ni marges ni bordures ; leurs coins restent arrondis. Les colonnes occupent par défaut la moitié de l’écran, même si une seule est présente. La vue d’ensemble utilise une échelle de 70 %.
 
 Dans `~/.config/hypr/input.lua` :
 
