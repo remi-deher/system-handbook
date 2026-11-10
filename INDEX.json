@@ -2520,6 +2520,27 @@
       ]
     },
     {
+      "path": "OS/Linux/arch/omarchy/03-CONFIGURATION/scrolloverview-hyprland.md",
+      "kind": "fiche",
+      "title": "Vue des workspaces avec ScrollOverview",
+      "summary": "configuration de ScrollOverview sous Omarchy et Hyprland pour afficher les workspaces avec Super+Tab, naviguer au clavier et corriger une erreur Lua de navigation.",
+      "status": "configuration chargée ; interaction et rendu à vérifier selon la session",
+      "date": "2026-11-10",
+      "scope_note": "Omarchy, Hyprland et greffon ScrollOverview",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "configuration"
+      ]
+    },
+    {
       "path": "OS/Linux/arch/omarchy/04-LOGICIEL/00-AGENTS.md",
       "kind": "guide",
       "title": "Instructions pour les IA — Logiciels — Omarchy",
