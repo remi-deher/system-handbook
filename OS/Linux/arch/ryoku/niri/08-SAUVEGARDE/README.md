@@ -2,7 +2,8 @@
 
 Actions de sauvegarde, archivage, rétention et restauration. Toutes les données sauvegardées sont chiffrées. Portée : Niri sous Ryoku. Ce dossier est une rubrique, pas une nouvelle portée.
 
-Le squelette est prêt ; aucune fiche technique propre à ce dossier n’est encore ajoutée.
+## Fiches
+
 
 ## Où chercher
 

@@ -1,12 +1,12 @@
 # Routage audio natif et volume matériel sous Ryoku
 
-Résumé : WirePlumber choisit automatiquement entre les haut-parleurs et les AirPods. Pour les haut-parleurs internes, les touches, le panneau de volume, l’OSD et QSbar affichent ou règlent PCM ; les autres sorties restent pilotées par PipeWire. Les smart filters issus des presets EasyEffects restent à compléter et à valider par écoute.
+Résumé : pour la sortie analogique interne du Dell, les touches de volume, QSbar et le panneau règlent PCM ; les autres sorties restent pilotées par PipeWire. Le routage et le traitement des haut-parleurs supérieurs, notamment le besoin du retask HDA `0x14`, restent à distinguer des observations d'écoute.
 
-- Statut : routage, filtres WirePlumber, remappage HDA au démarrage et lien de volume PipeWire/ALSA vérifiés le 2026-11-06 ; l'indicateur PCM QSbar et le curseur du panneau ont été confirmés par l'utilisateur le 2026-11-07. Le repli de l'OSD vers PCM est corrigé localement ; la vérification par l'utilisateur reste à faire. Le retour audible des haut-parleurs supérieurs après retask de `0x14` est confirmé par l'utilisateur. La conversion des presets reste incomplète.
-- Date : 2026-11-07
+- Statut : helpers de volume, contrôles PCM QSbar/panneau et événement OSD adaptés le 2026-11-08 après une installation fraîche. Le 2026-11-08, correction d'un conflit visuel : les notifications PipeWire du sink à 100 % ne doivent pas effacer la valeur PCM transmise à l'OSD ; Quickshell a été rechargé, le résultat reste à confirmer par l'utilisateur. L'utilisateur rapporte maintenant que le haut-parleur supérieur devient audible via `Headphone` sans retask `0x14` ; ce chemin et le besoin du retask restent à confirmer séparément. La conversion des presets reste incomplète.
+- Date : 2026-11-08
 - Portée : Arch Linux, Ryoku sous Niri, PipeWire et EasyEffects ; test réalisé sur un Dell Latitude 7440.
 - Environnements testés : EasyEffects 8.3.2, PipeWire 1.6.10, raccourcis Niri et barre Quickshell Ryoku.
-- Configuration actuelle : EasyEffects reste installé et ses presets sont conservés, mais son démarrage automatique est désactivé. Les smart filters WirePlumber sont actifs dans `~/.config/wireplumber/wireplumber.conf.d/80-ryoku-audio-smart-filters.conf` ; une copie `.conf.disabled` est conservée. La règle temporaire `soft-mixer` a été désactivée. Les raccourcis de volume pilotent désormais `PCM` sur la sortie analogique interne PCH ; ils gardent PipeWire pour les autres sorties. WirePlumber garde la sélection des sinks physiques et « Audio interne Stéréo analogique » comme source d'entrée par défaut.
+- Configuration observée après installation fraîche le 2026-11-08 : la sortie par défaut est `alsa_output.pci-0000_00_1f.3.analog-stereo`. Les fichiers HDA `/etc/modprobe.d/hda-jack-retask.conf` et `/lib/firmware/hda-jack-retask.fw`, la règle `80-ryoku-audio-smart-filters.conf` et les helpers `ryoku-volume`/`ryoku-audio-output` étaient absents. ALSA exposait `Master`, `Headphone`, `Speaker` et `PCM`, sans `Bass Speaker` ; le relevé montrait `Master`/`Speaker` à 100 %, `Headphone` à 0 % et coupé, `PCM` à 71 %. Les helpers, les liaisons PCM des touches/widget/panneau et le signal de volume vers l'OSD sont maintenant installés dans les fichiers utilisateur et leurs overlays. EasyEffects était installé et actif pendant le relevé ; le sink physique restait la sortie par défaut.
 - Historique : les sections EasyEffects ci-dessous consignent l'ancienne correction du volume en mode sink virtuel ; l'essai natif est devenu la configuration actuelle.
 
 ## Symptôme historique en mode EasyEffects
@@ -139,17 +139,33 @@ Après ce redémarrage, le relevé ALSA était : `Master` 100 % ON, `Speaker` in
 
 Correction des essais précédents, communiquée par l'utilisateur le 2026-11-07 : `Master` et `Bass Speaker` semblent agir ensemble sur le même ensemble de haut-parleurs. Mettre l'un ou l'autre à 0 % donne, selon son écoute, un rendu strictement identique. Il estime que les deux curseurs doivent rester autour de 80–85 % au minimum pour que leurs changements aient un effet audible ; sous ce niveau, leurs variations ne changent plus le rendu à l'oreille, quel que soit le niveau de l'autre curseur. Cela remplace les anciennes attributions distinctes aux haut-parleurs du haut et du bas. Le constat reste empirique et ne démontre pas à lui seul le rôle électrique précis des contrôles ALSA. Le réglage de référence reste de laisser les interrupteurs `Speaker` et `Bass Speaker` sur ON, de garder `Master` et `Bass Speaker` au-dessus du seuil audible constaté, puis d'utiliser `PCM` pour régler le niveau d'écoute.
 
+### Installation fraîche : contrôle `Headphone` et broche `0x14` (2026-11-08)
+
+Sur l'installation fraîche, aucun override de `0x14` n'était présent et ALSA n'exposait pas `Bass Speaker`. L'utilisateur rapporte que monter le niveau `Headphone` rend audible le haut-parleur supérieur, même si les interrupteurs visibles sont sur `MM`. Il entend les haut-parleurs inférieurs répondre à `Master` et constate que `PCM` règle les deux canaux affichés. C'est une observation d'écoute, pas une attribution électrique vérifiée : le nom `Headphone` et l'état `MM` ne suffisent pas à identifier le chemin analogique réel.
+
+Retour d'écoute communiqué par l'utilisateur le 2026-11-08 : le rendu sonore sans l'override `0x14` lui paraît nettement meilleur qu'avec. La prise jack n'a pas encore été testée avec un casque ou un autre appareil ; sa détection, son routage et son éventuel auto-mute restent inconnus.
+
+Cette observation montre que le retask `0x14` n'est peut-être pas nécessaire pour rendre le haut-parleur supérieur audible sur cette installation. L'installateur le laisse donc désactivé par défaut ; `--retask-0x14` permet encore de l'essayer explicitement si la sortie supérieure manque. Ne pas présenter le retask comme prérequis établi.
+
+Pour la sortie interne PCH, `ryoku-audio-output` ajuste `PCM` par pas de 5 % et envoie le niveau à l'OSD avec `qs ipc --config shell call osd showVolume <pourcentage> <muet>`. `OsdFeed.qml` expose cette méthode IPC ; `OsdSource.qml` affiche la valeur PCM pendant l'animation. Les événements de volume PipeWire sont ignorés pour l'effacement de cette valeur lorsque le sink interne est actif, car le niveau PipeWire du sink peut rester à 100 % alors que `PCM` change. Le widget QSbar et le curseur/la molette du panneau lisent et règlent également `PCM` pour le sink analogique interne, sans dépasser 100 % ; les autres sorties restent pilotées par PipeWire. Après ce correctif, les fichiers utilisateur et l'overlay ont été rechargés avec `ryoku-shell reload` ; le résultat visuel reste à confirmer par l'utilisateur.
+
 Les filtres réactivés sont une traduction des presets EasyEffects : ils ne reproduisent pas encore intégralement les plugins source, notamment les étages `stereo_tools` et les choix compresseur/limiteur déjà relevés ci-dessus. Si les artefacts sonores réapparaissent, terminer la conversion avant de considérer le rendu comme équivalent.
+
+### Persistance du niveau Headphone (2026-11-09)
+
+Sur cette installation, le profil ACP système `analog-output-speaker.conf` impose `volume = off` au contrôle `Headphone`, ce qui le ramène à 0 % lors de la sélection des haut-parleurs. Une copie utilisateur est installée dans `~/.config/alsa-card-profile/mixer/paths/analog-output-speaker.conf` : pour `[Element Headphone]`, elle remplace uniquement `volume = off` par `volume = ignore` et conserve `switch = off`. Le niveau a été réglé à 100 % avec `amixer -c PCH sset Headphone 100%`, puis enregistré avec `sudo alsactl store PCH`. Il est resté à 100 % après deux redémarrages de WirePlumber ; la persistance après redémarrage complet reste à confirmer. Le contrôle du casque jack et son niveau au branchement restent à tester prudemment.
+
+La copie utilisateur masque les mises à jour ultérieures du profil système : comparer les deux fichiers après une mise à jour du paquet. Pour annuler, retirer cette copie, redémarrer WirePlumber et, si nécessaire, réenregistrer l'état ALSA voulu.
 
 ## Persistance et retour arrière
 
-Le helper et son wrapper résident dans `~/.local/bin/`; les raccourcis source se trouvent dans les deux fichiers Niri indiqués plus haut. Les adaptations OSD et l'indicateur PCM QSbar résident dans `~/.config/quickshell/` et `~/.config/ryoku/user_edits/quickshell/`, et doivent être conservés si le shell est réinstallé ou réinitialisé.
+Le helper et son wrapper résident dans `~/.local/bin/`; les raccourcis source se trouvent dans les deux fichiers Niri indiqués plus haut. Les adaptations PCM du widget, du panneau et de l'OSD résident dans `~/.config/quickshell/` et `~/.config/ryoku/user_edits/quickshell/`. Conserver les overlays si le shell est réinstallé ou réinitialisé.
 
 Pour revenir à l'ancien ciblage, restaurer les fichiers Niri et Quickshell depuis une copie de configuration, puis retirer `~/.local/bin/ryoku-audio-output` et `~/.local/bin/ryoku-volume`. Cela rétablit les raccourcis qui ciblent le sink par défaut et supprime l'affichage OSD matériel.
 
 ## Réinstallation du trajet audio
 
-L'installateur documenté dans [Scripts Ryoku — Audio](../../05-SCRIPT/AUDIO/README.md) regroupe les réglages validés pour le Latitude 7440 : packages PipeWire et LV2, filtres WirePlumber pour les haut-parleurs/AirPods, raccourcis PCM, état ALSA `Speaker`/`Master`/`Bass Speaker` et override HDA de la broche `0x14`. Il sauvegarde les fichiers remplacés et laisse le niveau PCM courant inchangé. Le script est rédigé d'après la configuration de cette machine ; sa fiche précise qu'il reste à valider sur une installation vierge.
+L'installateur documenté dans [Scripts Ryoku — Audio](../../05-SCRIPT/AUDIO/README.md) regroupe les filtres WirePlumber, les raccourcis PCM, les contrôles QSbar/panneau, et l'état ALSA de `Speaker`/`Master`. Le retask HDA de `0x14` est facultatif (`--retask-0x14`). Le script complet reste à valider sur une installation vierge.
 
 ## Références
 

@@ -29,6 +29,13 @@ Singleton {
         pcmRead.running = true
     }
 
+    function setVolume(percent) {
+        const next = Math.max(0, Math.min(100, Math.round(percent)))
+        root.pcmVolume = next
+        root.pcmReady = true
+        Quickshell.execDetached(["amixer", "-c", root.card, "sset", "PCM", next + "%"])
+    }
+
     onUsesPcmChanged: {
         root.pcmReady = false
         if (root.usesPcm)

@@ -16,6 +16,7 @@ Faire reconnaître le lecteur d'empreinte du portable. Avant l'installation, `fp
 - Le lecteur apparaît dans la liste USB sous `0a5c:5843` (Broadcom BCM58200, nom USB « 58200 »).
 - Aucun pilote libre de `libfprint` standard ne le gère : il faut le module TOD propriétaire de Dell/Broadcom, chargé par une `libfprint` compilée avec le support TOD.
 - Le PKGBUILD AUR de `libfprint-2-tod1-broadcom` annonce explicitement la prise en charge de `0a5c:5843`.
+- Lors d’un premier diagnostic après 10 à 20 minutes, le lecteur était en `power/control=auto` et `runtime_status=suspended`, avec `usbcore.autosuspend=2`. L’autosuspend a été envisagé avant le diagnostic thermique ci-dessous.
 - Pendant le verrouillage de session, l’indication d’empreinte passe en erreur après 30 à 60 secondes et affiche des échecs répétés sans toucher le lecteur. Le journal fprintd indique `Device disabled to prevent overheating`, après un résultat de vérification arrivé tardivement. La désactivation thermique est donc confirmée ; le lien avec les vérifications sans correspondance est cohérent avec les observations, mais reste à valider après modification de PAM.
 
 ## Procédure ou utilisation

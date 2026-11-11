@@ -5,29 +5,28 @@ import Quickshell
 import Quickshell.Io
 
 // QML view of the daemon `osd` topic. The volume and mic OSDs read PipeWire
-// directly (Ryoku owns the audio graph in QML), with a short helper-provided
-// override for hardware mixer controls that PipeWire cannot observe. Brightness
-// has no QML-observable source: media keys and the brightness verb drive the
-// backlight directly, so the daemon watches it and pushes {brightness:{seq,
-// value}} here. Contract 12 sec 3, sec 9.
+// directly (Ryoku owns the audio graph in QML), but brightness has no
+// QML-observable source: the media keys and the brightness verb both drive the
+// backlight directly, so the daemon watches the primary backlight and pushes
+// {brightness:{seq,value}} here. The brightness OSD shows when `brightnessSeq`
+// advances and binds `brightness` (0..1) to its bar. Contract 12 sec 3, sec 9.
 Singleton {
     id: root
 
     property real brightness: 0
     property int brightnessSeq: 0
     property int previewSeq: 0
-    property real expectedMicVolume: -1
-    property double expectedMicVolumeAt: 0
     property real expectedVolume: -1
     property bool expectedVolumeMuted: false
     property double expectedVolumeAt: 0
     property int volumeSeq: 0
+    property real expectedMicVolume: -1
+    property double expectedMicVolumeAt: 0
 
     function expectVolume(value, muted) {
         root.expectedVolume = Math.max(0, Math.min(1.5, value))
         root.expectedVolumeMuted = muted
         root.expectedVolumeAt = Date.now()
-        root.volumeSeq++
     }
 
     function clearVolume() {
@@ -69,6 +68,7 @@ Singleton {
         }
         function showVolume(percent: int, muted: bool): string {
             root.expectVolume(Math.max(0, Math.min(150, percent)) / 100, muted)
+            root.volumeSeq++
             return "ok"
         }
         function brightness(): void { root.brightnessRequested(); }
