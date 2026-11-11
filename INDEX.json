@@ -2749,7 +2749,7 @@
       "kind": "fiche",
       "title": "Touches multimédias dans la vue d'ensemble",
       "summary": "Dans la vue Scrolloverview de Hyprland, charger les raccourcis multimédias Omarchy dans le sous-clavier de la vue pour conserver les touches de volume, luminosité et lecture.",
-      "status": "configuration rechargée sans erreur et raccourcis présents ; essai physique par l'utilisateur à confirmer",
+      "status": "résolu et fonctionnement confirmé par l'utilisateur le 2026-11-11",
       "date": "2026-11-11",
       "scope_note": "Omarchy, Hyprland avec le plugin Scrolloverview et configuration Lua",
       "os": "Linux",
