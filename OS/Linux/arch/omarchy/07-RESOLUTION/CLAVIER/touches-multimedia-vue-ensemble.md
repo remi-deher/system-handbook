@@ -2,7 +2,7 @@
 
 Résumé : Dans la vue Scrolloverview de Hyprland, charger les raccourcis multimédias Omarchy dans le sous-clavier de la vue pour conserver les touches de volume, luminosité et lecture.
 
-Statut : configuration rechargée sans erreur et raccourcis présents ; essai physique par l'utilisateur à confirmer.
+Statut : résolu et fonctionnement confirmé par l'utilisateur le 2026-11-11.
 Date : 2026-11-11
 Portée : Omarchy, Hyprland avec le plugin Scrolloverview et configuration Lua.
 
@@ -31,6 +31,6 @@ hyprctl configerrors
 hyprctl binds -j | jq '[.[] | select(.submap == "scrolloverview" and (.key | startswith("XF86")))] | length'
 ```
 
-Le rechargement a réussi sans erreur et 30 entrées XF86 ont été recensées dans le sous-clavier. Tester ensuite les touches physiques dans la vue et hors de celle-ci ; leur fonctionnement effectif dans la vue n'a pas encore été confirmé par l'utilisateur.
+Le rechargement a réussi sans erreur et 30 entrées XF86 ont été recensées dans le sous-clavier. L'utilisateur a confirmé le fonctionnement des touches dans la vue après correction.
 
 Pour revenir en arrière, retirer les deux lignes ajoutées, puis relancer `hyprctl reload` et `hyprctl configerrors`.
