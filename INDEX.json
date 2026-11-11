@@ -2705,6 +2705,69 @@
       ]
     },
     {
+      "path": "OS/Linux/arch/omarchy/07-RESOLUTION/CLAVIER/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Clavier sous Omarchy",
+      "summary": "Lire les guides `00-AGENTS.md` des dossiers parents et le `README.md` de ce dossier avant toute modification.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "07-RESOLUTION",
+      "category": "CLAVIER",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "resolution",
+        "clavier"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/omarchy/07-RESOLUTION/CLAVIER/README.md",
+      "kind": "guide",
+      "title": "Clavier — résolutions sous Omarchy",
+      "summary": "Voir les instructions IA et l'index parent.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "07-RESOLUTION",
+      "category": "CLAVIER",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "resolution",
+        "clavier"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/omarchy/07-RESOLUTION/CLAVIER/touches-multimedia-vue-ensemble.md",
+      "kind": "fiche",
+      "title": "Touches multimédias dans la vue d'ensemble",
+      "summary": "Dans la vue Scrolloverview de Hyprland, charger les raccourcis multimédias Omarchy dans le sous-clavier de la vue pour conserver les touches de volume, luminosité et lecture.",
+      "status": "configuration rechargée sans erreur et raccourcis présents ; essai physique par l'utilisateur à confirmer",
+      "date": "2026-11-11",
+      "scope_note": "Omarchy, Hyprland avec le plugin Scrolloverview et configuration Lua",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "07-RESOLUTION",
+      "category": "CLAVIER",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "resolution",
+        "clavier"
+      ]
+    },
+    {
       "path": "OS/Linux/arch/omarchy/07-RESOLUTION/README.md",
       "kind": "guide",
       "title": "Résolutions — Omarchy",
