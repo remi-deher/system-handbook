@@ -12,6 +12,7 @@ WIREPLUMBER_DIR="$CONFIG_HOME/wireplumber/wireplumber.conf.d"
 LOCAL_BIN="$HOME/.local/bin"
 AIRPODS_SINK=""
 DRY_RUN=false
+RETask_0X14=false
 CHANGED_WIREPLUMBER=false
 CHANGED_QUICKSHELL=false
 ALSA_STORED=false
@@ -25,12 +26,15 @@ ALC289 codec. Run it as your desktop user, without sudo.
 
 Options:
   --airpods-sink NAME  Set the exact PipeWire sink name for the AirPods profile.
+  --retask-0x14        Apply the optional HDA speaker retask on pin 0x14.
   --dry-run            Show the actions without changing the system.
   -h, --help           Show this help.
 
 If AirPods are connected, their sink is detected automatically. Otherwise, the
 speaker profile is installed and the AirPods profile can be added by rerunning
 the script with --airpods-sink after connecting them.
+
+The 0x14 HDA retask is skipped by default; add --retask-0x14 only when needed.
 EOF
 }
 
@@ -94,7 +98,11 @@ install_file() {
 set_mixer_baseline() {
 	amixer -c PCH sset Speaker unmute || return 1
 	amixer -c PCH sset Master 100% unmute || return 1
-	amixer -c PCH sset 'Bass Speaker' 100% unmute || return 1
+	if amixer -c PCH sget 'Bass Speaker' >/dev/null 2>&1; then
+		amixer -c PCH sset 'Bass Speaker' 100% unmute || return 1
+	elif [[ "$RETask_0X14" == true ]]; then
+		return 1
+	fi
 }
 
 detect_airpods_sink() {
@@ -166,6 +174,10 @@ while (($#)); do
 			AIRPODS_SINK="$2"
 			shift 2
 			;;
+		--retask-0x14)
+			RETask_0X14=true
+			shift
+			;;
 		--dry-run)
 			DRY_RUN=true
 			shift
@@ -187,7 +199,8 @@ for asset in \
 	quickshell-OsdSource.qml \
 	quickshell-PcmVolume.qml \
 	quickshell-shell-audio-qmldir \
-	quickshell-qsbar-AudioWidget.qml; do
+	quickshell-qsbar-AudioWidget.qml \
+	quickshell-qsbar-VolumePanel.qml; do
 	[[ -f "$ASSET_DIR/$asset" ]] || die "asset Quickshell manquant : $asset."
 done
 
@@ -279,19 +292,26 @@ install_file "$ASSET_DIR/quickshell-shell-audio-qmldir" "$CONFIG_HOME/ryoku/user
 install_file "$ASSET_DIR/quickshell-shell-audio-qmldir" "$CONFIG_HOME/quickshell/shell/audio/qmldir" 0644
 install_file "$ASSET_DIR/quickshell-qsbar-AudioWidget.qml" "$CONFIG_HOME/ryoku/user_edits/quickshell/shell/modules/bar/barstyles/qsbar/modules/AudioWidget.qml" 0644
 install_file "$ASSET_DIR/quickshell-qsbar-AudioWidget.qml" "$CONFIG_HOME/quickshell/shell/modules/bar/barstyles/qsbar/modules/AudioWidget.qml" 0644
+install_file "$ASSET_DIR/quickshell-qsbar-VolumePanel.qml" "$CONFIG_HOME/ryoku/user_edits/quickshell/shell/modules/bar/barstyles/qsbar/panels/VolumePanel.qml" 0644
+install_file "$ASSET_DIR/quickshell-qsbar-VolumePanel.qml" "$CONFIG_HOME/quickshell/shell/modules/bar/barstyles/qsbar/panels/VolumePanel.qml" 0644
 patch_niri_volume_keys
 
 if [[ "$DRY_RUN" == false ]]; then
-	install_file "$ASSET_DIR/hda-jack-retask.conf" /etc/modprobe.d/hda-jack-retask.conf 0644 true
-	install_file "$ASSET_DIR/hda-jack-retask.fw" /lib/firmware/hda-jack-retask.fw 0644 true
+	if [[ "$RETask_0X14" == true ]]; then
+		install_file "$ASSET_DIR/hda-jack-retask.conf" /etc/modprobe.d/hda-jack-retask.conf 0644 true
+		install_file "$ASSET_DIR/hda-jack-retask.fw" /lib/firmware/hda-jack-retask.fw 0644 true
+		log "Le retask HDA de 0x14 nécessite un redémarrage du PC."
+	else
+		log "Retask HDA de 0x14 ignoré ; passez --retask-0x14 pour l'activer explicitement."
+	fi
 
-	log "Activation des interrupteurs Speaker et Bass Speaker, Master/Bass Speaker à 100 % ; PCM reste inchangé."
+	log "Activation de Speaker et Master à 100 % ; PCM reste inchangé."
 	if set_mixer_baseline; then
 		backup_target /var/lib/alsa/asound.state
 		as_root alsactl store PCH
 		ALSA_STORED=true
 	else
-		warn "contrôle ALSA absent avant retask ; redémarrez puis relancez le script pour enregistrer Speaker/Master/Bass Speaker."
+		warn "contrôle ALSA attendu absent ; redémarrez si le retask est activé, puis relancez le script pour enregistrer tous les contrôles."
 	fi
 
 	if [[ "$CHANGED_WIREPLUMBER" == true ]]; then
@@ -309,7 +329,6 @@ if [[ "$DRY_RUN" == false ]]; then
 	if [[ "$ALSA_STORED" == true ]]; then
 		log "Réglages ALSA enregistrés pour la prochaine session."
 	fi
-	log "Le retask de la broche 0x14 nécessite un redémarrage du PC."
 else
 	log "Simulation : installation des fichiers, ALSA, services et retask non exécutés."
 fi
@@ -317,4 +336,4 @@ fi
 if [[ -d "$BACKUP_DIR" ]]; then
 	log "Sauvegardes conservées dans : $BACKUP_DIR"
 fi
-log "Installation terminée. Redémarrez le PC avant de vérifier les deux étages de haut-parleurs."
+log "Installation terminée. Redémarrez le PC uniquement si le retask 0x14 vient d'être activé."

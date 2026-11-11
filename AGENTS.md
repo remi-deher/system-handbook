@@ -6,7 +6,7 @@ Ce dépôt est la mémoire technique de l’utilisateur pour Linux et Windows : 
 
 ## Arborescence et nommage obligatoires
 
-- À la racine, `OS/` contient les connaissances système, `OUTILS/` les outils communs et `.github/` la CI. Aucun de ces deux dossiers techniques ne constitue une portée OS. Les fichiers généraux `README.md`, `AGENTS.md`, `CHIFFREMENT.md`, `CONTRIBUTING.md`, `.age-recipients`, `MODELE-FICHE.md`, les index générés `INDEX.json`, `INDEX.md` et `llms.txt`, et les fichiers de configuration Git restent à la racine. Un éventuel `.git/` est un répertoire interne de Git.
+- À la racine, `OS/` contient les connaissances système, `OUTILS/` les outils communs et `.github/` la CI. Aucun de ces deux dossiers techniques ne constitue une portée OS. Les fichiers généraux `README.md`, `AGENTS.md`, `CHIFFREMENT.md`, `CONTRIBUTING.md`, `MODELE-FICHE.md`, les index générés `INDEX.json`, `INDEX.md` et `llms.txt`, et les fichiers de configuration Git restent à la racine. Un éventuel `.git/` est un répertoire interne de Git.
 - `OS/` contient uniquement les regroupements `Linux/` et `Windows/`, et leurs guides. `OS/Linux/` contient les portées `arch/`, `ubuntu/`, `fedora/` et `debian/`, et ses guides.
 - Les regroupements racine, `OS/`, `OS/Linux/` et les dossiers techniques `OUTILS/` et `.github/` ne reproduisent pas les neuf rubriques. `OS/Windows/` est une portée système et possède les rubriques.
 - Les portées (distribution, environnement, compositeur, logiciel ou machine) portent un nom en minuscules : `arch`, `ryoku`, `omarchy`, `niri`, `hyprland`, `git`, etc. Les noms `OS`, `Linux` et `Windows` sont les noms fixes des niveaux supérieurs.
@@ -70,13 +70,15 @@ L’héritage est documentaire : aucun script, aucune installation et aucune fus
 
 ## Chiffrement indépendant de l’emplacement
 
+- Pour tout nouveau chiffrement, utiliser uniquement une phrase secrète avec `age -p` : aucun fichier d’identité ni destinataire à clé publique. La phrase secrète est saisie de façon interactive et ne figure jamais dans le dépôt, les commandes ou les journaux.
+
 - Tout fichier ou dossier peut être chiffré, quelle que soit sa fonction : pièce jointe de résolution, configuration, note ou sauvegarde.
 - Un objet chiffré peut rester dans la rubrique appropriée, par exemple `07-RESOLUTION/CLAVIER/` ou `03-CONFIGURATION/`. Aucun coffre central n’est obligatoire ; un dossier `COFFRE/` est facultatif.
 - Les contenus sensibles doivent être chiffrés **avant l’ajout à Git**, même si le dépôt est privé. Conserver contenu, noms et chemins d’origine dans le chiffrement ; employer un nom aléatoire `<32-caractères-hex>.age`.
 - Les fiches lisibles peuvent utiliser un lien neutre « Pièce chiffrée », sans nom original ni description confidentielle. L’emplacement et le lien révèlent le contexte : si cette association est sensible, choisir un emplacement moins révélateur et garder la correspondance chiffrée.
 - Ne pas mettre dans le dépôt de manifeste déchiffré, secret en clair, identité privée, référence d’accès ou indication du fournisseur de stockage privé.
-- Ne jamais afficher une clé privée ou une valeur secrète dans les conversations, sorties d’outils, arguments de commande ou journaux. Fournir l’identité par un canal local autorisé ; ne pas demander de la coller dans les échanges.
-- Ne pas régénérer une identité pour remplacer une identité inaccessible : cela ne restaurerait pas les anciennes données. Préserver les identités nécessaires à l’historique lors d’une rotation.
+- Ne jamais afficher une clé privée ou une valeur secrète dans les conversations, sorties d’outils, arguments de commande ou journaux. Ne jamais demander de coller une phrase secrète dans les échanges.
+- Une nouvelle phrase secrète ne permet pas de déchiffrer les anciens objets ; conserver les moyens de récupération nécessaires à l’historique.
 - Déchiffrer dans un nouveau dossier privé hors dépôt, vérifier puis appliquer uniquement les changements demandés. Ne pas écraser automatiquement les configurations actives.
 - La taille, le contexte du dossier, le nombre d’objets et les dates de commits restent visibles. Ne pas promettre leur masquage.
 
@@ -85,7 +87,7 @@ L’héritage est documentaire : aucun script, aucune installation et aucune fus
 - `08-SAUVEGARDE/` est réservé à une action de sauvegarde/archivage, sa stratégie, ses contrôles, sa rétention et sa restauration.
 - Toutes les données de sauvegarde sont chiffrées, même si leur contenu n’est pas considéré sensible. Seules les fiches de procédure et les guides Markdown restent lisibles dans cette rubrique. Ranger les outils et exemples dans les rubriques adaptées et les référencer.
 - Une configuration ou une résolution ne devient pas une sauvegarde parce qu’elle est chiffrée. Elle garde son emplacement fonctionnel.
-- Vérifier le déchiffrement avant de déclarer un objet récupérable ; un succès de chiffrement ne prouve pas à lui seul la disponibilité de l’identité privée.
+- Vérifier le déchiffrement avant de déclarer un objet récupérable ; un succès de chiffrement ne prouve pas à lui seul la disponibilité de la phrase secrète.
 
 ## Vérification, outils et limites
 
@@ -103,7 +105,7 @@ Indiquer brièvement les fichiers modifiés, validations effectuées et limites 
 ## CI et publication
 
 - **Aucun push direct dans `main`**, même pour une correction de documentation. Créer une branche, commiter, la pousser et ouvrir une pull request. Le workflow `auto-merge.yml` active la fusion automatique : un job régénère d'abord l'index sur la branche (commit « Mettre à jour l'index »), puis si `validation (ubuntu-latest)` et `validation (windows-latest)` sont verts, GitHub fusionne en squash et supprime la branche. Les PR en retard sur `main` sont mises à jour automatiquement. Si la CI est rouge, corriger dans la même branche ; ne pas contourner la protection ni la désactiver.
-- Le dépôt cible est public : aucune donnée confidentielle non chiffrée ne doit être ajoutée. Le destinataire public `.age-recipients` est publiable ; l’identité privée ne l’est jamais.
+- Le dépôt cible est public : aucune donnée confidentielle non chiffrée ne doit être ajoutée. Aucune phrase secrète ne doit être publiée.
 - Les contrôles GitHub Actions `validation (ubuntu-latest)` et `validation (windows-latest)` doivent réussir avant fusion dans `main`. Il vérifie tous les dossiers, les guides, les liens, la politique de chiffrement, l’historique avec Gitleaks et les tests du validateur spécifique.
 - Respecter les guides standard dans `OUTILS/` et `.github/` et les guides `00-` sous `OS/`. Ne pas ajouter de doublons pour satisfaire artificiellement le contrôle.
 - Ne pas affaiblir les contrôles ou ajouter d’exclusion globale de détection pour faire passer une CI. Identifier et corriger la cause, sans publier les valeurs détectées.

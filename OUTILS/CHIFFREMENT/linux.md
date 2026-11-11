@@ -22,7 +22,7 @@ Remplacer `/chemin/parent` et `source` par le parent et le nom du fichier ou dos
   trap 'rm -f -- "$temporaire"' EXIT
 
   tar -C /chemin/parent -czf - source |
-    age -R .age-recipients -o "$temporaire"
+    age -p -o "$temporaire"
 
   ln -- "$temporaire" "$destination/$objet"
   printf '%s\n' "$destination/$objet"
@@ -33,7 +33,7 @@ Le tar inclut les noms d’origine et les fichiers cachés présents sous `sourc
 
 ## Déchiffrer et retrouver les noms
 
-Fournir un fichier d’identité privé externe et le chemin réel d’un objet opaque. Le dossier de travail créé est nouveau, privé et hors dépôt.
+Saisir la phrase secrète à l’invite et fournir le chemin réel d’un objet opaque. Le dossier de travail créé est nouveau, privé et hors dépôt.
 
 ```bash
 (
@@ -42,7 +42,7 @@ Fournir un fichier d’identité privé externe et le chemin réel d’un objet 
   travail="$(mktemp -d "${XDG_RUNTIME_DIR:-/tmp}/handbook-XXXXXX")"
   trap 'rm -f -- "$travail/archive.tar.gz"' EXIT
 
-  age --decrypt --identity /chemin/prive/identite \
+  age --decrypt \
     --output "$travail/archive.tar.gz" \
     OS/Linux/arch/03-CONFIGURATION/IDENTIFIANT.age
 
@@ -55,4 +55,4 @@ Fournir un fichier d’identité privé externe et le chemin réel d’un objet 
 
 Remplacer `IDENTIFIANT.age` par le vrai nom aléatoire. L’extraction est faite uniquement après succès du déchiffrement, sans mode verbeux. N’utiliser que les archives attendues et de confiance ; ne pas ajouter d’option tar `-P` qui autoriserait les chemins absolus. Les fichiers récupérés restent dans `contenu/` pour vérification et application manuelle.
 
-Un adaptateur local facultatif peut fournir l’identité par un tube dédié à `age --decrypt --identity -`. Il ne doit jamais afficher la clé dans les échanges ou journaux ; son accès privé n’est pas documenté dans le dépôt. Les commandes ci-dessus fonctionnent sans adaptateur.
+La phrase secrète est saisie à l’invite interactive, jamais dans la commande ni dans les journaux.

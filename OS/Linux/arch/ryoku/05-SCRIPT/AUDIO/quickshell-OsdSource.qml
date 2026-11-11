@@ -7,9 +7,9 @@ import shell.audio
 import Ryoku.Ui.Singletons
 
 // One state source feeds both the shipped visuals and installed designs.
-// Volume and microphone read PipeWire, except for the short helper-provided
-// volume override used for hardware mixer controls. Brightness reads the daemon
-// OSD feed, and keyboard layout comes from the shared layout service.
+// Volume reads PipeWire except for the short helper override and internal PCM;
+// microphone reads PipeWire, brightness reads the daemon OSD feed, and keyboard
+// layout comes from the shared layout service.
 //
 // A fresh shell receives initial device values as it connects. Those signals
 // are not user actions, so volume, microphone and brightness arm after a short
@@ -35,15 +35,13 @@ QtObject {
         ? OsdFeed.expectedVolumeMuted : (audio ? audio.muted : false)
     // Audio boost can legitimately reach 150%, so the scale must keep unity
     // visible instead of making every boosted keypress look identical.
-    readonly property real maxValue: (isVolume && Config.qsbar
+    readonly property real maxValue: (isVolume && !usesPcm && Config.qsbar
         && Config.qsbar.audioBoost === true) ? 1.5 : 1.0
     readonly property real value: isBrightness
         ? OsdFeed.brightness
-        : (customVolume ? OsdFeed.expectedVolume
-        : (usesPcm ? PcmVolume.pcmVolume / 100
-        : ((isVolume || isMic) && audio
-            ? Math.max(0, Math.min(root.maxValue, audio.volume)) : 0))
-        )
+        : customVolume ? Math.max(0, Math.min(root.maxValue, OsdFeed.expectedVolume))
+        : usesPcm ? PcmVolume.pcmVolume / 100
+        : ((isVolume || isMic) && audio ? Math.max(0, Math.min(root.maxValue, audio.volume)) : 0)
     readonly property bool over: root.value > 1.005
     readonly property string layout: KeyboardLayout.variant || I18n.tr("Unknown")
     readonly property string label: isKeyboard
@@ -114,7 +112,10 @@ QtObject {
     property Connections audioEvents: Connections {
         target: root.audio
         function onVolumesChanged() {
-            if (root.isVolume && OsdFeed.expectedVolumeAt > 0
+            // PCM hotkeys control ALSA while PipeWire's sink stays at unity.
+            // Its volume notifications are unrelated and must not discard the
+            // PCM value supplied to the OSD for the current keypress.
+            if (root.isVolume && !PcmVolume.usesPcm && OsdFeed.expectedVolumeAt > 0
                     && !OsdFeed.acceptsVolume(root.audio.volume))
                 OsdFeed.clearVolume()
             if (!root.isMic || (root.audio && OsdFeed.acceptsMicVolume(root.audio.volume)))

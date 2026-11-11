@@ -2,18 +2,11 @@
 
 Le dépôt utilise **age** pour chiffrer et **tar** pour conserver ensemble le contenu, les noms d’origine et l’arborescence. Ce sont des outils existants : aucune implémentation de chiffrement maison n’est nécessaire.
 
-## Comprendre les clés
+## Phrase secrète obligatoire
 
-- La **clé publique** permet de chiffrer pour un destinataire, mais pas de déchiffrer. Elle peut être publiée.
-- La **clé privée**, appelée identité dans age, permet de déchiffrer. Elle reste hors du dépôt et n’est jamais fournie à la CI.
-- [`.age-recipients`](.age-recipients) est le fichier de configuration public lu par `age -R`. Il contient les clés publiques des destinataires, une par ligne ; ce n’est pas une sauvegarde des secrets.
-- Un fichier **`.age`** est l’objet chiffré. Dans nos procédures, son nom externe est aléatoire et les noms d’origine sont conservés dans le tar chiffré.
+Tout nouveau chiffrement du handbook utilise `age -p` avec une phrase secrète forte, saisie de façon interactive. Ne pas utiliser de fichier d’identité ni de destinataire à clé publique pour les nouveaux objets. Ne jamais inscrire la phrase secrète dans une commande, un fichier du dépôt, un journal ou une conversation. La conserver dans un gestionnaire de mots de passe avec un moyen de récupération indépendant de la machine.
 
-Une personne disposant du dépôt peut chiffrer un nouvel objet pour toi sans connaître ta clé privée. Elle ne peut pas pour autant ouvrir les objets existants. Le chiffrement pour une clé publique ne prouve pas qui a créé l’objet : ne récupérer que les archives attendues et de confiance.
-
-Conserver un moyen de récupération indépendant de la machine. Retrouver la même identité autorisée permet de déchiffrer sur un autre poste ; une nouvelle clé ne remplace pas l’ancienne. Modifier le fichier public ne rechiffre pas l’historique Git.
-
-Le fournisseur et les références de stockage de l’identité privée ne sont pas documentés dans le dépôt. Ne jamais copier une clé privée dans une conversation, un argument de commande ou un fichier versionné. Les exemples utilisent un fichier d’identité externe déjà obtenu par un moyen local autorisé.
+Un mot de passe ne déchiffre pas une ancienne archive créée pour une clé publique ; remplacer le moyen de chiffrement ne restaure pas les anciennes données.
 
 ## Procédures par système
 
@@ -22,7 +15,7 @@ Le fournisseur et les références de stockage de l’identité privée ne sont 
 | Linux / Bash | [Commandes natives Linux](OUTILS/CHIFFREMENT/linux.md) |
 | Windows / PowerShell | [Commandes natives Windows](OUTILS/CHIFFREMENT/windows.md) |
 
-Le format est commun : un objet créé sous Linux peut être ouvert sous Windows, et inversement, avec une identité autorisée. Les exemples utilisent un tar temporaire sous Windows pour éviter de faire transiter un flux binaire dans les anciennes versions de PowerShell.
+Le format est commun : un objet créé sous Linux peut être ouvert sous Windows, et inversement, avec la phrase secrète correspondante. Les exemples utilisent un tar temporaire sous Windows pour éviter de faire transiter un flux binaire dans les anciennes versions de PowerShell.
 
 ## Emplacement et noms
 
@@ -52,13 +45,13 @@ Le chiffrement doit précéder le premier ajout à Git. Ajouter un objet chiffr�
 
 La configuration [.pre-commit-config.yaml](.pre-commit-config.yaml) est commune aux hooks locaux et à GitHub Actions. Les hooks standards, Gitleaks et le contrôle propre au dépôt vérifient les fichiers suivis, la nomenclature et la politique des données ; la CI ajoute l’historique et les tests du validateur.
 
-Aucun scanner ne garantit l’absence de toute information privée. La CI ne reçoit aucune identité, ne déchiffre pas les objets et ne publie pas de rapport contenant des valeurs privées. Voir [CONTRIBUTING.md](CONTRIBUTING.md) pour les commandes locales et les protections serveur.
+Aucun scanner ne garantit l’absence de toute information privée. La CI ne reçoit aucune phrase secrète, ne déchiffre pas les objets et ne publie pas de rapport contenant des valeurs privées. Voir [CONTRIBUTING.md](CONTRIBUTING.md) pour les commandes locales et les protections serveur.
 
 ## Validation
 
-Les commandes natives Linux sont vérifiées avec des données et une identité jetables. Les commandes PowerShell sont rédigées pour Windows PowerShell 5.1 et PowerShell 7, avec age et tar installés ; elles ne sont pas annoncées comme exécutées sur ce poste Linux. La CI contrôle les conventions et les hooks sur Linux et Windows, sans tester de données personnelles.
+Les anciens tests automatisés utilisent une identité jetable et ne valident pas encore le mode à phrase secrète. Les commandes PowerShell sont rédigées pour Windows PowerShell 5.1 et PowerShell 7, avec age et tar installés ; elles ne sont pas annoncées comme exécutées sur ce poste Linux. La CI contrôle les conventions et les hooks sur Linux et Windows, sans tester de données personnelles.
 
-Le destinataire public et l’identité existante sont conservés. Les archives documentaires locales des anciennes étapes restent hors du dépôt ; aucune archive personnelle n’est ajoutée automatiquement.
+Les anciennes archives chiffrées avec une identité perdue ont été retirées localement.
 
 ## Références
 

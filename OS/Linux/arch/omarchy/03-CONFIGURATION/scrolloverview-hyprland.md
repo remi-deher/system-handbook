@@ -3,7 +3,7 @@
 Résumé : configuration de ScrollOverview sous Omarchy et Hyprland pour afficher les workspaces avec Super+Tab, naviguer au clavier et corriger une erreur Lua de navigation.
 
 - Statut : configuration chargée ; interaction et rendu à vérifier selon la session.
-- Date : 2026-11-10.
+- Date : 2026-11-11.
 - Portée : Omarchy, Hyprland et greffon ScrollOverview.
 - Environnement observé : Hyprland 0.56.2, ScrollOverview `07a944e4d16f`, configuration Lua.
 - Prérequis : greffon installé et activé avec `hyprpm`. Les options et API peuvent évoluer selon les versions.
@@ -28,7 +28,7 @@ hl.animation({ leaf = "windowsMove", enabled = true, speed = 4.5, bezier = "ease
 
 Cette animation modifie également les déplacements de fenêtres hors aperçu. Le zoom spécifique du fond d’écran en arrière-plan n’est pas fourni par la version examinée.
 
-Dans `~/.config/hypr/bindings.lua`, Super+Tab ouvre l’aperçu sur tous les écrans. Le sous-plan ci-dessous conserve la navigation, ferme l’aperçu avec Entrée sur la sélection clavier et crée un workspace vide en appuyant vers le bas depuis le dernier workspace occupé :
+Dans `~/.config/hypr/bindings.lua`, Super+Tab ouvre l’aperçu sur tous les écrans. Le sous-plan ci-dessous conserve la navigation, ferme l’aperçu avec Entrée, Échap ou Super+Tab sur la sélection clavier et crée un workspace vide en appuyant vers le bas depuis le dernier workspace occupé :
 
 ```lua
 o.rebind("SUPER + TAB", "Workspace overview", function()
@@ -61,6 +61,7 @@ hl.define_submap("scrolloverview", function()
   hl.bind("return", hl.plugin.scrolloverview.overview("off"))
   hl.bind("KP_Enter", hl.plugin.scrolloverview.overview("off"))
   hl.bind("escape", hl.plugin.scrolloverview.overview("off"))
+  hl.bind("SUPER + TAB", hl.plugin.scrolloverview.overview("off"))
   hl.bind("mouse:272", function()
     hl.plugin.scrolloverview.overview("select")
     hl.plugin.scrolloverview.window("select")
@@ -83,7 +84,7 @@ hyprctl reload
 hyprctl configerrors
 ```
 
-Le rechargement a réussi sans erreur de configuration et l’appel direct de navigation a été exécuté sans erreur. Le rendu de l’aperçu convient à l’utilisateur ; la sélection par Entrée et la création par la flèche bas après correction n’ont pas fait l’objet d’une confirmation explicite. Vérifier ces interactions en session et réexaminer la compatibilité après mise à jour de Hyprland ou du greffon.
+Le rechargement a réussi sans erreur de configuration et l’appel direct de navigation a été exécuté sans erreur. Le 11 novembre 2026, après ajout de Super+Tab au sous-plan, le rechargement a de nouveau réussi et `hyprctl binds -j` a confirmé son enregistrement ; son utilisation au clavier reste à vérifier. Le rendu de l’aperçu convient à l’utilisateur ; la sélection par Entrée et la création par la flèche bas après correction n’ont pas fait l’objet d’une confirmation explicite. Vérifier ces interactions en session et réexaminer la compatibilité après mise à jour de Hyprland ou du greffon.
 
 ## Retour arrière et références
 

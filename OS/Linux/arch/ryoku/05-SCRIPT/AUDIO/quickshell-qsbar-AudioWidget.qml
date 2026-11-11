@@ -59,8 +59,9 @@ Item {
 
     TooltipMixin { id: tip; root: rootMod.root; owner: rootMod; text: rootMod.tooltipText }
 
-    // The built-in speaker volume keys and wheel use the PCM-aware helper on the
-    // internal PCH output. Other outputs keep native PipeWire control.
+    // Native PipeWire control through the tracked default sink (AudioData binds
+    // it): setting volume/mute writes straight to the node, so the bar readout and
+    // the hardware never disagree. No wpctl/pactl/pamixer shell-out.
     function stepVolume(up) {
         if (PcmVolume.usesPcm) {
             Quickshell.execDetached(["ryoku-volume", up ? "up" : "down"])
