@@ -4,7 +4,7 @@ Lire `../../../../AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `..
 
 ## Utilité
 
-Environnement Omarchy dans la famille Arch ; squelette prêt à documenter. Cette portée reproduit les neuf rubriques numérotées standard.
+Environnement Omarchy (Hyprland) dans la famille Arch. Les notes ont été validées sous Omarchy 4.5.0 et Hyprland 0.56.2 ; la machine actuelle tourne sous Ryoku et niri, donc elles ne sont pas revérifiées sur l’installation courante : le dire quand on s’appuie dessus. Elles utilisent des chemins et des helpers propres à Omarchy et ne valent pas telles quelles sous Hyprland sur Ryoku. Cette portée reproduit les neuf rubriques numérotées standard.
 
 ## Maintenir ce dossier
 
