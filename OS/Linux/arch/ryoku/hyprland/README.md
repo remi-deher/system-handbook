@@ -2,6 +2,8 @@
 
 Compositeur Hyprland dans Ryoku ; squelette prêt à documenter. Cette portée reproduit les neuf rubriques numérotées standard.
 
+Des notes Hyprland existent déjà sous [Omarchy](../../omarchy/README.md) (disposition défilante, ScrollOverview, gestes, touches multimédias). Elles utilisent des chemins et des helpers propres à Omarchy : les lire comme point de départ, sans les réutiliser telles quelles, puis documenter ici ce qui est vérifié sous Ryoku.
+
 ## Où chercher
 
 - [01-INSTALLATION/](01-INSTALLATION/README.md)

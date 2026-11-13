@@ -4,7 +4,7 @@ Lire `../../../../../AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS
 
 ## Utilité
 
-Compositeur Hyprland dans Ryoku ; squelette prêt à documenter. Cette portée reproduit les neuf rubriques numérotées standard.
+Compositeur Hyprland dans Ryoku ; squelette prêt à documenter. Cette portée reproduit les neuf rubriques numérotées standard. Des notes Hyprland propres à Omarchy existent sous `../../omarchy/` : s’en inspirer sans les réutiliser telles quelles, leurs prérequis étant différents.
 
 ## Maintenir ce dossier
 
