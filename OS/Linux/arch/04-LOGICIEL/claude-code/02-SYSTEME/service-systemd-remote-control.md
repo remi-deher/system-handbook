@@ -1,8 +1,9 @@
 # Claude Code en service systemd avec Remote Control
 
 - Résumé : un service systemd utilisateur lance `claude remote-control` au démarrage, ce qui garde une session Claude Code accessible depuis le téléphone ou claude.ai/code et la reprend après un redémarrage du service.
-- Statut : testé (confirmé par l'utilisateur : session visible et synchronisée des deux côtés, reprise après redémarrage du service). Service ensuite désactivé par l'utilisateur le 2026-11-06 : comportement jugé trop instable pour un usage quotidien, voir « Limites constatées ».
+- Statut : archivé, fonction abandonnée ; testé (confirmé par l'utilisateur : session visible et synchronisée des deux côtés, reprise après redémarrage du service). Service ensuite désactivé par l'utilisateur le 2026-11-06 : comportement jugé trop instable pour un usage quotidien, voir « Limites constatées ».
 - Date : 2026-11-06.
+- Dernière vérification : 2026-11-13, Claude Code 2.1.323 sous Arch Linux : le service `claude-remote-control` n'existe plus (`systemctl --user is-enabled claude-remote-control` répond `not-found`) ; les procédures n'ont pas été rejouées.
 - Portée : Arch Linux, Claude Code (CLI), systemd en mode utilisateur.
 - Environnements testés : Arch Linux, Claude Code 2.1.318, systemd utilisateur avec linger activé, shell de connexion fish (le service lance bash). Redémarrage du service testé ; redémarrage complet de la machine non testé.
 - Prérequis et exclusions : compte Claude avec abonnement, `claude` connecté (`claude` lancé au moins une fois), dossier de travail approuvé. Remote Control est décrit dans la [documentation officielle](https://code.claude.com/docs/fr/remote-control) ; son comportement peut changer d'une version à l'autre.

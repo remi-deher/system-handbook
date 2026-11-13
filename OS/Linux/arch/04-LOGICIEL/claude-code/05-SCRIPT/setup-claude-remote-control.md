@@ -1,8 +1,9 @@
 # setup-claude-remote-control : installer le service Remote Control
 
 - Résumé : script bash idempotent qui crée et active le service systemd utilisateur `claude-remote-control` ; sans chemin ni nom de machine en dur.
-- Statut : testé (exécuté plusieurs fois, relance sans effet de bord).
+- Statut : archivé, le service qu'il installe a été abandonné le 2026-11-06 (voir la [fiche de fonctionnement](../02-SYSTEME/service-systemd-remote-control.md)) ; script testé (exécuté plusieurs fois, relance sans effet de bord).
 - Date : 2026-11-05.
+- Dernière vérification : 2026-11-13, Claude Code 2.1.323 sous Arch Linux : le service `claude-remote-control` n'existe plus (`systemctl --user is-enabled claude-remote-control` répond `not-found`) ; les procédures n'ont pas été rejouées.
 - Portée : Arch Linux et distributions avec systemd, Claude Code CLI.
 - Environnements testés : Arch Linux, Claude Code 2.1.318, bash ; aucune autre distribution.
 - Prérequis et exclusions : `claude` dans le `PATH`, `systemctl --user`, `loginctl`. Sans systemd, ne convient pas.
