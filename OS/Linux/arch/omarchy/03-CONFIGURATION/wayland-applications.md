@@ -33,4 +33,4 @@ Pour retirer le forçage Wayland de Plex, puis relancer :
 flatpak override --user --unset-env=QT_QPA_PLATFORM --nosocket=wayland tv.plex.PlexDesktop
 ```
 
-Si la taille redevient trop petite sous XWayland, voir [l’ancienne configuration Plex](../../07-RESOLUTION/LOGICIEL/plex-desktop-echelle-xwayland.md).
+Si la taille redevient trop petite sous XWayland, voir [l’ancienne configuration Plex](../07-RESOLUTION/LOGICIEL/plex-desktop-echelle-xwayland.md).
