@@ -4,6 +4,9 @@ Configurations de référence et adaptations sélectionnées ; chiffrer les donn
 
 ## Où chercher
 
+- [Gestes du pavé tactile pour la vue d’ensemble](gestes-vue-ensemble.md).
+- [Applications Wayland et échelle](wayland-applications.md).
+
 - [Vue des workspaces avec ScrollOverview](scrolloverview-hyprland.md) : aperçu, navigation et correction Lua.
 - [Disposition défilante et vue d’ensemble inspirées de Niri](disposition-defilante-niri.md) : fenêtres, gestes et raccourcis Hyprland.
 
