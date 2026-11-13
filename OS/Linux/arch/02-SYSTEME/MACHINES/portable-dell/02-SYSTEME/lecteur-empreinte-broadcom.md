@@ -1,10 +1,11 @@
 # Lecteur d'empreinte Broadcom 0a5c:5843 (Dell Latitude 7440)
 
 - Résumé : le lecteur d'empreinte Broadcom `0a5c:5843` du Dell Latitude 7440 demande `libfprint-tod` et le pilote propriétaire `libfprint-2-tod1-broadcom` (AUR) ; l'enregistrement se fait ensuite dans les paramètres Ryoku (Super + ,), rubrique « Écran de verrouillage ».
-- Statut : lecteur reconnu ; le 2026-11-08, le journal fprintd a confirmé une désactivation pour surchauffe après des vérifications sans correspondance. Le verrouillage a été configuré pour garder une conversation PAM unique (`max-tries=-1`) ; son effet reste à confirmer après une période de verrouillage comparable.
-- Date : 2026-11-08.
+- Statut : installation, enregistrement d'une empreinte et fonctionnement confirmés par l'utilisateur le 2026-11-13 (réinstallation des paquets). Le 2026-11-08, le journal fprintd avait confirmé une désactivation pour surchauffe après des vérifications sans correspondance ; le verrouillage a alors été configuré pour garder une conversation PAM unique (`max-tries=-1`), mais son effet sur la surchauffe reste à confirmer après une période de verrouillage comparable.
+- Date : 2026-11-13.
+- Dernière vérification : 2026-11-13, sous Arch Linux (noyau 7.3.4-arch1-1), Ryoku 1.0.9, niri 26.04, fprintd 1.94.5-2, `libfprint-tod` 1.95.2+tod1-1, `libfprint-2-tod1-broadcom` 5.15.021.0-1.
 - Portée : Arch Linux, machine Dell Latitude 7440, environnement Ryoku.
-- Environnements : installation initiale sous Arch (noyau 7.2.x), fprintd 1.94.5, `libfprint-tod` 1.95.2+tod1, `libfprint-2-tod1-broadcom` 5.15.021.0 ; constat actuel sous CachyOS (noyau 7.3.3-1) avec les mêmes versions des paquets et Ryoku.
+- Environnements : installation initiale sous Arch (noyau 7.2.x), fprintd 1.94.5, `libfprint-tod` 1.95.2+tod1, `libfprint-2-tod1-broadcom` 5.15.021.0 ; constat antérieur sous CachyOS (noyau 7.3.3-1) avec les mêmes versions des paquets ; réinstallation du 2026-11-13 sous Arch Linux (voir « Dernière vérification »).
 - Prérequis et exclusions : accès AUR (`yay`), mot de passe sudo. Le paquet `libfprint-2-tod1-broadcom-cv3plus` vise les lecteurs `0a5c:586*` (ControlVault 3 Plus) et ne convient pas à `0a5c:5843`.
 
 ## But ou problème
@@ -23,10 +24,12 @@ Faire reconnaître le lecteur d'empreinte du portable. Avant l'installation, `fp
 
 Shell : fish ou bash, sur Arch.
 
-1. Vérifier le lecteur :
+1. Vérifier le lecteur. `lsusb` vient du paquet `usbutils`, absent d'une installation Ryoku minimale ; sans lui, lire directement sysfs (bash) :
 
    ```bash
    lsusb | grep -i 0a5c:5843
+   # sans usbutils :
+   for d in /sys/bus/usb/devices/*/; do [ -r "$d/idVendor" ] && echo "$(cat "$d/idVendor"):$(cat "$d/idProduct")"; done | grep -i 0a5c:5843
    ```
 
 2. Installer la bibliothèque TOD (elle remplace `libfprint` et fournit `libfprint-2.so`, donc `fprintd` continue de fonctionner) et le pilote. `--ask 4` accepte le remplacement de `libfprint` :
@@ -62,12 +65,16 @@ Une règle udev pour empêcher l’autosuspend a été essayée, puis retirée :
 - Détection USB du lecteur et disponibilité des paquets AUR : constatées avant installation.
 - Installation, configuration et enregistrement : réalisés par l'utilisateur ; une capture des paramètres Ryoku montre un enregistrement en cours (étape 10/11).
 - Le 2026-11-08, `max-tries=-1` a été appliqué au service PAM du verrouillage et propagé par `ryoku-qylock-activate`. Le fonctionnement après 10 à 20 minutes de verrouillage reste à confirmer.
-- Non vérifié ici : déverrouillage réel de l'écran, `sudo` et connexion par empreinte.
+- Le 2026-11-13, après réinstallation : l'utilisateur a installé les deux paquets avec la commande de l'étape 2 (le mot de passe sudo est demandé de façon interactive) et enregistré l'empreinte par les paramètres Ryoku (Super + ,, « Écran de verrouillage »). `fprintd-list` voit le lecteur « Broadcom Sensors » avec une empreinte enregistrée (index droit) ; le journal fprintd indique que le micrologiciel du capteur est à jour. L'utilisateur confirme que le fonctionnement est bon, sans préciser quels usages ont été essayés (déverrouillage, `sudo`, connexion).
+- Le journal fprintd contient un refus `Authorization denied … 'EnrollStart' … Not Authorized: net.reactivated.fprint.device.enroll`, antérieur à l'enregistrement réussi ; cause non identifiée, sans conséquence constatée.
+- Le 2026-11-13, la ligne `pam_fprintd.so` du service de verrouillage (source sous `/usr/share/ryoku/lockscreen/...` et copie sous `~/.local/share/quickshell-lockscreen/...`) vaut `timeout=-1` **sans** `max-tries=-1` : la modification du 2026-11-08 n'a pas survécu à la réinstallation. Le risque de désactivation thermique après trois lectures sans correspondance est donc de nouveau présent tant que le réglage n'est pas réappliqué.
+- Non vérifié : le détail des usages (déverrouillage réel de l'écran, `sudo`, connexion par empreinte).
 
 ## Persistance et maintenance
 
 - Une mise à jour de `libfprint` depuis les dépôts officiels est bloquée par le conflit avec `libfprint-tod` ; mettre à jour les deux paquets AUR ensemble.
 - Le pilote installe aussi un micrologiciel dans `/var/lib/fprint/fw/` et des règles udev.
+- Le réglage `max-tries=-1` du verrouillage ne persiste pas : il est perdu à une mise à jour de `ryoku-desktop` ou à une réinstallation (constaté le 2026-11-13). Après l'un ou l'autre, relire la ligne `pam_fprintd.so` et la réappliquer si besoin.
 
 ## Sauvegarde et retour arrière
 
