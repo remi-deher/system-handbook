@@ -23,7 +23,7 @@ bash setup-claude-remote-control.sh --name NOM   # nom fixé dans ~/.config/clau
 
 Le script :
 
-- vérifie que `claude` est dans le `PATH` et avertit si le dossier personnel n'est pas approuvé ;
+- vérifie que `claude` est dans le `PATH` et avertit si le dossier personnel n'est pas approuvé (divergence constatée le 2026-11-13 : répondre « Yes » dans `~` ne semble pas persister, voir [la fiche de résolution](../07-RESOLUTION/confiance-dossier-personnel-redemandee.md)) ;
 - écrit `~/.config/systemd/user/claude-remote-control.service` (avec `%h` et `%H`, donc aucun chemin ni nom en dur) et crée `~/.config/claude-remote-control.env` s'il n'existe pas ;
 - répond `y` automatiquement à la question de confirmation de Remote Control ;
 - active le linger si besoin, recharge systemd, active le service et ne le redémarre que si l'unité a changé ou s'il est arrêté.

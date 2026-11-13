@@ -5,6 +5,7 @@ Problèmes, diagnostics et solutions, regroupés par catégorie. Portée : Claud
 ## Où chercher
 
 - [Remote Control : session introuvable, sans réponse ou service bloqué](remote-control-session-introuvable.md)
+- [Question de confiance du dossier redemandée à chaque lancement](confiance-dossier-personnel-redemandee.md)
 
 Ajouter ici les futures fiches utiles et les référencer dans cet index.
 
