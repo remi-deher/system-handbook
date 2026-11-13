@@ -1,13 +1,13 @@
 # Plex Desktop : taille et netteté sous XWayland
 
 - Résumé : sous Omarchy et Hyprland, Plex Desktop Flatpak affiché par XWayland peut être trop petit ; un facteur Qt propre à Plex de 1,25 donne une taille et une netteté correctes sur la machine testée.
-- Statut : résolu pour Plex (confirmé par l'utilisateur) ; réglage global à étudier.
+- Statut : obsolète depuis le 2026-11-11, remplacée par [la configuration Wayland](../../03-CONFIGURATION/wayland-applications.md) ; le réglage XWayland avait été confirmé par l'utilisateur pour Plex.
 - Date : 2026-11-10.
 - Portée : Arch Linux, Omarchy, Hyprland et Plex Desktop Flatpak `tv.plex.PlexDesktop`.
 - Environnements testés : écran 1920 × 1200 avec échelle Hyprland de 1,33, Plex lancé par XWayland.
 - Prérequis et exclusions : ce facteur est adapté aux préférences et à l'écran testés ; il ne s'applique pas automatiquement à Steam ou GeForce NOW.
 
-> Mise à jour du 2026-11-11 : la procédure XWayland ci-dessous est historique. Plex fonctionne désormais en Wayland natif sans facteur Qt supplémentaire ; voir [la configuration Wayland](../../omarchy/03-CONFIGURATION/wayland-applications.md). La taille est confirmée par l’utilisateur et la répétition de Tab semble corrigée.
+> Mise à jour du 2026-11-11 : la procédure XWayland ci-dessous est historique. Plex fonctionne désormais en Wayland natif sans facteur Qt supplémentaire ; voir [la configuration Wayland](../../03-CONFIGURATION/wayland-applications.md). La taille est confirmée par l’utilisateur et la répétition de Tab semble corrigée.
 
 ## Diagnostic
 
@@ -21,7 +21,7 @@ Dans un shell bash, pour cette installation Flatpak :
 flatpak override --user --env=QT_SCALE_FACTOR=1.25 tv.plex.PlexDesktop
 ```
 
-Fermer complètement Plex puis le relancer. Conserver `xwayland:force_zero_scaling` activé pour éviter l'agrandissement supplémentaire par le compositeur. Le réglage Qt Quick OpenGL préexistant reste indépendant ; voir [la fiche sur les carrés blancs](plex-desktop-carres-blancs-defilement.md).
+Fermer complètement Plex puis le relancer. Conserver `xwayland:force_zero_scaling` activé pour éviter l'agrandissement supplémentaire par le compositeur. Le réglage Qt Quick OpenGL préexistant reste indépendant ; voir [la fiche sur les carrés blancs](../../../07-RESOLUTION/LOGICIEL/plex-desktop-carres-blancs-defilement.md).
 
 ## Validation
 

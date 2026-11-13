@@ -2274,25 +2274,6 @@
       ]
     },
     {
-      "path": "OS/Linux/arch/07-RESOLUTION/LOGICIEL/geforce-now-interface-trop-petite.md",
-      "kind": "fiche",
-      "title": "GeForce NOW : interface trop petite sous XWayland",
-      "summary": "sur Omarchy avec Hyprland, le client GeForce NOW Flatpak peut afficher une interface trop petite ; un zoom CEF de 150 % a corrigé la taille sur la machine testée.",
-      "status": "résolu (confirmé par l'utilisateur)",
-      "date": "2026-11-10",
-      "scope_note": "Arch Linux, Omarchy, Hyprland, GeForce NOW Flatpak `com.nvidia.geforcenow`",
-      "os": "Linux",
-      "family": "arch",
-      "rubric": "07-RESOLUTION",
-      "category": "LOGICIEL",
-      "tags": [
-        "linux",
-        "arch",
-        "resolution",
-        "logiciel"
-      ]
-    },
-    {
       "path": "OS/Linux/arch/07-RESOLUTION/LOGICIEL/plex-desktop-carres-blancs-defilement.md",
       "kind": "fiche",
       "title": "Plex Desktop : carrés blancs pendant le défilement",
@@ -2300,25 +2281,6 @@
       "status": "résolu (confirmé par l'utilisateur)",
       "date": "2026-11-06",
       "scope_note": "Arch Linux, client Plex Desktop Flatpak `tv.plex.PlexDesktop`",
-      "os": "Linux",
-      "family": "arch",
-      "rubric": "07-RESOLUTION",
-      "category": "LOGICIEL",
-      "tags": [
-        "linux",
-        "arch",
-        "resolution",
-        "logiciel"
-      ]
-    },
-    {
-      "path": "OS/Linux/arch/07-RESOLUTION/LOGICIEL/plex-desktop-echelle-xwayland.md",
-      "kind": "fiche",
-      "title": "Plex Desktop : taille et netteté sous XWayland",
-      "summary": "sous Omarchy et Hyprland, Plex Desktop Flatpak affiché par XWayland peut être trop petit ; un facteur Qt propre à Plex de 1,25 donne une taille et une netteté correctes sur la machine testée.",
-      "status": "résolu pour Plex (confirmé par l'utilisateur) ; réglage global à étudier",
-      "date": "2026-11-10",
-      "scope_note": "Arch Linux, Omarchy, Hyprland et Plex Desktop Flatpak `tv.plex.PlexDesktop`",
       "os": "Linux",
       "family": "arch",
       "rubric": "07-RESOLUTION",
@@ -2539,9 +2501,9 @@
     {
       "path": "OS/Linux/arch/omarchy/03-CONFIGURATION/disposition-defilante-niri.md",
       "kind": "fiche",
-      "title": "Disposition défilante et vue d’ensemble inspirées de Niri",
-      "summary": "configurer sous Omarchy la disposition défilante native de Hyprland, les gestes du pavé tactile et la vue d’ensemble ScrollOverview pour retrouver des éléments de l’expérience Niri.",
-      "status": "configuration appliquée ; rechargement et options vérifiés, gestes physiques et vue d’ensemble à confirmer séparément",
+      "title": "Disposition défilante inspirée de Niri",
+      "summary": "configurer sous Omarchy la disposition défilante native de Hyprland, les gestes à trois doigts du pavé tactile et les raccourcis de fenêtres pour retrouver des éléments de l’expérience Niri ; la vue d’ensemble et les gestes à quatre doigts ont leurs propres fiches.",
+      "status": "configuration appliquée ; rechargement et options vérifiés, utilisation physique de la disposition, des gestes à trois doigts et des raccourcis à confirmer. La vue d’ensemble (ScrollOverview) et les gestes à quatre doigts, confirmés par l’utilisateur, sont suivis dans leurs fiches",
       "date": "2026-11-11",
       "scope_note": "Arch Linux, Omarchy et Hyprland ; ne configure pas Niri lui-même",
       "os": "Linux",
@@ -2810,6 +2772,92 @@
       ]
     },
     {
+      "path": "OS/Linux/arch/omarchy/07-RESOLUTION/LOGICIEL/00-AGENTS.md",
+      "kind": "guide",
+      "title": "Instructions pour les IA — Logiciels sous Omarchy",
+      "summary": "Lire `../../../../../../AGENTS.md`, `../../../../../00-AGENTS.md`, `../../../../00-AGENTS.md`, `../../../00-AGENTS.md`, `../../00-AGENTS.md`, `../00-AGENTS.md`, puis `README.md` ici.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "07-RESOLUTION",
+      "category": "LOGICIEL",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "resolution",
+        "logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/omarchy/07-RESOLUTION/LOGICIEL/README.md",
+      "kind": "guide",
+      "title": "Logiciels — résolutions sous Omarchy",
+      "summary": "Problèmes d'affichage ou de fonctionnement des logiciels propres à Omarchy et Hyprland (échelle XWayland, clients Flatpak).",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "07-RESOLUTION",
+      "category": "LOGICIEL",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "resolution",
+        "logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/omarchy/07-RESOLUTION/LOGICIEL/geforce-now-interface-trop-petite.md",
+      "kind": "fiche",
+      "title": "GeForce NOW : interface trop petite sous XWayland",
+      "summary": "sur Omarchy avec Hyprland, le client GeForce NOW Flatpak peut afficher une interface trop petite ; un zoom CEF de 150 % a corrigé la taille sur la machine testée.",
+      "status": "résolu (confirmé par l'utilisateur)",
+      "date": "2026-11-10",
+      "scope_note": "Arch Linux, Omarchy, Hyprland, GeForce NOW Flatpak `com.nvidia.geforcenow`",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "07-RESOLUTION",
+      "category": "LOGICIEL",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "resolution",
+        "logiciel"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/omarchy/07-RESOLUTION/LOGICIEL/plex-desktop-echelle-xwayland.md",
+      "kind": "fiche",
+      "title": "Plex Desktop : taille et netteté sous XWayland",
+      "summary": "sous Omarchy et Hyprland, Plex Desktop Flatpak affiché par XWayland peut être trop petit ; un facteur Qt propre à Plex de 1,25 donne une taille et une netteté correctes sur la machine testée.",
+      "status": "obsolète depuis le 2026-11-11, remplacée par la configuration Wayland ; le réglage XWayland avait été confirmé par l'utilisateur pour Plex",
+      "date": "2026-11-10",
+      "scope_note": "Arch Linux, Omarchy, Hyprland et Plex Desktop Flatpak `tv.plex.PlexDesktop`",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "07-RESOLUTION",
+      "category": "LOGICIEL",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "resolution",
+        "logiciel"
+      ]
+    },
+    {
       "path": "OS/Linux/arch/omarchy/07-RESOLUTION/README.md",
       "kind": "guide",
       "title": "Résolutions — Omarchy",
@@ -2903,7 +2951,7 @@
       "path": "OS/Linux/arch/omarchy/README.md",
       "kind": "scope",
       "title": "Omarchy",
-      "summary": "Environnement Omarchy dans la famille Arch ; squelette prêt à documenter.",
+      "summary": "Environnement Omarchy (Hyprland) dans la famille Arch.",
       "os": "Linux",
       "family": "arch",
       "scopes": [
