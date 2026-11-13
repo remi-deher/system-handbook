@@ -50,7 +50,7 @@ amixer -c PCH scontents
 pactl get-default-sink
 ```
 
-Vérifier que `Speaker` est activé et que `Master` est à 100 %. Si le retask est activé et que `Bass Speaker` existe, vérifier aussi ce contrôle. Régler le niveau d'écoute avec `PCM` ou les touches de volume. Le haut-parleur supérieur a été signalé audible via `Headphone` sans retask sur une installation fraîche ; voir les observations et limites dans [routage audio natif et volume matériel](../../07-RESOLUTION/AUDIO/volume-physique-avec-easyeffects.md).
+Vérifier que `Speaker` est activé et que `Master` est à 100 %. Si le retask est activé et que `Bass Speaker` existe, vérifier aussi ce contrôle. Régler le niveau d'écoute avec `PCM` ou les touches de volume. Le haut-parleur supérieur a été signalé audible via `Headphone` sans retask sur une installation fraîche ; voir les observations et limites dans [volume matériel PCM, OSD et QSbar](../../07-RESOLUTION/AUDIO/volume-pcm-osd-qsbar.md) et [haut-parleurs supérieurs du Dell](../../../02-SYSTEME/MACHINES/portable-dell/02-SYSTEME/audio-haut-parleurs-superieurs.md).
 
 ## Retour arrière
 

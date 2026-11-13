@@ -4,6 +4,7 @@ Routage audio, volume matériel, EasyEffects et périphériques Bluetooth sous R
 
 ## Où chercher
 
-- [volume-physique-avec-easyeffects.md](volume-physique-avec-easyeffects.md) : routage automatique vers les haut-parleurs ou les AirPods avec smart filters WirePlumber, contrôle du volume matériel et micro interne comme entrée par défaut.
+- [volume-pcm-osd-qsbar.md](volume-pcm-osd-qsbar.md) : volume matériel `PCM` des touches, de l'OSD, du widget QSbar et du panneau.
+- Autres sujets audio : [haut-parleurs supérieurs du Dell](../../../02-SYSTEME/MACHINES/portable-dell/02-SYSTEME/audio-haut-parleurs-superieurs.md) et [historique EasyEffects et smart filters](../../09-NOTE/audio-historique-easyeffects-smart-filters.md).
 
 Voir les [instructions IA](00-AGENTS.md) et l’[index des résolutions Ryoku](../README.md).

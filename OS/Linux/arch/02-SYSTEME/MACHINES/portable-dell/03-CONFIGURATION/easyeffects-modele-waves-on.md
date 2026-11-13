@@ -74,4 +74,4 @@ Les presets sont des ajouts : supprimer les deux fichiers de `~/.local/share/eas
 
 - [Mesures Waves : scripts, protocoles et rapports](../../../../../../../OUTILS/EASYEFFECTS/MESURES-WAVES/README.md) pour refaire ou prolonger les mesures.
 - [Autoload par appareil](../../../../../../../OUTILS/EASYEFFECTS/autoload-par-appareil.md) pour charger ce preset seulement sur les haut-parleurs.
-- [Routage audio et commandes de volume sous Ryoku](../../../../ryoku/07-RESOLUTION/AUDIO/volume-physique-avec-easyeffects.md) pour les profils par appareil, la sélection automatique des sorties et le volume matériel.
+- [Volume matériel PCM, OSD et QSbar sous Ryoku](../../../../ryoku/07-RESOLUTION/AUDIO/volume-pcm-osd-qsbar.md) pour le volume matériel, et l'[historique des essais audio](../../../../ryoku/09-NOTE/audio-historique-easyeffects-smart-filters.md) pour la sélection automatique des sorties.
