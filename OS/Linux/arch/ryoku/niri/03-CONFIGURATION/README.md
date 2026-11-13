@@ -4,6 +4,8 @@ Configurations de référence et adaptations sélectionnées ; chiffrer les donn
 
 ## Fiches
 
+- [Luminosité minimale des touches](luminosite-minimale.md) — limite à 1 % et pas adaptés sous Niri.
+
 - [Rotation automatique de l’écran — Niri](rotation-automatique.md) — rotation par accéléromètre et paires de fenêtres pleine largeur en portrait.
 
 ## Où chercher
