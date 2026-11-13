@@ -1024,6 +1024,26 @@
       ]
     },
     {
+      "path": "OS/Linux/arch/04-LOGICIEL/claude-code/07-RESOLUTION/confiance-dossier-personnel-redemandee.md",
+      "kind": "fiche",
+      "title": "Claude Code : la question de confiance du dossier revient à chaque lancement",
+      "summary": "l'approbation « I trust this folder » est enregistrée dossier par dossier dans `~/.claude.json` et ne semble pas retenue pour `~` ; mettre `hasTrustDialogAccepted` à `true` pour `~` supprime la question dans `~` et ses sous-dossiers.",
+      "status": "résolu (confirmé par l'utilisateur : la question ne revient plus) ; la cause exacte pour `~` reste une hypothèse",
+      "date": "2026-11-13",
+      "scope_note": "Claude Code CLI sous Linux, lancement dans le dossier personnel ou dans ses sous-dossiers",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "04-LOGICIEL",
+      "category": "claude-code/07-RESOLUTION",
+      "tags": [
+        "linux",
+        "arch",
+        "logiciel",
+        "claude-code",
+        "07-resolution"
+      ]
+    },
+    {
       "path": "OS/Linux/arch/04-LOGICIEL/claude-code/07-RESOLUTION/remote-control-session-introuvable.md",
       "kind": "fiche",
       "title": "Remote Control : session introuvable, sans réponse ou service bloqué",
