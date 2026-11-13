@@ -1,10 +1,8 @@
 # Raccourci d'accès rapide 1Password sous Niri
 
-Résumé : Sous Niri (Wayland), Ctrl+Maj+Espace n'ouvre pas l'accès rapide de 1Password car l'application ne peut pas enregistrer de raccourci global ; un raccourci Niri qui lance `1password --quick-access` via un script le ramène sur le bureau actif.
-
-Statut : **résolu et confirmé par l'utilisateur le 5 novembre 2026**.
-
-Date : 2026-11-05.
+- Résumé : Sous Niri (Wayland), Ctrl+Maj+Espace n'ouvre pas l'accès rapide de 1Password car l'application ne peut pas enregistrer de raccourci global ; un raccourci Niri qui lance `1password --quick-access` via un script le ramène sur le bureau actif.
+- Statut : résolu et confirmé par l'utilisateur le 5 novembre 2026.
+- Date : 2026-11-05.
 
 ## Portée
 

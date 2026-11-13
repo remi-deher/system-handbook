@@ -4470,6 +4470,7 @@
       "title": "Raccourcis AZERTY dans Ryoku / Niri",
       "summary": "Les raccourcis Super+Alt et Super+Maj avec la rangée AZERTY déplacent une fenêtre vers un bureau ; ils exigent les noms XKB français et `focus=false` pour Maj dans Ryoku avec Niri.",
       "status": "résolu et confirmé par l'utilisateur le 4 novembre 2026",
+      "date": "2026-11-04",
       "os": "Linux",
       "family": "arch",
       "scopes": [
