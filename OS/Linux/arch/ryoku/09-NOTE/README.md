@@ -2,9 +2,9 @@
 
 Connaissances, explications et observations utiles. Portée : Ryoku. Ce dossier est une rubrique, pas une nouvelle portée.
 
-Le squelette est prêt ; aucune fiche technique propre à ce dossier n’est encore ajoutée.
-
 ## Où chercher
+
+- [Historique audio : mode EasyEffects, routage natif et smart filters](audio-historique-easyeffects-smart-filters.md)
 
 Ajouter ici les futures fiches utiles et les référencer dans cet index.
 

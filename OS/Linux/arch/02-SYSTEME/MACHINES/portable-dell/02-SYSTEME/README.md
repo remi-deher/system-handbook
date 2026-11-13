@@ -5,6 +5,7 @@ Fonctionnement, services, matériel et réglages système. Portée : Portable De
 ## Où chercher
 
 - [Lecteur d'empreinte Broadcom 0a5c:5843](lecteur-empreinte-broadcom.md)
+- [Haut-parleurs supérieurs, retask HDA 0x14 et niveau Headphone](audio-haut-parleurs-superieurs.md)
 
 Ajouter ici les futures fiches utiles et les référencer dans cet index.
 

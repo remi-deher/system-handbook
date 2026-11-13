@@ -296,6 +296,27 @@
       ]
     },
     {
+      "path": "OS/Linux/arch/02-SYSTEME/MACHINES/portable-dell/02-SYSTEME/audio-haut-parleurs-superieurs.md",
+      "kind": "fiche",
+      "title": "Dell Latitude 7440 : haut-parleurs supérieurs, retask HDA 0x14 et niveau Headphone",
+      "summary": "sur le Dell Latitude 7440 (codec Realtek ALC289), le haut-parleur supérieur est rapporté audible via le curseur ALSA `Headphone` sans retask de la broche HDA `0x14` ; le retask par `hdajackretask` est facultatif et son besoin reste à confirmer.",
+      "status": "observations d'écoute de l'utilisateur, attributions électriques non vérifiées ; l'état du 2026-11-13 est un relevé de l'agent, non confirmé par l'utilisateur",
+      "date": "2026-11-13",
+      "scope_note": "Arch Linux, Dell Latitude 7440 (codec Realtek ALC289), Ryoku ; observations propres à cette machine",
+      "os": "Linux",
+      "family": "arch",
+      "rubric": "02-SYSTEME",
+      "category": "MACHINES/portable-dell/02-SYSTEME",
+      "tags": [
+        "linux",
+        "arch",
+        "systeme",
+        "machines",
+        "portable-dell",
+        "02-systeme"
+      ]
+    },
+    {
       "path": "OS/Linux/arch/02-SYSTEME/MACHINES/portable-dell/02-SYSTEME/lecteur-empreinte-broadcom.md",
       "kind": "fiche",
       "title": "Lecteur d'empreinte Broadcom 0a5c:5843 (Dell Latitude 7440)",
@@ -3403,13 +3424,13 @@
       ]
     },
     {
-      "path": "OS/Linux/arch/ryoku/07-RESOLUTION/AUDIO/volume-physique-avec-easyeffects.md",
+      "path": "OS/Linux/arch/ryoku/07-RESOLUTION/AUDIO/volume-pcm-osd-qsbar.md",
       "kind": "fiche",
-      "title": "Routage audio natif et volume matériel sous Ryoku",
-      "summary": "pour la sortie analogique interne du Dell, les touches de volume, QSbar et le panneau règlent PCM ; les autres sorties restent pilotées par PipeWire. Le routage et le traitement des haut-parleurs supérieurs, notamment le besoin du retask HDA `0x14`, restent à distinguer des observations d'écoute.",
-      "status": "helpers de volume, contrôles PCM QSbar/panneau et événement OSD adaptés le 2026-11-08 après une installation fraîche. Le 2026-11-08, correction d'un conflit visuel : les notifications PipeWire du sink à 100 % ne doivent pas effacer la valeur PCM transmise à l'OSD ; Quickshell a été rechargé, le résultat reste à confirmer par l'utilisateur. L'utilisateur rapporte maintenant que le haut-parleur supérieur devient audible via `Headphone` sans retask `0x14` ; ce chemin et le besoin du retask restent à confirmer séparément. La conversion des presets reste incomplète",
-      "date": "2026-11-08",
-      "scope_note": "Arch Linux, Ryoku sous Niri, PipeWire et EasyEffects ; test réalisé sur un Dell Latitude 7440",
+      "title": "Volume matériel PCM, OSD et QSbar sous Ryoku",
+      "summary": "sous Ryoku (niri), sur la sortie analogique interne du Dell, les touches de volume, le widget QSbar, le panneau de volume et l'OSD règlent le contrôle ALSA `PCM` ; les autres sorties restent pilotées par PipeWire. Les adaptations se réinstallent avec l'installateur audio.",
+      "status": "adaptations réalisées le 2026-11-08 après une installation fraîche (helpers, liaisons PCM des touches, du widget et du panneau, événement OSD) ; widget et panneau confirmés par l'utilisateur le 2026-11-07, conflit visuel de l'OSD corrigé le 2026-11-08 sans confirmation. Ces adaptations sont absentes de l'installation du 2026-11-13 : voir « Dernière vérification »",
+      "date": "2026-11-13",
+      "scope_note": "Arch Linux, Ryoku sous Niri, PipeWire ; test réalisé sur un Dell Latitude 7440",
       "os": "Linux",
       "family": "arch",
       "scopes": [
@@ -3628,6 +3649,27 @@
       "kind": "guide",
       "title": "Notes — Ryoku",
       "summary": "Connaissances, explications et observations utiles.",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "ryoku"
+      ],
+      "rubric": "09-NOTE",
+      "tags": [
+        "linux",
+        "arch",
+        "ryoku",
+        "note"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/ryoku/09-NOTE/audio-historique-easyeffects-smart-filters.md",
+      "kind": "fiche",
+      "title": "Historique audio : mode EasyEffects, routage natif et smart filters",
+      "summary": "consigne les essais audio du Dell sous Ryoku du 2026-11-06 : volume en mode sink virtuel EasyEffects, routage natif par WirePlumber, smart filters et diagnostic du rendu ; ne décrit pas l'installation du 2026-11-13.",
+      "status": "historique ; certains constats restent à confirmer par l'utilisateur (rendu sonore, bascule après désactivation des filtres)",
+      "date": "2026-11-06",
+      "scope_note": "Arch Linux, Ryoku sous Niri, PipeWire, WirePlumber et EasyEffects ; Dell Latitude 7440",
       "os": "Linux",
       "family": "arch",
       "scopes": [

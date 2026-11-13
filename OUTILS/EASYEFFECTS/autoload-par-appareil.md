@@ -19,7 +19,7 @@ Trois points ont empêché le premier essai :
 2. **Nom de la route.** Le champ `device-profile` d'un fichier d'autoload n'est pas le nom technique du port (`headphone-output`) mais sa **description localisée**, celle que `pactl list sinks` affiche dans `Ports:` : « Casque audio » pour un sink Bluetooth, « Haut-parleurs » pour l'interne. Avec un mauvais nom, le journal indique : `Could not find an autoload profile for the device … and route …`.
 3. **Le dernier preset persiste.** Sans autoload pour une sortie, EasyEffects garde le dernier preset chargé. Un preset AirPods resterait donc actif sur les haut-parleurs. Il faut un fichier d'autoload pour chaque sortie utilisée.
 
-Le sink virtuel `easyeffects_sink` peut rester la sortie par défaut pour faire passer les flux par les effets et préserver l'autoload. Dans cette configuration, les raccourcis de volume qui ciblent `@DEFAULT_AUDIO_SINK@` règlent le sink virtuel, pas nécessairement la sortie matérielle qui reçoit le signal. Sous Ryoku, voir [la résolution des commandes de volume](../../OS/Linux/arch/ryoku/07-RESOLUTION/AUDIO/volume-physique-avec-easyeffects.md).
+Le sink virtuel `easyeffects_sink` peut rester la sortie par défaut pour faire passer les flux par les effets et préserver l'autoload. Dans cette configuration, les raccourcis de volume qui ciblent `@DEFAULT_AUDIO_SINK@` règlent le sink virtuel, pas nécessairement la sortie matérielle qui reçoit le signal. Sous Ryoku, voir [les commandes de volume](../../OS/Linux/arch/ryoku/07-RESOLUTION/AUDIO/volume-pcm-osd-qsbar.md) et l'[historique des essais audio](../../OS/Linux/arch/ryoku/09-NOTE/audio-historique-easyeffects-smart-filters.md).
 
 ## Procédure ou utilisation
 
