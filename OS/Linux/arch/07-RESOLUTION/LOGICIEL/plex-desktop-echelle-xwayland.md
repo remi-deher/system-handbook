@@ -7,6 +7,8 @@
 - Environnements testés : écran 1920 × 1200 avec échelle Hyprland de 1,33, Plex lancé par XWayland.
 - Prérequis et exclusions : ce facteur est adapté aux préférences et à l'écran testés ; il ne s'applique pas automatiquement à Steam ou GeForce NOW.
 
+> Mise à jour du 2026-11-11 : la procédure XWayland ci-dessous est historique. Plex fonctionne désormais en Wayland natif sans facteur Qt supplémentaire ; voir [la configuration Wayland](../../omarchy/03-CONFIGURATION/wayland-applications.md). La taille est confirmée par l’utilisateur et la répétition de Tab semble corrigée.
+
 ## Diagnostic
 
 Avec `xwayland:force_zero_scaling` activé, les fenêtres XWayland ne sont pas agrandies par le compositeur et Plex était trop petit. L'agrandissement global par le compositeur a rendu son texte moins net. Le facteur Qt propre à Plex permet à l'application de dessiner elle-même à la taille demandée.
