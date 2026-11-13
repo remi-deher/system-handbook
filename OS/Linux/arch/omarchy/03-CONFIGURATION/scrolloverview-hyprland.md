@@ -6,7 +6,7 @@ Résumé : configuration de ScrollOverview sous Omarchy et Hyprland pour affiche
 - Date : 2026-11-11.
 - Portée : Omarchy, Hyprland et greffon ScrollOverview.
 - Environnement observé : Hyprland 0.56.2, ScrollOverview `07a944e4d16f`, configuration Lua.
-- Prérequis : greffon installé et activé avec `hyprpm`. Les options et API peuvent évoluer selon les versions.
+- Prérequis : greffon installé et activé avec `hyprpm` (voir « Installation du plugin » dans [la fiche disposition défilante](disposition-defilante-niri.md)). Les options et API peuvent évoluer selon les versions.
 
 ## Configuration
 
@@ -28,7 +28,7 @@ hl.animation({ leaf = "windowsMove", enabled = true, speed = 4.5, bezier = "ease
 
 Cette animation modifie également les déplacements de fenêtres hors aperçu. Le zoom spécifique du fond d’écran en arrière-plan n’est pas fourni par la version examinée.
 
-Dans `~/.config/hypr/bindings.lua`, Super+Tab ouvre l’aperçu sur tous les écrans. Le sous-plan ci-dessous conserve la navigation, ferme l’aperçu avec Entrée, Échap ou Super+Tab sur la sélection clavier et crée un workspace vide en appuyant vers le bas depuis le dernier workspace occupé :
+Dans `~/.config/hypr/bindings.lua`, Super+Tab ouvre l’aperçu sur tous les écrans (il passait auparavant à l’espace suivant). Le sous-plan ci-dessous conserve la navigation, ferme l’aperçu avec Entrée, Échap ou Super+Tab sur la sélection clavier et crée un workspace vide en appuyant vers le bas depuis le dernier workspace occupé :
 
 ```lua
 o.rebind("SUPER + TAB", "Workspace overview", function()
@@ -93,3 +93,4 @@ Retirer les options et raccourcis ajoutés ou restaurer les copies locales des f
 - [Documentation des actions ScrollOverview](https://github.com/yayuuu/hyprland-scroll-overview/wiki/Dispatchers)
 - [Sous-plan de raccourcis ScrollOverview](https://github.com/yayuuu/hyprland-scroll-overview/wiki/Keybind-submap)
 - [Workspaces dynamiques](https://github.com/yayuuu/hyprland-scroll-overview/wiki/Dynamic-workspaces)
+- Fiches liées : [gestes à quatre doigts](gestes-vue-ensemble.md), [touches multimédias dans la vue](../07-RESOLUTION/CLAVIER/touches-multimedia-vue-ensemble.md), [disposition défilante](disposition-defilante-niri.md).

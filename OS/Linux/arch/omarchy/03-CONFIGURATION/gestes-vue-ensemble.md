@@ -16,7 +16,7 @@ hl.gesture({ fingers = 4, direction = "up", action = hl.plugin.scrolloverview.ov
 hl.gesture({ fingers = 4, direction = "down", action = hl.plugin.scrolloverview.overview("off") })
 ```
 
-Le premier geste ouvre la même vue sur tous les écrans que le raccourci personnel Super+Tab. Le second utilise la même fermeture que les touches Entrée et Échap de la vue ; il conserve la sélection active. Les gestes préexistants à trois doigts restent disponibles.
+Le premier geste ouvre la même vue sur tous les écrans que le raccourci personnel Super+Tab. Le second utilise la même fermeture que les touches Entrée et Échap de la vue ; il conserve la sélection active. Les gestes préexistants à trois doigts restent disponibles ; ils sont décrits dans [la fiche disposition défilante](disposition-defilante-niri.md).
 
 Sur la version testée, `overview(...)` fournit une fonction d’action en dehors d’un raccourci clavier. La passer directement à `action` : l’appeler seule à l’intérieur d’une autre fonction de geste ne déclenche pas la vue.
 
