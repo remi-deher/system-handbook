@@ -1,8 +1,9 @@
 # Remote Control : session introuvable, sans réponse ou service bloqué
 
 - Résumé : liste des pièges rencontrés avec `claude remote-control` en service (session absente de l'application ou de `/resume`, message sans réponse, erreur « already served », service actif mais mort) et leur cause.
-- Statut : résolu en partie (confirmé par l'utilisateur) ; certaines causes restent des hypothèses signalées comme telles. Le service a finalement été désactivé le 2026-11-06, voir la fiche de fonctionnement.
+- Statut : archivé, service abandonné ; résolu en partie (confirmé par l'utilisateur) ; certaines causes restent des hypothèses signalées comme telles. Le service a finalement été désactivé le 2026-11-06, voir la fiche de fonctionnement.
 - Date : 2026-11-06.
+- Dernière vérification : 2026-11-13, Claude Code 2.1.323 sous Arch Linux : le service `claude-remote-control` n'existe plus (`systemctl --user is-enabled claude-remote-control` répond `not-found`) ; les procédures n'ont pas été rejouées.
 - Portée : Claude Code CLI sur Linux avec le service de la fiche [service systemd Remote Control](../02-SYSTEME/service-systemd-remote-control.md).
 - Environnements testés : Claude Code 2.1.318 sous Arch Linux.
 - Prérequis et exclusions : service installé et connecté ; ne couvre pas les problèmes d'authentification Claude.
