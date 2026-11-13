@@ -5,6 +5,7 @@
 - Résumé : une ou deux phrases qui disent le problème et la solution ; reprises telles quelles par l'index généré.
 - Statut : à investiguer / proposé / testé / résolu.
 - Date : AAAA-MM-JJ.
+- Dernière vérification : AAAA-MM-JJ et versions relevées ce jour-là (système, noyau, logiciel concerné) ; facultatif, à mettre à jour à chaque contrôle sur la machine, même sans autre changement. Elle permet de comparer la fiche à l'état réel du système et de repérer une fiche périmée.
 - Portée : OS, famille, environnement, compositeur, logiciel ou machine concernés.
 - Environnements testés : versions, shell et matériel vérifiés ; indiquer « aucun » si non testé.
 - Prérequis et exclusions : dépendances et contextes incompatibles connus.
