@@ -1,9 +1,7 @@
 # Lanceur Super+Espace sans résultat (variante hero)
 
-Statut : **contournement confirmé par l'utilisateur le 5 novembre 2026 ; cause non identifiée**.
-
 - Résumé : Sous Ryoku (Niri et Hyprland), le lanceur Super+Espace n'affiche aucun résultat avec la variante `hero` ; contournement en passant à la variante `main`, sans cause identifiée.
-
+- Statut : contournement confirmé par l'utilisateur le 5 novembre 2026 ; cause non identifiée.
 - Date : 2026-11-05.
 - Portée : Ryoku (Niri et Hyprland), lanceur Quickshell (configuration `shell`).
 - Environnements testés : Arch Linux, Niri, Quickshell `0.3.2-1`, shell fish ; machine portable Dell. Sous Hyprland, l'utilisateur indique que le correctif fonctionne aussi ; je n'ai pas pu le vérifier moi-même.

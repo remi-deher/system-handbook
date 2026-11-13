@@ -1,8 +1,8 @@
 # Raccourcis AZERTY dans Ryoku / Niri
 
-Statut : **résolu et confirmé par l'utilisateur le 4 novembre 2026**.
-
-Résumé : Les raccourcis Super+Alt et Super+Maj avec la rangée AZERTY déplacent une fenêtre vers un bureau ; ils exigent les noms XKB français et `focus=false` pour Maj dans Ryoku avec Niri.
+- Résumé : Les raccourcis Super+Alt et Super+Maj avec la rangée AZERTY déplacent une fenêtre vers un bureau ; ils exigent les noms XKB français et `focus=false` pour Maj dans Ryoku avec Niri.
+- Statut : résolu et confirmé par l'utilisateur le 4 novembre 2026.
+- Date : 2026-11-04.
 
 ## Comportement attendu
 
