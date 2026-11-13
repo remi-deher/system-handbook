@@ -2558,6 +2558,27 @@
       ]
     },
     {
+      "path": "OS/Linux/arch/omarchy/03-CONFIGURATION/gestes-vue-ensemble.md",
+      "kind": "fiche",
+      "title": "Gestes du pavé tactile pour la vue d’ensemble",
+      "summary": "Un balayage à quatre doigts vers le haut ouvre la vue ScrollOverview de Super+Tab ; vers le bas, il la ferme sur la sélection active.",
+      "status": "testé et confirmé par l’utilisateur",
+      "date": "2026-11-12",
+      "scope_note": "Omarchy, Hyprland et plugin ScrollOverview",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "configuration"
+      ]
+    },
+    {
       "path": "OS/Linux/arch/omarchy/03-CONFIGURATION/scrolloverview-hyprland.md",
       "kind": "fiche",
       "title": "Vue des workspaces avec ScrollOverview",
@@ -2565,6 +2586,27 @@
       "status": "configuration chargée ; interaction et rendu à vérifier selon la session",
       "date": "2026-11-11",
       "scope_note": "Omarchy, Hyprland et greffon ScrollOverview",
+      "os": "Linux",
+      "family": "arch",
+      "scopes": [
+        "omarchy"
+      ],
+      "rubric": "03-CONFIGURATION",
+      "tags": [
+        "linux",
+        "arch",
+        "omarchy",
+        "configuration"
+      ]
+    },
+    {
+      "path": "OS/Linux/arch/omarchy/03-CONFIGURATION/wayland-applications.md",
+      "kind": "fiche",
+      "title": "Applications Wayland et échelle",
+      "summary": "Omarchy privilégie Wayland pour les applications compatibles ; Plex Desktop Flatpak utilise Wayland natif sans facteur Qt supplémentaire sur cette machine.",
+      "status": "Plex testé et taille confirmée ; répétition de Tab apparemment corrigée",
+      "date": "2026-11-11",
+      "scope_note": "Arch Linux, Omarchy, Hyprland 0.56.2 et Plex Desktop Flatpak 1.115.0",
       "os": "Linux",
       "family": "arch",
       "scopes": [
