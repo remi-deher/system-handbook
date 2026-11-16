@@ -6,6 +6,8 @@
 - Portée : Arch Linux, Omarchy, Hyprland 0.56.2 et Plex Desktop Flatpak 1.115.0.
 - Prérequis : session Wayland et application compatible ; XWayland reste nécessaire pour les logiciels qui ne prennent pas en charge Wayland.
 
+> Divergence constatée le 2026-11-16 (Ryoku, Niri) : sur cette machine, Plex est le paquet `plex-desktop` et non plus le Flatpak, et Plex en Wayland natif crée une surface RGB565 qui provoque du banding. Voir [la fiche Niri](../../ryoku/niri/07-RESOLUTION/LOGICIEL/plex-desktop-banding-rgb565-wayland.md) ; la configuration Wayland ci-dessous ne s'applique plus à Plex sur cette machine.
+
 ## Diagnostic et configuration
 
 La session privilégie déjà Wayland pour GTK, Qt, Firefox et Electron, avec repli lorsque disponible. Contrôler les fenêtres ouvertes avec `hyprctl clients -j` : `xwayland: false` signifie Wayland natif. Cela ne garantit pas le comportement des applications fermées ou futures.

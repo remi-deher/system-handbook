@@ -5,5 +5,6 @@ Problèmes, diagnostics et solutions, regroupés par catégorie. Portée : Niri 
 ## Où chercher
 
 - [CLAVIER/](CLAVIER/README.md)
+- [LOGICIEL/](LOGICIEL/README.md)
 
 Voir les [instructions IA](00-AGENTS.md) et [l’index parent](../README.md).
