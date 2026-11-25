@@ -4,6 +4,7 @@ Configurations de référence et adaptations sélectionnées ; chiffrer les donn
 
 ## Fiches
 
+- [Luminosité minimale et pas des touches](luminosite-clavier.md) — plancher et paliers de l’écran intégré.
 - [Rotation automatique de l’écran — Niri](rotation-automatique.md) — rotation par accéléromètre et paires de fenêtres pleine largeur en portrait.
 
 ## Où chercher

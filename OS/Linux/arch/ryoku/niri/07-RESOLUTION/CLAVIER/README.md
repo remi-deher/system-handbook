@@ -4,6 +4,7 @@ Catégorie des résolutions du clavier, de la disposition et des raccourcis. Une
 
 ## Où chercher
 
+- [verrouillage-maj-chiffres.md](verrouillage-maj-chiffres.md)
 - [raccourcis-azerty.md](raccourcis-azerty.md)
 - [azerty-niri-user.kdl](azerty-niri-user.kdl)
 - [ryoku-capture-azerty.patch](ryoku-capture-azerty.patch)

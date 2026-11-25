@@ -4,6 +4,7 @@
 
 ## Où chercher
 
+- [connexion-automatique-trousseau.md](connexion-automatique-trousseau.md)
 - [greeter-clavier-qwerty.md](greeter-clavier-qwerty.md)
 
 Les résolutions d'authentification communes à Arch ont leur propre catégorie `AUTHENTIFICATION` dans la portée Arch. Pour le clavier sous Niri, voir [la catégorie Niri](../../niri/07-RESOLUTION/CLAVIER/README.md).
